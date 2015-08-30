@@ -1,6 +1,6 @@
 *.DS_Store
 */fonts
 */images
-*/img
-*/node_modules
+**/img
+**/node_modules
 */bower_components
