@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en"  class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en"  class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en"  class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="Personal_Website" class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <base href="/"></base>
+    <title>Michael Clayton Yuen</title>
+    <meta name="author" content="Michael Yuen">
+        
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- begin Google Fonts -->
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- end Google Fonts -->
+
+    <!-- Libraries -->
+    <script src="/assets/js/angular/angular.min.js"></script>
+    <script src="/assets/js/angular/angular-route.min.js"></script>
+    <script src="/assets/js/angular/angular-animate.min.js"></script>
+    <script src="/assets/js/ui_bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+
+    <!-- App -->
+    <script src="app.js"></script>
+
+</head>
+<body ng-controller="MainController">
+
+    <div class="header" ng-class="{'shrink': shrink_header == 'true'}">
+        
+        <span ng-click="select('home')">
+
+            <div class="col-xs-12 col-md-4 circle-container">
+                <div class="circle"></div>
+            </div>
+            
+            <div class="col-xs-12 col-md-8 welcome">
+                <div class="kilo">
+                    <span>M</span><span class="first">ichael&nbsp;</span>
+                    <span>C</span><span class="middle">layton&nbsp;</span>
+                    <span class="y">Y</span><span class="last">uen</span>
+                </div>
+                <h1 class="spacer"></h1>
+                <h2>Web Developer</h2>
+                <!-- <h4>Orlando, FL</h4> -->
+            </div>
+        </span>
+
+        <ul class="nav">
+            <li class="about" ng-class="{'active': active == 'about'}" ng-click="select('about')">ABOUT</li>
+            <li class="work" ng-class="{'active': active == 'work'}" ng-click="select('work')">WORK</li>
+            <li class="contact" ng-class="{'active': active == 'contact'}" ng-click="select('contact')">CONTACT</li>
+            <li class="bottom-bar"></li>
+        </ul>
+    </div>
+
+    <div class="container-fluid menu" ng-class="{'grow': shrink_header == 'true'}">
+        <div class="row">
+
+            <section id="about" class="col-xs-4 about" ng-class="{'active': active == 'about', 'shrink': active == 'work' || active == 'contact'}" ng-click="select('about')">
+                <figure>
+                    <img src="assets/img/traintrack02.jpg">
+                    <figcaption>
+                        <div class="border">
+                            <h1 class="head">ABOUT</h1>
+                            <svg>
+                                <line class="top" x1="0%" y1="0%" x2="100%" y2="0%"/>
+                                <line class="bottom" x1="0%" y1="100%" x2="100%" y2="100%"/>
+                                <line class="left" x1="0%" y1="0%" x2="0%" y2="100%"/>
+                                <line class="right" x1="100%" y1="0%" x2="100%" y2="100%"/>
+                            </svg>
+                        </div>
+
+                    </figcaption>
+                </figure>
+
+                <div class="quote-container">
+                    <p class="gamma quote">Knowing is not enough, we must <em>apply</em>. Willing is not enough, we must <em>do</em>.</p>
+                    <h2 class="author"><span>J</span>ohann <span>W</span>olfgang <span>v</span>on <span>G</span>oethe</h2>
+                </div>
+
+                <div class="body-container">
+                    <div class="body">
+                        <h4>
+                            In the equation for success, there is one quality I admire that I feel is often overlooked - persistence. The ability to not just do things but to get them done. This is something I apply to all aspects of my life. I would not want to hire someone that knows how to build a website but can't deliver, and don't want to be that type of developer or person.
+                        </h4>
+                        <h1 class="emphasis">developer that delivers</h1>
+                        <h4>
+                            I take pride in who I am and what I do. Always improving myself and pushing limits, I enjoy being challenged mentally and physically. Weightlifting is a new lifestyle I am loving, and I look forward to seeing old friends that will no longer recognize me. Additionally I've begun practicing Jeet Kune Do which has quickly become one of my favorite hobbies. Don't call me Fast Eddie, but if you're not careful I'll hustle you at pool. In my downtime I can be found nose-deep in a novel or feeding my Game of Thrones obsession.
+                        </h4>
+                        <h1 class="emphasis">always self-improving</h1>
+                        <h4>
+                            I love this miracle that is life, aiming to not simply exist but to live and fully appreciate everything. There's so much peace and beauty to be found in nature, and I love experiencing this through hiking and kayaking. In the future I hope I'm able to travel the world and experience all that it has to offer.
+                        </h4>
+                        <h1 class="emphasis">appreciate everything</h1>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="work" class="col-xs-4 work" ng-class="{'active': active == 'work', 'shrink': active == 'about' || active == 'contact'}" ng-click="select('work')">
+                <figure>
+                    <img src="assets/img/mountains03.jpg">
+                    <figcaption>
+                        <div class="border">
+                            <h1 class="head">WORK</h1>
+                            <svg>
+                                <line class="top" x1="0%" y1="0%" x2="100%" y2="0%"/>
+                                <line class="bottom" x1="0%" y1="100%" x2="100%" y2="100%"/>
+                                <line class="left" x1="0%" y1="0%" x2="0%" y2="100%"/>
+                                <line class="right" x1="100%" y1="0%" x2="100%" y2="100%"/>
+                            </svg>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <div class="quote-container">
+                    <p class="gamma quote">I have <em>not</em> failed. I've just found 10,000 ways that <em>won't</em> work.</p>
+                    <h2 class="author"><span>T</span>homas <span>E</span>dison</h2>
+                </div>
+
+                <div class="body"></div>
+
+            </section>
+
+            <section id="contact" class="col-xs-4 contact" ng-class="{'active': active == 'contact', 'shrink': active == 'about' || active == 'work'}" ng-click="select('contact')">
+                <figure>
+                    <img src="assets/img/kayak01.jpg">
+                    <figcaption>
+                        <div class="border">
+                            <h1 class="head">CONTACT</h1>
+                            <svg>
+                                <line class="top" x1="0%" y1="0%" x2="100%" y2="0%"/>
+                                <line class="bottom" x1="0%" y1="100%" x2="100%" y2="100%"/>
+                                <line class="left" x1="0%" y1="0%" x2="0%" y2="100%"/>
+                                <line class="right" x1="100%" y1="0%" x2="100%" y2="100%"/>
+                            </svg>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <div class="quote-container">
+                    <p class="gamma quote">Everybody is special. Everybody. Everybody is a hero, a lover, a fool, a villain. Everybody. Everybody has their story to tell.</p>
+                    <h2 class="author"><span>V</span> for <span>V</span>endetta</h2>
+                </div>
+
+                <div class="body-container">
+                    <div class="body">
+                        <h4>
+                            In a time where life increasingly digital, gratification is expected to be instant, and human interaction has fallen by the wayside, I try to approach everything with passion, patience and perspective so as to reclaim the beauty of these forgotten values.
+                        </h4>
+                        <h4>
+                            As Alan Moore eloquently stated, everybody has their story to tell. Unfortunately, more often than not these stories lose their value to all but the teller.
+                        </h4>
+                        <h1 class="emphasis">I don't like that</h1>
+                        <h4>
+                            It's easy to hear; harder to listen. I try to listen to everybody's stories as if they were my own and appreciate what they mean to the person brave enough to tell them. If you have a story you'd like to tell or a project you'd like to build, contact me.
+                        </h4>
+
+                        <div class="icons">
+                            <a class="fa fa-envelope fa-3x" href="mailto:michaelclaytonyuen@gmail.com"><span>Email</span></a>
+                            <a class="fa fa-linkedin fa-3x" href="https://www.linkedin.com/in/yuenmichael"><span>LinkedIn</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

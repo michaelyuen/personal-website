@@ -1,0 +1,77 @@
+/*
+	Add floating label input magic based on Googe Material Design
+	http://www.google.com/design/spec/components/text-fields.html#text-fields-floating-labels
+	Author: Michael Yuen
+
+	@param {Width} @input-width - corresponds to (max) width of input.
+	With a smaller device, the input may have less width but the effect will not be noticably different.
+
+	@requires - html to have a particular structure
+			  - essentially the label after the input, all within a containing element
+
+	<container-element where mixin is applied>
+		<input>
+		<label>
+	</>
+
+*/
+.input-magic (@input-width) {
+	position: relative;
+
+	label:not(.num-employees){
+		color: @text-hint;
+		font-weight: 400;
+		pointer-events: none;
+		position: absolute; left: 0; top: 15px;
+		transition: top .3s cubic-bezier(.64,.09,.08,1),
+					font-size .3s cubic-bezier(.64,.09,.08,1),
+					color .3s cubic-bezier(.64,.09,.08,1);
+	}
+
+	input{
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, @primary 4%);
+		background-position: (@input-width * -1) 0;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		border: none;
+		border-bottom: 1px solid @border;
+		color: @text-secondary;
+		display: block;
+		transition: background-position 0.3s cubic-bezier(.64,.09,.08,1);
+		width: 100%;
+
+		&::-moz-placeholder, &:-moz-placeholder{
+			color: transparent;
+		}
+
+		&::-webkit-input-placeholder{
+			color: transparent;
+		}
+
+		&:focus ~ label, &.ng-dirty:not(.ng-invalid-required) ~ label, &:valid ~ label, &.ng-valid ~ label{
+			top: -5px;
+			font-size: 12px;
+			color: @primary;
+		}
+
+		&:focus, &.ng-valid, &:valid{
+			background-position: 0 0;
+
+			&::-moz-placeholder, &:-moz-placeholder{
+				color: inherit;
+			}
+
+			&::-webkit-input-placeholder{
+				color: inherit;
+			}
+		}
+
+		&.ng-invalid.ng-dirty:not(.ng-invalid-required){
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, @warning 4%);
+
+			& ~ label{
+				color: @warning;
+			}
+		}
+	}
+}

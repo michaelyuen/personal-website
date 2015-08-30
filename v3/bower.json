@@ -1,0 +1,26 @@
+{
+  "name": "Personal_Website",
+  "version": "3.0.0",
+  "authors": [
+    "Michael Yuen <michaelclaytonyuen@gmail.com>"
+  ],
+  "description": "N/A",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "michaelclaytonyuen.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "1.2.27",
+    "angular-route": "1.2.27",
+    "angular-ui-bootstrap-bower": "~0.12.1",
+    "bootstrap-css-only": "~3.3.2",
+    "angular-ui-utils": "validate-0.2.2"
+  }
+}

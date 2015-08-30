@@ -1,0 +1,465 @@
+/*
+    CSS RESET
+
+    http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+/*
+************** FONTS ****************
+*/
+
+@font-face {
+    font-family: 'Nevis';
+    src: url('../fonts/nevis.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Quicksand-light';
+    src: url('../fonts/Quicksand_Light.otf') format('opentype');
+}
+
+/************* WEBSITE CONTENT ***********/
+ /* html {font-family: "Brandon Grotesque","Helvetica Neue",Helvetica,"Myriad Pro","Lucida Grande",sans-serif;}*/
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+    font-family: Quicksand, 'Helvetica Neue', Calibri, Arial, sans-serif;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.container header {
+    position: fixed;
+    z-index: 1001;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1440px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.container nav {
+    text-align: center;
+}
+
+.container li {
+    display: inline;
+    height: 50px;
+    line-height: 50px;
+}
+
+.container header nav a {
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+    padding: 18px;
+    padding-bottom: 18px;
+    width: 100%;
+}
+
+.container > header nav a:hover {
+	background: black;
+    color: white;
+}
+
+#fbsection1 .loc {
+    position: fixed;
+    z-index: 100;
+    left: 150px;
+    top: 150px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #d0d0d0;
+}
+
+#fbsection1 .title {
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 50px;
+    line-height: 40px;
+    font-weight: 500;
+    color: white;
+    font-family: Nevis;
+}
+
+#fbsection1 .dev {
+    font-family: Quicksand-light;
+    font-size: 40px;
+    padding-top: 10px;
+    color: white;
+}
+
+/* Set all parents to full height */
+html, body,
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section {
+	height: 100%;
+}
+
+/* The nav is fixed on the right side  and we center it by translating it 50%
+(we don't know it's height so we can't use the negative margin trick) */
+.cbp-fbscroller > nav {
+	position: fixed;
+	z-index: 9999;
+	right: 100px;
+	top: 50%;
+	width: 26px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.cbp-fbscroller > nav a {
+	display: block;
+	position: relative;
+	z-index: 9999;
+	color: transparent;
+	width: 26px;
+	height: 26px;
+	outline: none;
+	margin: 25px 0;
+	border-radius: 50%;
+	border: 4px solid #fff;
+}
+
+.no-touch .cbp-fbscroller > nav a:hover {
+	background: rgba(255,255,255,0.6);
+}
+
+.cbp-fbscroller > nav a.cbp-fbcurrent {
+	background: #fff;
+}
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.no-touch .cbp-fbscroller section {
+	background-attachment: fixed;
+}
+
+.head_space {
+    height: 50px;
+}
+
+#fbsection1 {
+	background-image: url(../images/bg1.png);
+}
+
+#fbsection2 {
+}
+
+#fbsection2 .about {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #999999;
+    padding: 25px;
+    margin-top: 25px;
+    overflow: auto;
+}
+
+#fbsection2 .left {
+    float: left;
+    margin-right: 10px;
+    color: black;
+}
+
+#fbsection2 .left figcaption {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+#fbsection2 .right {
+    color: black;
+}
+
+#fbsection2 .right h1 {
+    font-size: 50px;
+    font-weight: 500;
+    font-family: Nevis;
+    padding: 20px;
+}
+
+#fbsection2 .right p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: justify;
+}
+
+#fbsection2 img {
+    height: 500px;
+}
+
+#fbsection3 {
+    background-image: url(../images/mountains1.png);
+}
+
+#fbsection4 {
+    background-color: #00aaff;
+    text-align: center;
+    color: black;
+    /* height: auto;   THIS MAKES THE SECTION FIT WHEN IT'S TALLER THAN THE SCREEN */
+}
+
+#fbsection4 .resume{
+    width: auto;
+    height: 659px;
+    margin: auto;
+    padding: 25px;
+    margin-top: 25px;
+    overflow: auto;
+}
+
+
+#fbsection4 h1 {
+    width: 800px;
+    font-size: 50px;
+    font-weight: 500;
+    font-family: Nevis;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 50px;
+    border-bottom: 2px solid black;
+}
+
+#fbsection4 .buttons {
+    width: 200px;
+    margin: 30px;
+    display: inline-block;
+    background-color: #fff;
+}
+
+#fbsection4 .buttons .container {
+    position: relative;
+    height: 160px;
+}
+
+#fbsection4 .buttons .container .background {
+    background-image: url(../images/buttonbg.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 160px;
+    z-index: 999;
+}
+
+#fbsection4 .buttons .container .background figure {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+
+#fbsection4 .buttons .container .background img {
+    height: 40px;
+    border-radius: 5px;
+}
+
+#fbsection4 .buttons .container .cover {
+    background-color: white;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 160px;
+    max-height: 160px;
+    transition: all .5s;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#fbsection4 .buttons:hover .container .cover {
+    height: 0px;
+    max-height: 0px;
+    padding: 0px;
+}
+
+#fbsection4 .buttons .label {
+    background-color: #004c6d;
+    color: white;
+    padding: 20px;
+}
+
+#fbsection4 .resume .filler {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+
+#fbsection5 {
+	background-image: url(../images/zipline.png);
+}
+
+#fbsection6 {
+    background-color: #89fbff;
+    text-align: center;
+}
+
+#fbsection6 .contact {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 25px;
+    margin-top: 25px;
+    color: black;
+    overflow: auto;
+}
+
+#fbsection6 h1 {
+    font-size: 50px;
+    font-weight: 500;
+    font-family: Nevis;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+#fbsection6 p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#fbsection6 .button_wrap {
+    overflow: auto;
+    margin-top: 30px;
+}
+
+#fbsection6 .buttons {
+    width: 30%;
+    display: inline-block;
+}
+
+#fbsection6 figure {
+}
+
+#fbsection6 img {
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: 0 6px #111;
+    border-bottom: 1px solid white;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
+#fbsection6 figcaption {
+    padding: 5px;
+}
+
+#fbsection6 img:hover {
+	box-shadow: 0 10px #111;
+	top: -4px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+#fbsection6 img:active {
+	box-shadow: 0 0 #111;
+    border: none;
+	top: 6px;
+}
+
+#fbsection6 .footer {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+}

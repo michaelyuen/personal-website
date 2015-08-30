@@ -1,0 +1,604 @@
+ /*--- TABLE OF CONTENTS
+
+01. COLOR SETTINGS
+02. MIXINS
+03. PRIMARY STYLES
+	A. Font Standards
+	B. Misc Reset
+	C. Framework
+	D. Angular Form Validation
+04. HEADER
+05. FOOTER
+
+--- */
+
+/* ========================================================== */
+/* 			           01. COLOR SETTINGS                     */
+/* ========================================================== */
+@import 'variables.less';
+
+/* ========================================================== */
+/* 			           02. MIXINS		                      */
+/* ========================================================== */
+@import 'mixins.less';
+
+/* ========================================================== */
+/* 			           03. PRIMARY STYLES                     */
+/* ========================================================== */
+
+/* ----- A. Font Standards ----- */
+html, body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    /* line-height will be 24px (This is now our magic number; 
+        all subsequent margin-bottoms and line-heights 
+        want to be a multiple of this number in order 
+        to maintain vertical rhythm.) */
+    line-height: 1.5;
+
+    @media (min-width: 768px){
+        font-size: 16px;
+    }
+}
+
+/* Common margin-bottom for vertical rhythm. */
+.giga,.mega,.kilo,
+h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta,
+small,.milli,ul,p,pre,hr{
+	margin-top: 0px;
+    margin-bottom:24px;
+}
+
+.giga,.mega,.kilo,
+h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta{
+	font-weight: 400;
+}
+
+.kilo{
+    font-size: 36px;
+    line-height: 1.2;
+
+    @media (min-width: 768px){
+        font-size:46px;
+        line-height:1.5;
+    }
+}
+
+h1,.alpha{
+    font-size: 28px;
+    line-height: 1.2;
+
+    @media (min-width: 768px){
+        font-size:32px;
+        line-height:1.5;
+    }
+}
+h2,.beta{
+    font-size: 20px;
+    line-height: 1.2;
+
+    @media (min-width: 768px){
+        font-size:24px;
+        line-height:1;
+    }
+}
+h3,.gamma{
+	font-size: 16px;
+	line-height: 1.5;
+
+    @media (min-width: 768px){
+        font-size:20px;
+        line-height:1.2;
+    }
+}
+h4,.delta{
+    font-size: 16px;
+    line-height: 1.5;
+
+    @media (min-width: 768px){
+        font-size:18px;
+        line-height:1.333;
+    }
+}
+h5,.epsilon{
+    font-size: 14px;
+    line-height: 1.5;
+
+    @media (min-width: 768px){
+        font-size:16px;
+        line-height:1.5;
+    }
+}
+h6,.zeta{
+    font-size: 12px;
+    line-height: 2;
+
+    @media (min-width: 768px){
+        font-size:14px;
+        line-height:1.5;
+    }
+}
+small,.milli {
+    font-size:12px;
+    line-height:2;
+}
+
+/* ----- End Font Standards ----- */
+
+/* ----- B. Misc Reset ----- */
+
+.modal-backdrop{
+	bottom: 0;
+}
+
+/* ----- End Misc Reset ----- */
+
+/* ----- C. Framework ----- */
+
+:focus{
+	outline: none;
+}
+
+hr{
+	border-color: @border;
+}
+
+html, body{
+	background: #fff;
+	color: @text-secondary;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+a{
+	color: @primary;
+
+	&:hover{
+		color: @primary-dark;
+	}
+
+	&:focus{
+		outline: none;
+	}
+}
+
+select, button, textarea, input {
+	vertical-align: baseline;
+}
+
+input{
+	height: 48px;
+	padding: 16px 0 8px 0;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+.btn-container{
+
+	@media (max-width: 767px){
+		padding: 6px 4px;
+	}
+
+	input[type="submit"], input[type="reset"], input[type="button"], button, .btn{
+		height: 36px;
+		line-height: 24px;
+		min-width: 64px;
+		text-transform: uppercase;
+	}
+
+	.btn{
+		background: @primary;
+		border-radius: 2px;
+		color: @dark-text-primary;
+		font-weight: 500;
+
+		&:hover:not(:disabled){
+			background: @primary-dark;
+		}
+
+		&:focus{
+			background: @primary-light;
+			color: @primary;
+			outline: none;
+		}
+
+		&:disabled{
+			cursor: not-allowed;
+			pointer-events: inherit;
+		}
+	}
+}
+
+.card{
+	background: white;
+	border-radius: 2px;
+	border: 1px solid @border;
+	margin-bottom: 30px;
+	padding: 15px;
+
+	@media (min-width: 768px){
+		padding: 30px;
+	}
+}
+
+.text-invalid{
+	color: @warning;
+	position: absolute;
+	font-size: 12px;
+}
+
+.view-container{
+	clear: left;
+	height: calc(~'100% - 52px');
+	width: calc(~'100% - 300px');
+	overflow-y: scroll;
+	padding: 30px 15px;
+	-webkit-overflow-scrolling: touch;
+
+	@media (min-width: 768px){
+		height: calc(~'100% - 64px');
+		padding: 30px;
+	}
+
+	@media (min-width: 992px){
+		clear: none;
+		height: 100%;
+	}
+
+	&.fullscreen{
+		padding: 0;
+	}
+}
+
+.title{
+	color: @text-primary;
+}
+
+sub{
+	font-size: 8px;
+}
+
+.modal-header{
+	margin-bottom: 0;
+	padding: 20px 30px;
+}
+
+.modal-body{
+	padding: 20px 30px;
+}
+
+.modal-footer{
+	padding: 10px;
+
+	.btn-success{
+		background: @primary;
+		border: none;
+
+		&:hover{
+			background: @primary-dark;
+			color: white;
+		}
+	}
+
+	.btn-danger{
+		background: #d9534f;
+		border: none;
+		&:hover{
+			background: #df3f3a !important;
+			color: white;
+		}
+	}
+}
+
+.modal-dialog{
+	width: 400px;
+	position: absolute;
+	top: 10%;
+	left: calc(~'50% - 200px');
+}
+
+/* ----- End Framework ----- */
+
+/* ========================================================== */
+/* 				 		END PRIMARY STYLES               	  */
+/* ========================================================== */
+
+/* ========================================================== */
+/* 						   04. HEADER                         */
+/* ========================================================== */
+
+/* Initial welcome screen - covers full screen */
+header{
+	background: @primary;
+	border-bottom: 1px solid @border;
+	box-shadow: 0px 4px 2px @border;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0 15px;
+	width: 100%; height: 52px;
+	z-index: 1;
+	transition: width 1s ease-in-out;
+
+	@media (min-width: 992px){
+		width: 100%; height: 100%;
+	}
+
+	.logo, hr{
+		display: none;
+	}
+
+	.avatar-container{
+		border-bottom: none;
+		padding: 30px 0;
+
+		.avatar{
+			width: 250px; height: 250px;
+			background-image: url('/assets/img/flaglerpier.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border: 5px solid white;
+			border-radius: 50%;
+			margin: auto;
+			margin-top: 50px;
+		}
+	}
+
+	.name{
+		color: @dark-text-primary;
+		display: block;
+	}
+
+	.menu{
+		text-align: center;
+
+		a{
+			background: @primary;
+			color: @dark-text-primary;
+			display: inline-block;
+			font-size: 20px;
+			padding: 12px 16px 12px 0;
+			transition: color .3s cubic-bezier(.64,.09,.08,1);
+			width: auto;
+
+			&::before{
+				display: none;
+			}
+
+			&:hover{
+				color: @primary-dark;
+				text-decoration: none;
+			}
+
+			i{
+				margin: 0 10px 0 20px;
+			}
+		}
+	}
+}
+
+/* When a page is chosen - revert to sidebar */
+header.shrink{
+	background: @primary;
+	border-bottom: 1px solid @border;
+	box-shadow: 0px 4px 2px @border;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0 15px;
+	//transition: width 1s ease-in-out;
+	width: 100%; height: 52px;
+	z-index: 1;
+
+	@media (min-width: 768px){
+		height: 64px;
+		padding: 0 15px 0 30px;
+	}
+
+	@media (min-width: 992px){
+		border-right: 1px solid @border;
+		border-bottom: none;
+		box-shadow: none;
+		padding: 0;
+		width: 300px; height: 100%;
+	}
+
+	.logo{
+		color: @dark-text-primary;
+		font-weight: 500;
+		line-height: 52px;
+		margin-bottom: 0px;
+
+		@media (min-width: 768px){
+			line-height: 64px;
+		}
+
+		@media (min-width: 992px){
+			display: block;
+			font-weight: 400;
+			text-align: center;
+			width: 100%;
+		}
+
+		&:hover, &:focus{
+			color: @primary-dark;
+			text-decoration: none;
+		}
+	}
+
+	hr{
+		margin-bottom: 0;
+	}
+
+	.avatar-container{
+		display: none;
+		width: 100%;
+
+		@media (min-width: 992px){
+			border-bottom: 1px solid @border;
+			display: block;
+			padding: 30px 0;
+		}
+
+		.avatar{
+			width: 190px; height: 190px;
+			background-image: url('/assets/img/flaglerpier.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border: 5px solid white;
+			border-radius: 50%;
+			margin: auto;
+			position: relative; top: 5px;
+		}
+	}
+
+	.name{
+		display: none;
+	}
+
+	.hamburger{
+		float: right;
+		margin: 9px;
+		margin-right: 0;
+		position: relative;
+		width: 34px; height: 34px;
+
+		@media (min-width: 768px){
+			width: 46px; height: 46px;
+		}
+
+		@media (min-width: 992px){
+			display: none;
+		}
+
+		span{
+			background: @dark-text-primary;
+			display: block;
+			margin: 5px 0;
+			width: 100%; height: 5px;
+
+			@media (min-width: 768px){
+				margin: 7px 0;
+			}
+		}
+	}
+
+	.menu{
+		box-shadow: 0px 2px 5px @text-hint;
+		clear: both;
+		max-height: 0px;
+		overflow: hidden;
+		position: absolute; left: 0; right: 0;
+		transition: max-height .5s cubic-bezier(.64,.09,.08,1);
+		text-align: left;
+		z-index: 10;
+
+		&.open{
+			max-height: 500px;
+		}
+
+		a{
+			background: white;
+			border-bottom: 1px solid @border;
+			color: @primary;
+			display: block;
+			font-size: 16px;
+			padding: 12px 16px 12px 0;
+			text-decoration: none;
+			width: 100%;
+
+			&:focus{
+				color: @primary;
+			}
+
+			i{
+				min-width: 16px;
+				margin: 0 16px 0 30px;
+				text-align: center;
+			}
+		}
+
+		@media (min-width: 992px){
+			box-shadow: none;
+			max-height: none;
+			overflow: visible;
+			position: relative;
+
+			a{
+				background: linear-gradient(to left, white 50%, @primary 49%, transparent 1%);
+				background-size: 200% 100%;
+				background-position: 600px 0;
+				background-repeat: none;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid transparent;
+				color: @dark-text-primary;
+				display: block;
+				padding: 12px 16px 12px 0;
+				position: relative;
+				transition: background-position .3s cubic-bezier(.64,.09,.08,1),
+							color .3s cubic-bezier(.64,.09,.08,1);
+				width: calc(~'100% + 1px');
+
+				@media (min-width: 992px){
+					height: auto;
+				}
+
+				&::before{
+					background: @primary-dark;
+					content: '';
+					display: block;
+					margin-top: -1px;
+					position: absolute; top: 0; left: -5px;
+					transition: left .2s cubic-bezier(.64,.09,.08,1);
+					width: 5px; height: 104%;
+				}
+
+				&:hover{
+					color: @primary-dark;
+					text-decoration: none;
+
+					&::before{
+						left: 0;
+					}
+				}
+
+				&:focus, &.current{
+					background-position: 300px 0;
+					border-top: 1px solid @border;
+					border-bottom: 1px solid @border;
+					color: @primary;
+					text-decoration: none;
+
+					&::before{
+						left: 0;
+					}
+				}
+
+				i{
+					margin: 0 16px 0 50px;
+				}
+			}
+		}
+	}
+}
+/* ========================================================== */
+/* 						    END HEADER                        */
+/* ========================================================== */
+
+/* ========================================================== */
+/* 						    06. FOOTER                        */
+/* ========================================================== */
+
+/* ========================================================== */
+/* 						    END FOOTER                        */
+/* ========================================================== */
