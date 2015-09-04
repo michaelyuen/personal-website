@@ -2,13 +2,12 @@
 
 01. COLOR SETTINGS
 02. MIXINS
-03. PRIMARY STYLES
-	A. Font Standards
-	B. Misc Reset
-	C. Framework
-	D. Angular Form Validation
-04. HEADER
-05. FOOTER
+03. FONT STANDARDS
+04. PRIMARY STYLES
+	A. Misc Reset
+	B. Framework
+05. HEADER
+06. FOOTER
 
 --- */
 
@@ -23,110 +22,16 @@
 @import 'mixins.less';
 
 /* ========================================================== */
-/* 			           03. PRIMARY STYLES                     */
+/* 			           03. FONT STANDARDS                     */
 /* ========================================================== */
 
-/* ----- A. Font Standards ----- */
-html, body{
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    /* line-height will be 24px (This is now our magic number; 
-        all subsequent margin-bottoms and line-heights 
-        want to be a multiple of this number in order 
-        to maintain vertical rhythm.) */
-    line-height: 1.5;
+@import 'font-standards.less';
 
-    @media (min-width: 768px){
-        font-size: 16px;
-    }
-}
+/* ========================================================== */
+/* 			           04. PRIMARY STYLES                     */
+/* ========================================================== */
 
-/* Common margin-bottom for vertical rhythm. */
-.giga,.mega,.kilo,
-h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta,
-small,.milli,ul,p,pre,hr{
-	margin-top: 0px;
-    margin-bottom:24px;
-}
-
-.giga,.mega,.kilo,
-h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta{
-	font-weight: 400;
-}
-
-.kilo{
-    font-size: 36px;
-    line-height: 1.2;
-
-    @media (min-width: 768px){
-        font-size:46px;
-        line-height:1.5;
-    }
-}
-
-h1,.alpha{
-    font-size: 28px;
-    line-height: 1.2;
-
-    @media (min-width: 768px){
-        font-size:32px;
-        line-height:1.5;
-    }
-}
-h2,.beta{
-    font-size: 20px;
-    line-height: 1.2;
-
-    @media (min-width: 768px){
-        font-size:24px;
-        line-height:1;
-    }
-}
-h3,.gamma{
-	font-size: 16px;
-	line-height: 1.5;
-
-    @media (min-width: 768px){
-        font-size:20px;
-        line-height:1.2;
-    }
-}
-h4,.delta{
-    font-size: 16px;
-    line-height: 1.5;
-
-    @media (min-width: 768px){
-        font-size:18px;
-        line-height:1.333;
-    }
-}
-h5,.epsilon{
-    font-size: 14px;
-    line-height: 1.5;
-
-    @media (min-width: 768px){
-        font-size:16px;
-        line-height:1.5;
-    }
-}
-h6,.zeta{
-    font-size: 12px;
-    line-height: 2;
-
-    @media (min-width: 768px){
-        font-size:14px;
-        line-height:1.5;
-    }
-}
-small,.milli {
-    font-size:12px;
-    line-height:2;
-}
-
-/* ----- End Font Standards ----- */
-
-/* ----- B. Misc Reset ----- */
+/* ----- A. Misc Reset ----- */
 
 .modal-backdrop{
 	bottom: 0;
@@ -134,7 +39,7 @@ small,.milli {
 
 /* ----- End Misc Reset ----- */
 
-/* ----- C. Framework ----- */
+/* ----- B. Framework ----- */
 
 :focus{
 	outline: none;
@@ -238,7 +143,6 @@ ul{
 .view-container{
 	clear: left;
 	height: calc(~'100% - 52px');
-	width: calc(~'100% - 300px');
 	overflow-y: scroll;
 	padding: 30px 15px;
 	-webkit-overflow-scrolling: touch;
@@ -250,11 +154,11 @@ ul{
 
 	@media (min-width: 992px){
 		clear: none;
-		height: 100%;
+		width: calc(~'100% - 300px'); height: 100%;
 	}
 
 	&.fullscreen{
-		padding: 0;
+		display: none;
 	}
 }
 
@@ -305,6 +209,13 @@ sub{
 	left: calc(~'50% - 200px');
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 /* ----- End Framework ----- */
 
 /* ========================================================== */
@@ -312,36 +223,48 @@ sub{
 /* ========================================================== */
 
 /* ========================================================== */
-/* 						   04. HEADER                         */
+/* 						   05. HEADER                         */
 /* ========================================================== */
 
 /* Initial welcome screen - covers full screen */
 header{
 	background: @primary;
-	border-bottom: 1px solid @border;
-	box-shadow: 0px 4px 2px @border;
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0 15px;
-	width: 100%; height: 52px;
-	z-index: 1;
-	transition: width 1s ease-in-out;
+	transition: width .75s ease-in-out, height .5s ease-in-out;
+	width: 100%; height: 100%;
 
-	@media (min-width: 992px){
-		width: 100%; height: 100%;
+	.logo, hr, .hamburger{
+		opacity: 0;
 	}
 
-	.logo, hr{
-		display: none;
+	.logo{
+		float: left;
+	}
+
+	.hamburger{
+		float: right;
 	}
 
 	.avatar-container{
-		border-bottom: none;
-		padding: 30px 0;
+		padding: 100px 0 30px;
+
+		@media (orientation: landscape){
+			padding: 100px 0 20px;
+		}
+
+		@media (min-width: 768px){
+			padding: 150px 0 40px;
+
+			@media (orientation: landscape){
+				padding: 125px 0 40px;
+			}
+		}
+
+		@media (min-width: 992px){
+			padding: 75px 0 30px;
+		}
 
 		.avatar{
-			width: 250px; height: 250px;
+			width: 200px; height: 200px;
 			background-image: url('/assets/img/flaglerpier.jpg');
             background-repeat: no-repeat;
             background-position: center center;
@@ -349,71 +272,118 @@ header{
             border: 5px solid white;
 			border-radius: 50%;
 			margin: auto;
-			margin-top: 50px;
+			transition: all .5s ease-in-out;
+
+			@media (min-width: 768px){
+				width: 300px; height: 300px;
+			}
+
+			@media (min-width: 992px){
+				transition: all .5s ease-in-out .35s;
+			}
 		}
+	}
+
+	.name, .menu{
+		transition: opacity .5s ease-in-out;
 	}
 
 	.name{
 		color: @dark-text-primary;
-		display: block;
+		margin-bottom: 30px;
+		transition: all 1s ease-in-out;
+
+		@media (orientation: landscape){
+			margin-bottom: 20px;
+		}
+
+		@media (min-width: 768px){
+			font-weight: 500;
+		}
+
+		@media (min-width: 992px){
+			font-weight: 400;
+		}
 	}
 
 	.menu{
 		text-align: center;
 
 		a{
-			background: @primary;
 			color: @dark-text-primary;
-			display: inline-block;
-			font-size: 20px;
-			padding: 12px 16px 12px 0;
-			transition: color .3s cubic-bezier(.64,.09,.08,1);
-			width: auto;
+			font-size: 16px;
+			padding-right: 15px;
+
+			@media (min-width: 768px){
+				font-size: 22px;
+				font-weight: 500;
+				padding-right: 25px;
+			}
+
+			@media (min-width: 992px){
+				font-size: 20px;
+				font-weight: 400;
+				padding-right: 35px;
+				transition: font 1s ease-in-out;
+			}
 
 			&::before{
 				display: none;
 			}
 
-			&:hover{
+			&:last-child{
+				padding-right: 0;
+			}
+
+			&:hover, &:focus{
 				color: @primary-dark;
 				text-decoration: none;
 			}
 
 			i{
-				margin: 0 10px 0 20px;
+				margin-right: 5px;
+
+				@media (min-width: 768px){
+					margin-right: 10px;
+				}
 			}
 		}
 	}
 }
 
-/* When a page is chosen - revert to sidebar */
 header.shrink{
-	background: @primary;
 	border-bottom: 1px solid @border;
-	box-shadow: 0px 4px 2px @border;
-	float: left;
-	list-style: none;
-	margin: 0;
+	box-shadow: 0px 2px 4px @border;
 	padding: 0 15px;
-	//transition: width 1s ease-in-out;
 	width: 100%; height: 52px;
-	z-index: 1;
+	transition: width .75s ease-in-out, height .5s ease-in-out;
 
 	@media (min-width: 768px){
 		height: 64px;
-		padding: 0 15px 0 30px;
+		padding: 0 30px;
 	}
 
 	@media (min-width: 992px){
 		border-right: 1px solid @border;
 		border-bottom: none;
 		box-shadow: none;
+		float: left;
 		padding: 0;
 		width: 300px; height: 100%;
 	}
 
+	.logo, hr, .hamburger{
+		opacity: 1;
+		transition: opacity .3s ease-in-out .3s;
+	}
+
+	hr{
+		margin-bottom: 0;
+	}
+
 	.logo{
 		color: @dark-text-primary;
+		float: left;
 		font-weight: 500;
 		line-height: 52px;
 		margin-bottom: 0px;
@@ -424,6 +394,7 @@ header.shrink{
 
 		@media (min-width: 992px){
 			display: block;
+			float: none;
 			font-weight: 400;
 			text-align: center;
 			width: 100%;
@@ -435,46 +406,16 @@ header.shrink{
 		}
 	}
 
-	hr{
-		margin-bottom: 0;
-	}
-
-	.avatar-container{
-		display: none;
-		width: 100%;
-
-		@media (min-width: 992px){
-			border-bottom: 1px solid @border;
-			display: block;
-			padding: 30px 0;
-		}
-
-		.avatar{
-			width: 190px; height: 190px;
-			background-image: url('/assets/img/flaglerpier.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            border: 5px solid white;
-			border-radius: 50%;
-			margin: auto;
-			position: relative; top: 5px;
-		}
-	}
-
-	.name{
-		display: none;
-	}
-
 	.hamburger{
-		float: right;
-		margin: 9px;
+		margin: 10px;
 		margin-right: 0;
 		position: relative;
-		width: 34px; height: 34px;
+		width: 32px; height: 32px;
 
 		@media (min-width: 768px){
-			width: 46px; height: 46px;
+			margin: 15px;
+			margin-right: 0;
+			width: 34px; height: 34px;
 		}
 
 		@media (min-width: 992px){
@@ -485,11 +426,39 @@ header.shrink{
 			background: @dark-text-primary;
 			display: block;
 			margin: 5px 0;
-			width: 100%; height: 5px;
+			width: 100%; height: 3px;
 
 			@media (min-width: 768px){
-				margin: 7px 0;
+				margin: 6px 0;
 			}
+		}
+	}
+
+	.avatar-container{
+		@media (min-width: 992px){
+			border-bottom: 1px solid @border;
+			display: block;
+			padding: 30px 0;
+			width: 100%;
+		}
+
+		.avatar{
+			width: 0px; height: 0px;
+
+			@media (min-width: 992px){
+				width: 200px; height: 200px;
+			}
+		}
+	}
+
+	.name{
+		opacity: 0;
+
+		@media (min-width: 992px){
+			font-size: 0;
+			height: 0;
+			margin-bottom: 0;
+			//transition: all 2s ease-in-out;
 		}
 	}
 
@@ -498,19 +467,23 @@ header.shrink{
 		clear: both;
 		max-height: 0px;
 		overflow: hidden;
-		position: absolute; left: 0; right: 0;
+		position: absolute; top: 52px; left: 0; right: 0;
 		transition: max-height .5s cubic-bezier(.64,.09,.08,1);
 		text-align: left;
 		z-index: 10;
+
+		@media (min-width: 768px){
+			top: 64px;
+		}
 
 		&.open{
 			max-height: 500px;
 		}
 
 		a{
-			background: white;
+			background: @primary;
 			border-bottom: 1px solid @border;
-			color: @primary;
+			color: @dark-text-primary;
 			display: block;
 			font-size: 16px;
 			padding: 12px 16px 12px 0;
@@ -532,11 +505,11 @@ header.shrink{
 			box-shadow: none;
 			max-height: none;
 			overflow: visible;
-			position: relative;
+			position: relative; top: 0;
 
 			a{
-				background: linear-gradient(to left, white 50%, @primary 49%, transparent 1%);
-				background-size: 200% 100%;
+				background-image: linear-gradient(to right, transparent 50%, white 50%);
+				background-size: 600px;
 				background-position: 600px 0;
 				background-repeat: none;
 				border-top: 1px solid transparent;
@@ -546,8 +519,9 @@ header.shrink{
 				padding: 12px 16px 12px 0;
 				position: relative;
 				transition: background-position .3s cubic-bezier(.64,.09,.08,1),
-							color .3s cubic-bezier(.64,.09,.08,1);
-				width: calc(~'100% + 1px');
+							color .3s cubic-bezier(.64,.09,.08,1),
+							width .3s ease-in-out .5s;
+				width: calc(~'100% + 1px'); max-width: 300px;
 
 				@media (min-width: 992px){
 					height: auto;

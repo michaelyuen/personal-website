@@ -76,12 +76,14 @@
     <script src="components/custom_filters/custom_filters.js"></script>
 </head>
 
-<body>
+<body class="preload" ng-cloak>
     <span ng-controller="topPageController">
 
-        <header ng-class="{'shrink': page_name != 'Home'}">
-            <a href="/" class="beta logo">
-                M<span class="hidden-xs hidden-sm">ichael </span>C<span class="hidden-xs hidden-sm">layton </span>Y<span class="hidden-xs  hidden-sm">uen</span>
+        <header ng-if="true" ng-class="{'shrink': page_name != 'Home'}">
+            <a href="#/" class="beta logo">
+                M<span class="hidden-xs hidden-sm">ichael </span>
+                C<span class="hidden-xs hidden-sm">layton </span>
+                Y<span class="hidden-xs  hidden-sm">uen</span>
             </a>
 
             <hr class="hidden-xs hidden-sm">
@@ -100,19 +102,19 @@
 
             <div class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
 
-                <a href="/about" ng-class="{'current': page_name == 'About'}">
+                <a href="#/about" ng-class="{'current': page_name == 'About'}">
                     <i class="fa fa-child"></i>About
                 </a>
 
-                <a href="/work" ng-class="{'current': page_name == 'Work'}">
+                <a href="#/work" ng-class="{'current': page_name == 'Work'}">
                     <i class="fa fa-rocket"></i>Work
                 </a>
 
-                <a href="/contact" ng-class="{'current': page_name == 'Contact'}">
+                <a href="#/contact" ng-class="{'current': page_name == 'Contact'}">
                     <i class="fa fa-envelope"></i>Contact
                 </a>
 
-                <a href="/blog" ng-class="{'current': page_name == 'Blog'}">
+                <a href="#/blog" ng-class="{'current': page_name == 'Blog'}">
                     <i class="fa fa-coffee"></i>Blog
                 </a>
             </div>
@@ -138,6 +140,10 @@
             link.href = 'assets/css/bootstrap.min.css';
             document.getElementsByTagName('head')[0].appendChild(link);
         }
+
+        setTimeout( function() {
+            document.getElementsByTagName('body')[0].className = '';
+        }, 300);
     </script>
 </body>
 </html>

@@ -18,7 +18,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
     //Parse.initialize("PEKZ1k3yMaY5A8KlRFZ6gI0fhicQ9Dp9K3IEczje", "YCqsf34KeicGdaRaoVjXrvJehc9X3509GvS6V6sN");
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    //$locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
