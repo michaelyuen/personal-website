@@ -11,8 +11,14 @@ angular.module('about', ['ngRoute'])
     });
 }])
 
-.controller('AboutController', ['$rootScope', '$scope', function ($rootScope, $scope) {
+.controller('AboutController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
 
 	$rootScope.page_name    = 'About';
 	$rootScope.stylesheet   = 'about';
+
+	$timeout(enableTransitions, 600);
+	function enableTransitions () {
+		angular.element(document.querySelector('.menu')).addClass('enable');
+	}
+	
 }]);

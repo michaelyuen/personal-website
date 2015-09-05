@@ -11,8 +11,13 @@ angular.module('contact', ['ngRoute'])
     });
 }])
 
-.controller('ContactController', ['$rootScope', '$scope', function ($rootScope, $scope) {
+.controller('ContactController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
 
 	$rootScope.page_name    = 'Contact';
 	$rootScope.stylesheet   = 'contact';
+
+	$timeout(enableTransitions, 600);
+	function enableTransitions () {
+		angular.element(document.querySelector('.menu')).addClass('enable');
+	}
 }]);

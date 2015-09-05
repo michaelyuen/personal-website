@@ -11,8 +11,13 @@ angular.module('work', ['ngRoute'])
     });
 }])
 
-.controller('WorkController', ['$rootScope', '$scope', function ($rootScope, $scope) {
+.controller('WorkController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
 
 	$rootScope.page_name    = 'Work';
 	$rootScope.stylesheet   = 'work';
+
+	$timeout(enableTransitions, 600);
+	function enableTransitions () {
+		angular.element(document.querySelector('.menu')).addClass('enable');
+	}
 }]);

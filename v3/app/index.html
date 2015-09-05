@@ -100,24 +100,32 @@
 
             <div class="name text-center kilo">Michael Clayton Yuen</div>
 
-            <div class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
+            <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
 
-                <a href="#/about" ng-class="{'current': page_name == 'About'}">
-                    <i class="fa fa-child"></i>About
-                </a>
+                <li>
+                    <a href="#/about" ng-class="{'current': page_name == 'About'}">
+                        <i class="fa fa-child"></i>About
+                    </a>
+                </li>
 
-                <a href="#/work" ng-class="{'current': page_name == 'Work'}">
-                    <i class="fa fa-rocket"></i>Work
-                </a>
+                <li>
+                    <a href="#/work" ng-class="{'current': page_name == 'Work'}">
+                        <i class="fa fa-rocket"></i>Work
+                    </a>
+                </li>
 
-                <a href="#/contact" ng-class="{'current': page_name == 'Contact'}">
-                    <i class="fa fa-envelope"></i>Contact
-                </a>
+                <li>
+                    <a href="#/contact" ng-class="{'current': page_name == 'Contact'}">
+                        <i class="fa fa-envelope"></i>Contact
+                    </a>
+                </li>
 
-                <a href="#/blog" ng-class="{'current': page_name == 'Blog'}">
-                    <i class="fa fa-coffee"></i>Blog
-                </a>
-            </div>
+                <li>
+                    <a href="#/blog" ng-class="{'current': page_name == 'Blog'}">
+                        <i class="fa fa-coffee"></i>Blog
+                    </a>
+                </li>
+            </ul>
         </header>
         
     </span> 

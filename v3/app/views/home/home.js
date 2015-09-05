@@ -15,4 +15,6 @@ angular.module('home', ['ngRoute'])
 
 	$rootScope.page_name    = 'Home';
 	$rootScope.stylesheet   = 'home';
+
+	angular.element(document.querySelector('.menu')).removeClass('enable');
 }]);
