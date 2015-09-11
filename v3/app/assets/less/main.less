@@ -142,6 +142,7 @@ ul{
 
 .view-container{
 	clear: left;
+	display: block;
 	height: calc(~'100% - 52px');
 	overflow-y: scroll;
 	padding: 30px 15px;
@@ -158,7 +159,13 @@ ul{
 	}
 
 	&.fullscreen{
-		display: none;
+		animation: hide .75s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes hide{
+		99%  { width: calc(~'100% - 300px'); padding: 30px;}
+		100% { width: 0px; padding: 0;}
 	}
 }
 
@@ -210,10 +217,16 @@ sub{
 }
 
 .preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+
+ 	-webkit-animation: none !important;
+ 	-moz-animation: none !important;
+ 	-o-animation: none !important;
+ 	-ms-animation: none !important;
+ 	animation: none !important;
 }
 
 /* ----- End Framework ----- */
@@ -229,9 +242,10 @@ sub{
 /* Initial welcome screen - covers full screen */
 header{
 	background: @primary;
+	float: left;
 	transition: width .75s ease-in, height .5s ease-in-out;
 	width: 100%; height: 100%;
-	//transform: translate3d(0,0,0);
+	//z-index: 1;
 
 	.logo, hr, .hamburger{
 		opacity: 0;
@@ -266,7 +280,7 @@ header{
 
 		.avatar{
 			width: 200px; height: 200px;
-			background-image: url('/assets/img/flaglerpier.jpg');
+			background-image: url('/assets/img/cinemagraph1.gif');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
