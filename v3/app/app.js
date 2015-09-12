@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 var app = angular.module('personal_website', [
     'ngRoute',
+    'ngAnimate',
     'parse-angular',
     'ui.bootstrap',
     'ui.validate',
@@ -20,6 +21,16 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
     //$locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/'});
+}]);
+
+app.run(['$rootScope', '$routeParams', function ($rootScope, $routeParams) {
+
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+
+        if (current && next.originalPath == '/') {
+            $rootScope.prev_url = 'views' + current.originalPath + current.originalPath + '.html';
+        }
+    });
 }]);
 
 // Global Controllers (used on index.html)
