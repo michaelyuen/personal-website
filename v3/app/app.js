@@ -9,10 +9,7 @@ var app = angular.module('personal_website', [
     'ui.validate',
     'customFilters',
     'home',
-    'about',
-    'work',
-    'contact',
-    'blog'
+    'content'
 ]);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -28,7 +25,7 @@ app.run(['$rootScope', '$routeParams', function ($rootScope, $routeParams) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
 
         if (current && next.originalPath == '/') {
-            $rootScope.prev_url = 'views' + current.originalPath + current.originalPath + '.html';
+            $rootScope.prev_url = 'views/content/' + $routeParams.page_name + '.html';
         }
     });
 }]);

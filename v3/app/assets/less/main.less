@@ -7,7 +7,8 @@
 	A. Misc Reset
 	B. Framework
 05. HEADER
-06. FOOTER
+06. CONTENT
+07. FOOTER
 
 --- */
 
@@ -156,18 +157,8 @@ ul{
 	@media (min-width: 992px){
 		clear: none;
 		float: right;
-		padding-top: 30px;
+		padding: 50px;
 		width: calc(~'100% - 300px'); height: 100%;
-	}
-
-	&.fullscreen{
-		animation: hide .75s;
-		animation-fill-mode: forwards;
-	}
-
-	@keyframes hide{
-		99%  { width: calc(~'100% - 300px'); padding: 30px;}
-		100% { width: 0px; padding: 0;}
 	}
 
 	&.animation{
@@ -195,10 +186,7 @@ ul{
 		&.ng-leave.ng-leave-active{
 			top: -100%;
 		}
-
 	}
-
-
 }
 
 .title{
@@ -271,7 +259,7 @@ header{
 	position: absolute; top: 0; left: 0;
 	transition: width .75s ease-in, height .5s ease-in-out;
 	width: 100%; height: 100%;
-	z-index: 1;
+	z-index: 2;
 
 	.logo, hr, .hamburger{
 		opacity: 0;
@@ -656,7 +644,89 @@ header.shrink{
 /* ========================================================== */
 
 /* ========================================================== */
-/* 						    06. FOOTER                        */
+/* 						   06. CONTENT                        */
+/* ========================================================== */
+
+.body-container{
+
+    .body{
+        font-family: 'Merriweather';
+        margin: auto;
+        text-align: justify;
+        color: @text-primary;
+
+        .beta{
+            font-weight: 200;
+        }
+
+        .emphasis{
+            text-transform: uppercase;
+            font-family: 'Raleway';
+            letter-spacing: 15px;
+            text-align: center;
+        }
+
+        .icons{
+            text-align: center;
+
+            .fa{
+            	background: @primary;
+                border-radius: 50%;
+                color: black;
+                display: inline-block;
+                font-size: 0px;
+                margin: 15px 75px 0;
+                position: relative;
+                text-decoration: none;
+                width: 100px; height: 100px;
+                z-index: 1;
+                transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+                -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+                &:before{
+                    font-size: 48px;
+                    line-height: 95px;
+                    display: block;
+                }
+
+                &:after{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    content: '';
+                    box-sizing: content-box;
+                    top: -7px;
+                    left: -7px;
+                    padding: 7px;
+                    box-shadow: 0 0 0 4px black;
+                    transform: scale(.8);
+                    opacity: 0;
+                    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                    -webkit-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                }
+
+                &:hover{
+                    background: rgba(0, 0, 0, 1);
+                    color: @primary;
+                }
+
+                &:hover:after{
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    opacity: 1;
+                }
+            }   
+        }
+    }
+}
+
+/* ========================================================== */
+/* 						   END CONTENT                        */
+/* ========================================================== */
+
+/* ========================================================== */
+/* 						    07. FOOTER                        */
 /* ========================================================== */
 
 /* ========================================================== */

@@ -12,10 +12,9 @@ angular.module('home', ['ngRoute'])
     });
 }])
 
-.controller('HomeController', ['$rootScope', '$scope', function ($rootScope, $scope) {
+.controller('HomeController', ['$rootScope', '$scope', '$animate', function ($rootScope, $scope, $animate) {
 
-	$rootScope.page_name    = 'Home';
-	$rootScope.stylesheet   = 'home';
+	$rootScope.page_name = 'Home';
 
 	angular.element(document.querySelector('.menu')).removeClass('enable');
 
@@ -28,4 +27,6 @@ angular.module('home', ['ngRoute'])
             return 'views/home/home.html';
         }
     }
+
+    $animate.enabled(false);
 }]);

@@ -24,9 +24,6 @@
     <!-- Main Template stylesheet used by all pages -->
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
 
-    <!-- Page-specific stylesheet -->
-    <link ng-if="stylesheet" ng-href="assets/css/{{ stylesheet }}.css" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,10 +63,7 @@
 
     <!-- Views -->
     <script src="views/home/home.js"></script>
-    <script src="views/about/about.js"></script>
-    <script src="views/work/work.js"></script>
-    <script src="views/contact/contact.js"></script>
-    <script src="views/blog/blog.js"></script>
+    <script src="views/content/content.js"></script>
 
     <!-- Components -->
     <script src="components/log_service/log_service.js"></script>
@@ -137,7 +131,7 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-view class="container-fluid view-container" ng-class="{'fullscreen': page_name == 'Home', 'animation': page_name != 'Home'}"></div>
+    <div ng-view class="container-fluid view-container" ng-class="{'animation': page_name != 'Home'}"></div>
 
     <!-- Check for bootstrap css loaded from cdn -->
     <div id="bootstrap-test" class="hide"></div>
