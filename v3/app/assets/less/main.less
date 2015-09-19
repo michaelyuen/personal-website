@@ -157,7 +157,7 @@ ul{
 	@media (min-width: 992px){
 		clear: none;
 		float: right;
-		padding: 50px;
+		padding: 75px 100px;
 		width: calc(~'100% - 300px'); height: 100%;
 	}
 
@@ -659,13 +659,25 @@ header.shrink{
             font-weight: 200;
         }
 
-        .emphasis{
+        .emphasis{;
             text-transform: uppercase;
             font-family: 'Raleway';
+            font-weight: 500;
             letter-spacing: 15px;
+            margin-bottom: 50px;
             text-align: center;
+
+            span{
+            	color: #24a9e2;
+            }
         }
 
+        .screenshot{
+        	border: 1px solid @border;
+        	width: 100%;
+        }
+
+        // Contact page
         .icons{
             text-align: center;
 
