@@ -504,6 +504,7 @@ header.shrink{
 			transition: width .75s ease-out, height .75s ease-out;
 
 			@media (min-width: 992px){
+				border: 5px solid white;
 				width: 200px; height: 200px;
 			}
 		}
@@ -662,29 +663,6 @@ header.shrink{
 
         .beta{
             font-weight: 200;
-
-            img{
-            	border: 5px solid black;
-            	width: 100%;
-
-            	& + figcaption{
-            		font-size: 16px;
-            		font-weight: 400;
-            		text-align: center;
-            	}
-            }
-
-            .kayaking, .aquarium{
-            	margin-bottom: 10px;
-            }
-
-            .zeus{
-            	@media (min-width: 768px){
-            		margin: 12px 0 0 30px;
-            		width: 45%;
-            	}
-            	
-            }
         }
 
         .emphasis{
@@ -700,63 +678,166 @@ header.shrink{
             }
         }
 
-        .screenshot{
-        	border: 1px solid @border;
-        	width: 100%;
+        &.about{
+
+        	.beta{
+
+        		img{
+        			border: 5px solid black;
+        			width: 100%;
+
+        			& + figcaption{
+        				font-size: 16px;
+        				font-weight: 400;
+        				text-align: center;
+        			}
+        		}
+
+        		.kayaking, .aquarium{
+        			margin-bottom: 10px;
+        		}
+
+        		.zeus{
+        			@media (min-width: 768px){
+        				margin: 12px 0 0 30px;
+        				width: 45%;
+        			}
+        			
+        		}
+        	}
         }
 
-        // Contact page
-        .icons{
-            text-align: center;
+        &.work{
 
-            .fa{
-            	background: @primary;
-                border-radius: 50%;
-                color: black;
-                display: inline-block;
-                font-size: 0px;
-                margin: 15px 75px 0;
-                position: relative;
-                text-decoration: none;
-                width: 100px; height: 100px;
-                z-index: 1;
-                transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-                -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+        	.beta{
 
-                &:before{
-                    font-size: 48px;
-                    line-height: 95px;
-                    display: block;
-                }
+        		.project{
 
-                &:after{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    content: '';
-                    box-sizing: content-box;
-                    top: -7px;
-                    left: -7px;
-                    padding: 7px;
-                    box-shadow: 0 0 0 4px black;
-                    transform: scale(.8);
-                    opacity: 0;
-                    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-                    -webkit-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-                }
+        			.emphasis{
+        				letter-spacing: 10px;
+        			}
 
-                &:hover{
-                    background: rgba(0, 0, 0, 1);
-                    color: @primary;
-                }
+        			.browser{
 
-                &:hover:after{
-                    transform: scale(1);
-                    -webkit-transform: scale(1);
-                    opacity: 1;
-                }
-            }   
+        				.top{
+        					border: 1px solid @border;
+        					border-bottom: none;
+        					border-radius: 3px 3px 0 0;
+        					height: 40px;
+
+        					ul{
+        						float: left;
+        						margin: 10px 20px 0 10px;
+
+        						li{
+
+        							border: 1px solid @border;
+        							border-radius: 50%;
+        							float: left;
+        							list-style: none;
+        							margin-right: 5px;
+        							width: 10px; height: 10px;
+        						}
+        					}
+
+        					span{
+        						border: 1px solid @border;
+        						border-radius: 2px;
+        						color: @text-secondary;
+        						display: inline-block;
+        						font-size: 16px;
+        						padding-left: 5px;
+        						width: calc(~'100% - 125px');
+
+        						.fa{
+        							color: @text-secondary;
+        							margin-right: 5px;
+        						}
+        					}
+
+        					.hamburger{
+        						float: right;
+        						margin: 10px;
+        						margin-right: 10px;
+        						position: relative;
+        						width: 20px; height: 20px;
+
+        						span{
+        							background: @text-secondary;
+        							display: block;
+        							margin: 3px 0;
+        							width: 100%; height: 3px;
+        						}
+        					}
+        				}
+
+        				.screenshot{
+	        				border: 1px solid @border;
+	        				width: 100%;
+	        			}
+        			}
+        		}
+        	}
+        }
+
+        &.contact{
+
+        	.beta{
+
+        	}
+
+        	.icons{
+        	    text-align: center;
+
+        	    .fa{
+        	    	background: @primary;
+        	        border-radius: 50%;
+        	        color: black;
+        	        display: inline-block;
+        	        font-size: 0px;
+        	        margin: 15px 75px 0;
+        	        position: relative;
+        	        text-decoration: none;
+        	        width: 100px; height: 100px;
+        	        z-index: 1;
+        	        transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+        	        -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+        	        &:before{
+        	            font-size: 48px;
+        	            line-height: 95px;
+        	            display: block;
+        	        }
+
+        	        &:after{
+        	            position: absolute;
+        	            width: 100%;
+        	            height: 100%;
+        	            border-radius: 50%;
+        	            content: '';
+        	            box-sizing: content-box;
+        	            top: -7px;
+        	            left: -7px;
+        	            padding: 7px;
+        	            box-shadow: 0 0 0 4px black;
+        	            transform: scale(.8);
+        	            opacity: 0;
+        	            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        	            -webkit-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        	        }
+
+        	        &:hover{
+        	            background: rgba(0, 0, 0, 1);
+        	            color: @primary;
+        	        }
+
+        	        &:hover:after{
+        	            transform: scale(1);
+        	            -webkit-transform: scale(1);
+        	            opacity: 1;
+        	        }
+        	    }   
+        	}
         }
     }
 }
