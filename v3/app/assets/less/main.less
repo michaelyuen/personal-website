@@ -709,75 +709,172 @@ header.shrink{
 
         &.work{
 
-        	.beta{
+    		& > .beta{
+    			margin-bottom: 150px;
+    			position: relative;
 
-        		.project{
+    			&:last-child{
+    				margin-bottom: 50px;
+    			}
 
-        			.emphasis{
-        				letter-spacing: 10px;
+    			.browser{
+    				clear: both;
+
+    				.top{
+    					background: @border;
+    					border: 1px solid @border;
+    					border-bottom: none;
+    					border-radius: 3px 3px 0 0;
+    					height: 40px;
+
+    					ul{
+    						float: left;
+    						margin: 10px 20px 0 10px;
+
+    						li{
+
+    							border: 1px solid @border;
+    							border-radius: 50%;
+    							float: left;
+    							list-style: none;
+    							margin-right: 5px;
+    							width: 10px; height: 10px;
+
+    							&:first-child{
+    								background: #ff5f59;
+    							}
+
+    							&:nth-child(2){
+    								background: #ffbe30;
+    							}
+
+    							&:last-child{
+    								background: #29cf42;
+    							}
+    						}
+    					}
+
+    					span{
+    						background: white;
+    						border: 1px solid @border;
+    						border-radius: 2px;
+    						color: @text-secondary;
+    						display: inline-block;
+    						font-size: 16px;
+    						padding-left: 5px;
+    						width: calc(~'100% - 125px');
+
+    						.fa{
+    							color: @text-secondary;
+    							margin-right: 5px;
+    						}
+    					}
+
+    					.hamburger{
+    						float: right;
+    						margin: 10px;
+    						margin-right: 10px;
+    						position: relative;
+    						width: 20px; height: 20px;
+
+    						span{
+    							background: @text-secondary;
+    							display: block;
+    							margin: 3px 0;
+    							width: 100%; height: 3px;
+    						}
+    					}
+    				}
+
+    				.screenshot{
+        				border: 1px solid @border;
+        				border-top: none;
+        				position: relative; top: -1px;
+        				width: 100%;
         			}
+    			}
 
-        			.browser{
+    			.phone{
+    				background: @border;
+    				border: 1px solid @border;
+    				border-radius: 15px;
+    				margin-bottom: 50px;
+    				padding: 0 10px;
+    				width: 250px;
 
-        				.top{
-        					border: 1px solid @border;
-        					border-bottom: none;
-        					border-radius: 3px 3px 0 0;
-        					height: 40px;
+    				&.left{
+    					float: left;
+    					margin-right: 75px;
+    				}
 
-        					ul{
-        						float: left;
-        						margin: 10px 20px 0 10px;
+    				&.right{
+    					float: right;
+    					margin-left: 75px;
+    				}
 
-        						li{
+    				.top{
+    					height: 55px;
 
-        							border: 1px solid @border;
-        							border-radius: 50%;
-        							float: left;
-        							list-style: none;
-        							margin-right: 5px;
-        							width: 10px; height: 10px;
-        						}
-        					}
+    					.camera{
+    						background: @border;
+    						border-radius: 50%;
+    						margin: auto;
+    						position: relative; top: 15px;
+    						width: 8px; height: 8px;
+    					}
 
-        					span{
-        						border: 1px solid @border;
-        						border-radius: 2px;
-        						color: @text-secondary;
-        						display: inline-block;
-        						font-size: 16px;
-        						padding-left: 5px;
-        						width: calc(~'100% - 125px');
+    					.speaker{
+    						background: @border;
+    						border-radius: 2px;
+    						margin: auto;
+    						position: relative; top: 32px;
+    						width: 35px; height: 4px;
+    					}
+    				}
 
-        						.fa{
-        							color: @text-secondary;
-        							margin-right: 5px;
-        						}
-        					}
+    				.screenshot{
+    					border: 1px solid @border;
+    					width: 100%;
+    				}
 
-        					.hamburger{
-        						float: right;
-        						margin: 10px;
-        						margin-right: 10px;
-        						position: relative;
-        						width: 20px; height: 20px;
+    				.bottom{
+    					height: 55px;
 
-        						span{
-        							background: @text-secondary;
-        							display: block;
-        							margin: 3px 0;
-        							width: 100%; height: 3px;
-        						}
-        					}
-        				}
+    					.home{
+    						background: @border;
+    						border: 1px solid @border;
+    						border-radius: 50%;
+    						margin: auto;
+    						position: relative; top: 9px;
+    						width: 34px; height: 34px;
+    					}
+    				}
+    			}
 
-        				.screenshot{
-	        				border: 1px solid @border;
-	        				width: 100%;
-	        			}
-        			}
-        		}
-        	}
+    			.overview{
+
+    				.kilo{
+    					letter-spacing: 10px;
+    					margin-bottom: 24px;
+    					text-align: left;
+    				}
+
+    				h4{
+    					strong{
+    						margin-right: 15px;
+    					}
+
+    					i{
+    						margin-right: 10px;
+
+    						&:last-child{
+    							margin-right: 0;
+    						}
+    					}
+
+    				}
+    			}
+    		}
         }
 
         &.contact{
