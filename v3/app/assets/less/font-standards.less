@@ -18,7 +18,11 @@ html, body{
 h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta,
 small,.milli,ul,p,pre,hr{
 	margin-top: 0px;
-    margin-bottom:24px;
+    margin-bottom:10px;
+
+    @media (min-width: 768px){
+        margin-bottom:24px;
+    }
 }
 
 .giga,.mega,.kilo,
@@ -27,12 +31,16 @@ h1,.alpha,h2,.beta,h3,.gamma,h4,.delta,h5,.epsilon,h6,.zeta{
 }
 
 .kilo{
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1.2;
 
     @media (min-width: 768px){
-        font-size: 46px;
+        font-size: 42px;
         line-height:1.5;
+    }
+
+    @media (min-width: 1025px){
+        font-size: 46px;
     }
 }
 
