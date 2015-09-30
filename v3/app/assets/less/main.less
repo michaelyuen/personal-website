@@ -818,21 +818,26 @@ header.shrink{
 
     				.top{
     					height: 55px;
+    					text-align: center;
 
     					.camera{
     						background: @border;
     						border-radius: 50%;
+    						display: inline-block;
     						margin: auto;
-    						position: relative; top: 15px;
+    						position: relative; top: 10px; right: 10px;
     						width: 8px; height: 8px;
+    						vertical-align: middle;
     					}
 
     					.speaker{
     						background: @border;
     						border-radius: 2px;
+    						display: inline-block;
     						margin: auto;
-    						position: relative; top: 32px;
+    						position: relative; top: 10px; right: 6px;
     						width: 35px; height: 4px;
+    						vertical-align: middle;
     					}
     				}
 
@@ -865,7 +870,9 @@ header.shrink{
 
     				h4{
     					strong{
+    						display: inline-block;
     						margin-right: 15px;
+    						width: 80px;
     					}
 
     					i{
@@ -883,12 +890,17 @@ header.shrink{
 
         &.contact{
 
-        	.beta{
+        	.beta.last{
+        		@media (min-width: 768px){
+        			margin-bottom: 75px;
+        		}
 
+        		@media (min-width: 992px){
+        			margin-bottom: 35px;
+        		}
         	}
 
         	.icons{
-        	    text-align: center;
 
         	    .fa{
         	    	background: @primary;
@@ -899,7 +911,7 @@ header.shrink{
         	        //margin: 0 60px;
         	        position: relative;
         	        text-decoration: none;
-        	        width: 50px; height: 50px;
+        	        width: 75px; height: 75px;
         	        z-index: 1;
         	        transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
         	        -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -909,8 +921,8 @@ header.shrink{
         	        }
 
         	        &:before{
-        	            font-size: 23px;
-        	            line-height: 45px;
+        	            font-size: 35px;
+        	            line-height: 70px;
         	            display: block;
 
         	            @media (min-width: 768px){
