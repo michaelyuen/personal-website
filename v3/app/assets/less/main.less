@@ -318,14 +318,14 @@ header{
 		}
 	}
 
-	.name, .menu{
+	.name{
 		transition: opacity .75s ease-in;
 	}
 
 	.name{
 		color: @dark-text-primary;
 		margin-bottom: 30px;
-		transition: all .75s ease-in-out;
+		transition: all .75s ease-in;
 
 		@media (orientation: landscape){
 			margin-bottom: 20px;
@@ -343,14 +343,19 @@ header{
 	.menu{
 		margin: auto;
 		overflow: hidden;
-		width: 320px;
+		width: 300px;
+		transition: width 0s ease-in .25s;
 
 		@media (min-width: 768px){
-			width: 458px;
+			width: 425px;
 		}
 
 		@media (min-width: 992px){
-			width: 460px;
+			width: 420px;
+		}
+
+		@media (min-width: 992px){
+			width: 455px;
 		}
 		
 
@@ -358,7 +363,7 @@ header{
 			float: left;
 			list-style: none;
 			//padding-right: 20px;
-			padding-right: 52px;
+			padding-right: 42px;
 			
 			&:last-child{
 				padding-right: 0;
@@ -366,12 +371,17 @@ header{
 
 			@media (min-width: 768px){
 				//padding-right: 30px;
-				padding-right: 78px;
+				padding-right: 60px;
 			}
 
 			@media (min-width: 992px){
 				//padding-right: 40px;
-				padding-right: 91px;
+				padding-right: 70px;
+			}
+
+			@media (min-width: 992px){
+				//padding-right: 40px;
+				padding-right: 89px;
 			}
 
 			a{
@@ -541,6 +551,7 @@ header.shrink{
 		overflow: hidden;
 		text-align: left;
 		width: auto;
+		transition: width 0s;
 
 		@media (max-width: 991px){
 			position: absolute; top: 52px; left: 0; right: 0;
@@ -765,6 +776,11 @@ header.shrink{
 						}
 
 						h4{
+							margin-bottom: 10px;
+
+							@media (min-width: 768px){
+								margin-bottom: 24px;
+							}
 
 							i{
 								margin-right: 10px;

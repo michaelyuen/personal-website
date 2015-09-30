@@ -1,45 +1,47 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-var app = angular.module('personal_website', [
+angular.module('personal_website', [
     'ngRoute',
-    'ngAnimate',
-    'parse-angular',
-    'ui.bootstrap',
-    'ui.validate',
-    'customFilters',
-    'home',
-    'content'
-]);
+    'ngAnimate'
+])
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    //Parse.initialize("PEKZ1k3yMaY5A8KlRFZ6gI0fhicQ9Dp9K3IEczje", "YCqsf34KeicGdaRaoVjXrvJehc9X3509GvS6V6sN");
-
-    //$locationProvider.html5Mode(true).hashPrefix('!');
-    $routeProvider.otherwise({redirectTo: '/'});
-}]);
-
-app.run(['$rootScope', '$routeParams', function ($rootScope, $routeParams) {
-
-    $rootScope.$on("$routeChangeStart", function (event, next, current) {
-
-        if (current && next.originalPath == '/') {
-            $rootScope.prev_url = 'views/content/' + $routeParams.page_name + '.html';
-        }
-    });
-}]);
-
-// Global Controllers (used on index.html)
-app.controller('topPageController', ['$rootScope', '$scope', function($rootScope, $scope) {
+    $locationProvider.html5Mode(true).hashPrefix('!');
     
-    $scope.menu_open = false;
+    $routeProvider.when('/:page_name?', { controller: 'MainController' });
+}])
 
-    $scope.toggleMenu = function () {
-        $scope.menu_open = !$scope.menu_open;
-    };
-
-    $scope.closeMenu = function () {
+.controller('MainController', ['$rootScope', '$scope', '$animate', '$timeout', '$route', '$location', '$anchorScroll',
+    function($rootScope, $scope, $animate, $timeout, $route, $location, $anchorScroll) {
+    
         $scope.menu_open = false;
-    }
+
+        $scope.toggleMenu = function () {
+            $scope.menu_open = !$scope.menu_open;
+        };
+
+        $scope.closeMenu = function () {
+            $scope.menu_open = false;
+        }
+
+        $scope.$on('$routeChangeStart',function(event, next, current){
+
+            if (next.params.page_name) {
+                $rootScope.page_name = next.params.page_name[0].toUpperCase() + next.params.page_name.slice(1);
+                $scope.page_url = '/views/' + next.params.page_name + '.html';
+                $timeout(enableTransitions, 600);
+                $anchorScroll();
+            }
+            else {
+                $rootScope.page_name = 'Home';
+                $animate.enabled(false);
+                angular.element(document.querySelector('.menu')).removeClass('enable');
+            }
+        });
+
+        function enableTransitions () {
+            angular.element(document.querySelector('.menu')).addClass('enable');
+            $animate.enabled(true);
+        }
 }]);

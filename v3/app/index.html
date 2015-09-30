@@ -47,11 +47,6 @@
             document.write('<script src="assets/js/angular-animate/angular-animate.min.js"><\/script>');
         }
     </script>
-    <script src="assets/js/parse/parse.js"></script>
-    <script src="assets/js/parse/parse_angular_patch.js"></script>
-    <script src="assets/js/parse/parse_dot.js"></script>
-    <script src="assets/js/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="assets/js/ui-utils/validate.min.js"></script>
 
     <!-- Result of grunt 'uglify-all' task
         Minifies and concats all files in assets/js except angular core -->
@@ -64,23 +59,18 @@
 
     <!-- App -->
     <script src="app.js"></script>
-
-    <!-- Views -->
-    <script src="views/home/home.js"></script>
-    <script src="views/content/content.js"></script>
-
-    <!-- Components -->
-    <script src="components/log_service/log_service.js"></script>
-    <script src="components/authorization_service/authorization_service.js"></script>
-    <script src="components/user_service/user_service.js"></script>
-    <script src="components/custom_filters/custom_filters.js"></script>
 </head>
 
 <body class="preload" ng-cloak>
-    <span ng-controller="topPageController">
+
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <span ng-controller="MainController">
 
         <header ng-class="{'shrink': page_name != 'Home'}">
-            <a href="#/" class="beta logo">
+            <a href="/" class="beta logo">
                 M<span class="hidden-xs hidden-sm">ichael </span>
                 C<span class="hidden-xs hidden-sm">layton </span>
                 Y<span class="hidden-xs  hidden-sm">uen</span>
@@ -103,19 +93,19 @@
             <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
 
                 <li>
-                    <a href="#/about" ng-class="{'current': page_name == 'About'}">
+                    <a href="/about" ng-class="{'current': page_name == 'About'}">
                         <i class="fa fa-child"></i>About
                     </a>
                 </li>
 
                 <li>
-                    <a href="#/work" ng-class="{'current': page_name == 'Work'}">
+                    <a href="/work" ng-class="{'current': page_name == 'Work'}">
                         <i class="fa fa-rocket"></i>Work
                     </a>
                 </li>
 
                 <li>
-                    <a href="#/contact" ng-class="{'current': page_name == 'Contact'}">
+                    <a href="/contact" ng-class="{'current': page_name == 'Contact'}">
                         <i class="fa fa-envelope"></i>Contact
                     </a>
                 </li>
@@ -127,15 +117,12 @@
                 </li> -->
             </ul>
         </header>
+
+        <div ng-include="page_url" class="container-fluid view-container" 
+            ng-class="{'animation': page_name != 'Home'}"></div>
         
     </span> 
     <!-- End of TopPageController -->
-
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <div ng-view class="container-fluid view-container" ng-class="{'animation': page_name != 'Home'}"></div>
 
     <!-- Check for bootstrap css loaded from cdn -->
     <div id="bootstrap-test" class="hide"></div>

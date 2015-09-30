@@ -27,8 +27,6 @@ module.exports = function(grunt) {
                     'js/angular/angular.min.js': 'angular/angular.min.js',
                     'js/angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
                     'js/angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js',
-                    'js/ui-bootstrap/ui-bootstrap-tpls.min.js': 'angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js',
-                    'js/ui-utils/validate.min.js': 'angular-ui-utils/validate.min.js',
 
                     // CSS
                     'css/bootstrap.min.css': 'bootstrap-css-only/css/bootstrap.min.css'
