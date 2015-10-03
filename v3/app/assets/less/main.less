@@ -706,27 +706,72 @@ header.shrink{
 
         	.beta{
 
-        		img{
-        			border: 5px solid black;
-        			width: 100%;
-
-        			& + figcaption{
-        				font-size: 16px;
-        				font-weight: 400;
-        				text-align: center;
-        			}
+        		figcaption{
+        			font-size: 16px;
+        			font-weight: 400;
+        			text-align: center;
         		}
 
         		.kayaking, .aquarium{
         			margin-bottom: 10px;
         		}
 
+        		.kayak{
+        			background-image: url('/assets/img/kayak_phone.jpg');
+        			background-repeat: no-repeat;
+        			background-position: center;
+        			background-size: cover;
+        			border: 5px solid black;
+        			width: 100%; height: 225px;
+
+        			@media (min-width: 600px){
+        				height: 400px;
+        			}
+
+        			@media (min-width: 768px){
+        				background-image: url('/assets/img/kayak_tablet.jpg');
+        				height: 500px;
+        			}
+
+        			@media (min-width: 1025px){
+        				background-image: url('/assets/img/kayak_desktop.jpg');
+        				height: 575px;
+        			}
+        		}
+
         		.zeus{
+        			border: 5px solid black;
+        			margin-top: 24px;
+        			width: 100%;
+
         			@media (min-width: 768px){
         				margin: 12px 0 0 30px;
         				width: 45%;
         			}
         			
+        		}
+
+        		.aquarium{
+        			background-image: url('/assets/img/aquarium_phone.jpg');
+        			background-repeat: no-repeat;
+        			background-position: center;
+        			background-size: cover;
+        			border: 5px solid black;
+        			width: 100%; height: 225px;
+
+        			@media (min-width: 600px){
+        				height: 400px;
+        			}
+
+        			@media (min-width: 768px){
+        				background-image: url('/assets/img/aquarium_tablet.jpg');
+        				height: 500px;
+        			}
+
+        			@media (min-width: 1025px){
+        				background-image: url('/assets/img/aquarium_desktop.jpg');
+        				height: 575px;
+        			}
         		}
         	}
         }
