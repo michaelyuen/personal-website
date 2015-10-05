@@ -299,7 +299,7 @@ header{
 
 		.avatar{
 			width: 200px; height: 200px;
-			background-image: url('/assets/img/cinemagraph1.gif');
+			background-image: url('/assets/img/headshot-edit.jpg');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -396,7 +396,7 @@ header{
 				@media (min-width: 992px){
 					font-size: 20px;
 					font-weight: 400;
-					transition: color .2s;
+					transition: color .2s ease-in-out;
 				}
 
 				&::before{
@@ -496,11 +496,36 @@ header.shrink{
 			display: none;
 		}
 
+		&.open{
+
+			span{
+
+				&:first-child{
+					top: 8px;
+					transform: rotate(45deg);
+					-webkit-transform: rotate(45deg);
+
+				}
+
+				&:nth-child(2){
+					opacity: 0;
+				}
+
+				&:last-child{
+					top: -8px;
+					transform: rotate(-45deg);
+					-webkit-transform: rotate(-45deg);
+				}
+			}
+		}
+
 		span{
 			background: @dark-text-primary;
 			display: block;
 			margin: 5px 0;
+			position: relative;
 			width: 100%; height: 3px;
+			transition: transform .3s ease-in-out, opacity .2s ease-in-out;
 
 			@media (min-width: 768px){
 				margin: 6px 0;
@@ -555,7 +580,7 @@ header.shrink{
 
 		@media (max-width: 991px){
 			position: absolute; top: 52px; left: 0; right: 0;
-			transition: max-height .5s cubic-bezier(.64,.09,.08,1);
+			transition: max-height .3s ease-in-out;
 			z-index: 10;
 		}
 		
@@ -582,10 +607,6 @@ header.shrink{
 				text-decoration: none;
 				width: 100%;
 
-				&:focus{
-					color: @primary;
-				}
-
 				i{
 					min-width: 16px;
 					margin: 0 16px 0 30px;
@@ -601,20 +622,17 @@ header.shrink{
 			width: 249px;
 			
 			&.enable li a{
-				transition: background-position .2s ease-out;
+				transition: background-position .3s ease-out, color .3s ease-out;
 
 				&::before{
 					width: 5px;
 					transition: width .2s ease-in .3s;
 				}
 
-				&:focus, &.current{
+				&.current{
 					background-position: 300px 0;
-					border-top: 1px solid @border;
-					border-bottom: 1px solid @border;
-					color: @primary;
-					text-decoration: none;
-					transition: background-position .2s ease-in;
+					color: @primary-dark;
+					transition: background-position .3s ease-in, color .3s ease-in;
 
 					&::before{
 						left: 0;
@@ -629,13 +647,11 @@ header.shrink{
 					background-size: 600px;
 					background-position: 600px 0;
 					background-repeat: none;
-					border-top: 1px solid transparent;
-					border-bottom: 1px solid transparent;
+					border-bottom: none;
 					color: @dark-text-primary;
 					display: block;
 					padding: 12px 16px 12px 0;
 					position: relative;
-					transition: color .3s ease-in;
 					width: calc(~'100% + 1px');
 
 					&::before{
@@ -655,10 +671,6 @@ header.shrink{
 							left: 0;
 							transition: left .2s ease-in;
 						}
-					}
-
-					&:focus{
-						color: @dark-text-primary;
 					}
 
 					i{

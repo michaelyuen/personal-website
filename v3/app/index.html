@@ -73,7 +73,7 @@
 
             <hr class="hidden-xs hidden-sm">
 
-            <div class="hamburger" ng-click="toggleMenu()">
+            <div class="hamburger" ng-click="toggleMenu()" ng-class="{'open': menu_open}">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -114,7 +114,7 @@
         </header>
 
         <div ng-include="page_url" class="container-fluid view-container" 
-            ng-class="{'animation': page_name != 'Home'}"></div>
+            ng-class="{'animation': page_name != 'Home'}" ng-click="closeMenu()"></div>
         
     </span> 
     <!-- End of TopPageController -->
