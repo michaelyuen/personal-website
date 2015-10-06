@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'app/assets/js/uglify-all/lib.min.js': ['app/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*'],
+                    'app/assets/js/uglify-all/lib.min.js': ['app/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*', '!**/angular-animate/*'],
                     'app/assets/js/uglify-all/app.min.js': ['app/app.js', 'app/components/**/*.js', 'app/views/**/*.js']
                 }
             }

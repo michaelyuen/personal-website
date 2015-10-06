@@ -12,8 +12,8 @@ angular.module('personal_website', [
     $routeProvider.when('/:page_name?', { controller: 'MainController' });
 }])
 
-.controller('MainController', ['$rootScope', '$scope', '$animate', '$timeout', '$route', '$location', '$anchorScroll',
-    function($rootScope, $scope, $animate, $timeout, $route, $location, $anchorScroll) {
+.controller('MainController', ['$rootScope', '$scope', '$animate', '$timeout', '$route',
+    function($rootScope, $scope, $animate, $timeout, $route) {
     
         $scope.menu_open = false;
 
@@ -31,7 +31,6 @@ angular.module('personal_website', [
                 $rootScope.page_name = next.params.page_name[0].toUpperCase() + next.params.page_name.slice(1);
                 $scope.page_url = '/views/' + next.params.page_name + '.html';
                 $timeout(enableTransitions, 600);
-                $anchorScroll();
             }
             else {
                 $rootScope.page_name = 'Home';
