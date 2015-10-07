@@ -2,7 +2,9 @@
 
 angular.module('personal_website', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'angulartics',
+    'angulartics-google-analytics'
 ])
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

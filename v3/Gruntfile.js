@@ -27,6 +27,8 @@ module.exports = function(grunt) {
                     'js/angular/angular.min.js': 'angular/angular.min.js',
                     'js/angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
                     'js/angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js',
+                    'js/angulartics/angulartics.min.js': 'angulartics/dist/angulartics.min.js',
+                    'js/angulartics/angulartics-google-analytics.min.js': 'angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
 
                     // CSS
                     'css/bootstrap.min.css': 'bootstrap-css-only/css/bootstrap.min.css'
