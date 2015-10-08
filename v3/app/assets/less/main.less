@@ -4,8 +4,6 @@
 02. MIXINS
 03. FONT STANDARDS
 04. PRIMARY STYLES
-	A. Misc Reset
-	B. Framework
 05. HEADER
 06. CONTENT
 07. FOOTER
@@ -31,8 +29,6 @@
 /* ========================================================== */
 /* 			           04. PRIMARY STYLES                     */
 /* ========================================================== */
-
-/* ----- A. Misc Reset ----- */
 .preload *{
 	-webkit-transition: none !important;
 	-moz-transition: none !important;
@@ -40,26 +36,19 @@
 	-o-transition: none !important;
 }
 
-.modal-backdrop{
-	bottom: 0;
+*{
+	box-sizing: border-box;
 }
-
-/* ----- End Misc Reset ----- */
-
-/* ----- B. Framework ----- */
 
 :focus{
 	outline: none;
-}
-
-hr{
-	border-color: @border;
 }
 
 html, body{
 	background: #fff;
 	color: @text-secondary;
 	height: 100%;
+	margin: 0;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: 100%;
@@ -69,6 +58,7 @@ html, body{
 
 a{
 	color: @primary;
+	text-decoration: none;
 
 	&:hover{
 		color: @primary-dark;
@@ -79,13 +69,9 @@ a{
 	}
 }
 
-select, button, textarea, input {
-	vertical-align: baseline;
-}
-
-input{
-	height: 48px;
-	padding: 16px 0 8px 0;
+hr{
+	border-color: @border;
+	border-width: 1px 0px 0px;
 }
 
 ul{
@@ -127,24 +113,6 @@ ul{
 			pointer-events: inherit;
 		}
 	}
-}
-
-.card{
-	background: white;
-	border-radius: 2px;
-	border: 1px solid @border;
-	margin-bottom: 30px;
-	padding: 15px;
-
-	@media (min-width: 768px){
-		padding: 30px;
-	}
-}
-
-.text-invalid{
-	color: @warning;
-	position: absolute;
-	font-size: 12px;
 }
 
 .view-container{
@@ -199,55 +167,6 @@ ul{
 		}
 	}
 }
-
-.title{
-	color: @text-primary;
-}
-
-sub{
-	font-size: 8px;
-}
-
-.modal-header{
-	margin-bottom: 0;
-	padding: 20px 30px;
-}
-
-.modal-body{
-	padding: 20px 30px;
-}
-
-.modal-footer{
-	padding: 10px;
-
-	.btn-success{
-		background: @primary;
-		border: none;
-
-		&:hover{
-			background: @primary-dark;
-			color: white;
-		}
-	}
-
-	.btn-danger{
-		background: #d9534f;
-		border: none;
-		&:hover{
-			background: #df3f3a !important;
-			color: white;
-		}
-	}
-}
-
-.modal-dialog{
-	width: 400px;
-	position: absolute;
-	top: 10%;
-	left: calc(~'50% - 200px');
-}
-/* ----- End Framework ----- */
-
 /* ========================================================== */
 /* 				 		END PRIMARY STYLES               	  */
 /* ========================================================== */
@@ -270,6 +189,12 @@ header{
 
 	.logo{
 		float: left;
+	}
+
+	hr{
+		@media (max-width: 993px){
+			display: none;
+		}
 	}
 
 	.hamburger{
@@ -317,12 +242,9 @@ header{
 	}
 
 	.name{
-		transition: opacity .75s ease-in;
-	}
-
-	.name{
 		color: @dark-text-primary;
 		margin-bottom: 30px;
+		text-align: center;
 		transition: all .75s ease-in;
 
 		@media (orientation: landscape){
@@ -458,6 +380,7 @@ header.shrink{
 		font-weight: 500;
 		line-height: 52px;
 		margin-bottom: 0px;
+		text-decoration: none;
 
 		@media (min-width: 768px){
 			line-height: 64px;
@@ -475,6 +398,12 @@ header.shrink{
 		&:hover, &:focus{
 			color: @primary-dark;
 			text-decoration: none;
+		}
+
+		.hidden{
+			@media (max-width: 993px){
+				display: none;
+			}
 		}
 	}
 
@@ -700,7 +629,7 @@ header.shrink{
         color: @text-primary;
 
         .beta{
-            font-weight: 200;
+            font-weight: 300;
         }
 
         .emphasis{
@@ -716,14 +645,19 @@ header.shrink{
 
         	.beta{
 
-        		figcaption{
-        			font-size: 16px;
-        			font-weight: 400;
-        			text-align: center;
-        		}
+        		figure{
+        			margin: 0;
 
-        		.kayaking, .aquarium{
-        			margin-bottom: 10px;
+        			figcaption{
+        				font-size: 14px;
+        				font-weight: 400;
+        				margin-top: 10px;
+        				text-align: center;
+
+        				@media (min-width: 768px){
+        					font-size: 16px;
+        				}
+        			}
         		}
 
         		.kayak{
@@ -758,6 +692,22 @@ header.shrink{
         				margin: 12px 0 0 30px;
         				width: 45%;
         			}
+
+        			&.hidden-xs{
+        				float: right;
+
+        				@media (max-width: 767px){
+        					display: none;
+        				}
+        			}
+
+        			&.visible-xs{
+        				margin-top: 30px;
+
+        				@media (min-width: 768px){
+        					display: none;
+        				}
+        			}
         			
         		}
 
@@ -787,6 +737,42 @@ header.shrink{
         }
 
         &.work{
+
+        	.row{
+        		margin: 0 -15px;
+        		overflow: hidden;
+
+        		.col-xs-3, .col-xs-4, .col-xs-8, .col-xs-9, .col-sm-5, .col-sm-7{
+        			float: left;
+        			min-height: 1px;
+        			padding: 0 15px;
+        			position: relative;
+        		}
+
+        		.col-xs-3{
+        			width: 25%;
+        		}
+
+        		.col-xs-4{
+        			width: 33.3333%;
+        		}
+
+        		.col-xs-8{
+        			width: 66.6667%;
+        		}
+
+        		.col-xs-9{
+        			width: 75%;
+        		}
+
+        		.col-sm-5{
+        			width: 41.6667%;
+        		}
+
+        		.col-sm-7{
+        			width: 58.3333%;
+        		}
+        	}
 
     		& > .beta{
     			margin-bottom: 150px;
@@ -1093,6 +1079,16 @@ header.shrink{
         	}
 
         	.icons{
+        		margin: 0 -15px;
+        		text-align: center;
+
+        		.col-xs-4{
+        			float: left;
+        			min-height: 1px;
+        			padding: 0 15px;
+        			position: relative;
+        			width: 33.3333%;
+        		}
 
         	    .fa{
         	    	background: @primary;

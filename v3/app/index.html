@@ -8,19 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="assets/img/favicon.ico">
-    <title ng-if="page_name" ng-bind="page_name + ' | Michael Clayton Yuen | Web Developer with a passion for Front-end'"></title>
-    <title ng-if="!page_name">Michael Clayton Yuen | Web Developer with a passion for Front-end</title>
+    <title ng-if="page_name != 'Home'" ng-bind="page_name + ' | Michael Clayton Yuen | Web Developer with a passion for Front-end'"></title>
+    <title ng-if="page_name == 'Home'">Michael Clayton Yuen | Web Developer with a passion for Front-end</title>
     <meta name="description" content="Portfolio of Full-stack web developer with a passion for Front-end web development, specializing in AngularJS, Parse, HTML, LessCSS, Bootstrap, Grunt, and Bower.">
-
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500' rel='stylesheet' type='text/css'>
-
-    <link href='http://fonts.googleapis.com/css?family=Lato:200,300,400,500,700' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!-- Main Template stylesheet used by all pages -->
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
@@ -32,7 +22,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
     <!-- Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-route.min.js"></script>
@@ -66,11 +55,11 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-68573068-1', 'none'); // 'none' while you are working on localhost
+        ga('create', 'UA-68573068-1', 'auto'); // 'none' while you are working on localhost
     </script>
 </head>
 
-<body class="preload" ng-cloak>
+<body class="preload">
 
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -80,12 +69,12 @@
 
         <header ng-class="{'shrink': page_name != 'Home'}">
             <a href="/" class="beta logo">
-                M<span class="hidden-xs hidden-sm">ichael </span>
-                C<span class="hidden-xs hidden-sm">layton </span>
-                Y<span class="hidden-xs  hidden-sm">uen</span>
+                M<span class="hidden">ichael </span>
+                C<span class="hidden">layton </span>
+                Y<span class="hidden">uen</span>
             </a>
 
-            <hr class="hidden-xs hidden-sm">
+            <hr class="hidden">
 
             <div class="hamburger" ng-click="toggleMenu()" ng-class="{'open': menu_open}">
                 <span></span>
@@ -97,7 +86,7 @@
                 <div class="avatar" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
             </div>
 
-            <div class="name text-center kilo">Michael Clayton Yuen</div>
+            <div class="name kilo">Michael Clayton Yuen</div>
 
             <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
 
@@ -127,24 +116,13 @@
             </ul>
         </header>
 
-        <div ng-include="page_url" class="container-fluid view-container" 
+        <div ng-include="page_url" class="view-container" 
             ng-class="{'animation': page_name != 'Home'}" ng-click="closeMenu()"></div>
         
     </span> 
     <!-- End of MainController -->
 
-    <!-- Check for bootstrap css loaded from cdn -->
-    <div id="bootstrap-test" class="hide"></div>
     <script type="text/javascript">
-        var elem = document.getElementById("bootstrap-test");
-        if (elem.offsetWidth > 0 || elem.offsetHeight > 0) {
-            var link = document.createElement('link');
-            link.type = 'text/css';
-            link.rel = 'stylesheet';
-            link.href = 'assets/css/bootstrap.min.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-
         setTimeout( function() {
             document.getElementsByTagName('body')[0].className = '';
         }, 300);

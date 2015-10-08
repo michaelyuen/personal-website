@@ -41,7 +41,6 @@ angular.module('personal_website', [
                 }
             }
             else {
-                next.params.page_name = '';
                 $rootScope.page_name = 'Home';
                 $animate.enabled(false);
                 angular.element(document.querySelector('.menu')).removeClass('enable');

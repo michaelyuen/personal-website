@@ -1,3 +1,45 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body{
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
@@ -97,4 +139,65 @@ h6,.zeta{
 small,.milli {
     font-size:12px;
     line-height:2;
+}
+
+strong{
+    font-weight: 700;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+    font-size: inherit; // can't have font-size inherit on line above, so need to override
+    text-rendering: auto; // optimizelegibility throws things off #1094
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-3x {
+    font-size: 3em;
+}
+
+.fa-child:before {
+    content: "\f1ae";
+}
+
+.fa-rocket:before {
+    content: "\f135";
+}
+
+.fa-envelope:before {
+    content: "\f0e0";
+}
+
+.fa-coffee:before {
+    content: "\f0f4";
+}
+
+.fa-mobile:before {
+    content: "\f10b";
+}
+
+.fa-tablet:before {
+    content: "\f10a";
+}
+
+.fa-laptop:before {
+    content: "\f109";
+}
+
+.fa-desktop:before {
+    content: "\f108";
+}
+
+.fa-globe:before {
+    content: "\f0ac";
+}
+
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+
+.fa-github-alt:before {
+    content: "\f113";
 }
