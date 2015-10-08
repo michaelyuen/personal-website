@@ -7,8 +7,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title ng-bind="page_name + ' | Michael Clayton Yuen'"></title>
-    <meta name="description" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <title ng-if="page_name" ng-bind="page_name + ' | Michael Clayton Yuen | Web Developer with a passion for Front-end'"></title>
+    <title ng-if="!page_name">Michael Clayton Yuen | Web Developer with a passion for Front-end</title>
+    <meta name="description" content="Portfolio of Full-stack web developer with a passion for Front-end web development, specializing in AngularJS, Parse, HTML, LessCSS, Bootstrap, Grunt, and Bower.">
 
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500' rel='stylesheet' type='text/css'>
 
@@ -92,7 +94,7 @@
             </div>
 
             <div class="avatar-container">
-                <div class="avatar"></div>
+                <div class="avatar" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
             </div>
 
             <div class="name text-center kilo">Michael Clayton Yuen</div>
