@@ -20,6 +20,8 @@ RewriteRule ^(.*)$ /#/$1 [L]
 </ifModule>
 # END Compress text files
 
+ExpiresActive on
+
 # BEGIN EXPIRES
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -32,6 +34,7 @@ RewriteRule ^(.*)$ /#/$1 [L]
     ExpiresByType application/x-javascript "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 week"
     ExpiresByType application/x-icon "access plus 1 year"
+    ExpiresByType font/truetype "access plus 1 year"
 </IfModule>
 # END EXPIRES
 

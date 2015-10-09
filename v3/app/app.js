@@ -33,7 +33,7 @@ angular.module('personal_website', [
 
                 if (next.params.page_name == 'about' || next.params.page_name == 'work' || next.params.page_name == 'contact') {
                     $rootScope.page_name = next.params.page_name[0].toUpperCase() + next.params.page_name.slice(1);
-                    $scope.page_url = '/views/' + next.params.page_name + '.min.html';
+                    $scope.page_url = '/views/' + next.params.page_name + '.html';
                     $timeout(enableTransitions, 600);
                 }
                 else {
