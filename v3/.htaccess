@@ -1,3 +1,5 @@
+AddDefaultCharset UTF-8
+
 RewriteEngine On 
 Options FollowSymLinks
 
@@ -40,9 +42,11 @@ RewriteRule ^(.*)$ /#/$1 [L]
   </filesMatch>
   <filesMatch ".(css)$">
     Header set Cache-Control "public"
+    Header append Vary: Accept-Encoding
   </filesMatch>
   <filesMatch ".(js)$">
     Header set Cache-Control "private"
+    Header append Vary: Accept-Encoding
   </filesMatch>
   <filesMatch ".(x?html?|php)$">
     Header set Cache-Control "private, must-revalidate"
