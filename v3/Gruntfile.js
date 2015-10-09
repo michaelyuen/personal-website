@@ -35,19 +35,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        uglify: {
-            options: {
-                compress: false,
-                mangle: false,
-                sourceMap: true
-            },
-            build: {
-                files: {
-                    'app/assets/js/uglify-all/lib.min.js': ['app/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*', '!**/angular-animate/*'],
-                    'app/assets/js/uglify-all/app.min.js': ['app/app.js', 'app/components/**/*.js', 'app/views/**/*.js']
-                }
-            }
-        },
         connect: {
             server: {
                 options: {
@@ -75,16 +62,46 @@ module.exports = function(grunt) {
                 }
             }
 
+        },
+        uglify: {
+            options: {
+                compress: false,
+                mangle: false,
+                sourceMap: true
+            },
+            build: {
+                files: {
+                    'app/assets/js/uglify-all/lib.min.js': ['app/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*', '!**/angular-animate/*'],
+                    'app/assets/js/uglify-all/app.min.js': ['app/app.js', 'app/components/**/*.js', 'app/views/**/*.js']
+                }
+            }
+        },
+        htmlmin: {
+            options: {
+                removeComments: true,
+                collapseWhitespace: true
+            },
+            build: {
+                files: {
+                    'app/index.min.html': 'app/index.html',
+                    'app/views/about.min.html': 'app/views/about.html',
+                    'app/views/work.min.html': 'app/views/work.html',
+                    'app/views/contact.min.html': 'app/views/contact.html',
+                    'app/views/blog.min.html': 'app/views/blog.html'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-bowercopy');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.registerTask('default', ['bowercopy', 'connect', 'watch']);
     grunt.registerTask('bower', ['bowercopy']);
     grunt.registerTask('uglify-all', ['uglify']);
+    grunt.registerTask('htmlmin-all', ['htmlmin']);
 };
