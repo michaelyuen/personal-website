@@ -80,7 +80,7 @@ ul{
 }
 
 .btn-container{
-	line-height: 42px;
+	line-height: 62px;
 	text-align: center;
 
 	@media (max-width: 767px){
@@ -851,11 +851,13 @@ header.shrink{
 						}
 
 						.beta{
-							margin-bottom: 0;
+							@media (min-width: 768px){
+								margin-bottom: 0;
+							}
 						}
 
 						.btn-container{
-							//margin-bottom: 0;
+							margin-bottom: 0;
 						}
 					}
     			}
@@ -875,7 +877,6 @@ header.shrink{
     				border: 1px solid @border;
     				border-radius: 10px;
     				padding: 0 4px;
-    				width: 175px;
     				
 
     				@media (orientation: portrait) and (max-width: 767px){
@@ -888,7 +889,7 @@ header.shrink{
     					border-radius: 15px;
     					margin-top: 10px;
     					padding: 0 10px;
-    					width: 250px;
+    					width: calc(~'100% - 20px');
     				}
 
     				&.pull-right{
@@ -912,6 +913,10 @@ header.shrink{
     					height: 25px;
     					text-align: center;
 
+    					@media (orientation: landscape) and (max-width: 767px){
+    						height: 40px;
+    					}
+
     					@media (min-width: 768px){
     						height: 55px;
     					}
@@ -924,6 +929,11 @@ header.shrink{
     						position: relative; top: 0; right: 6px;
     						width: 4px; height: 4px;
     						vertical-align: middle;
+
+    						@media (orientation: landscape) and (max-width: 767px){
+    							top: 5px;
+    							width: 6px; height: 6px;
+    						}
 
     						@media (min-width: 768px){
     							top: 10px; right: 10px;
@@ -940,6 +950,11 @@ header.shrink{
     						width: 20px; height: 2px;
     						vertical-align: middle;
 
+    						@media (orientation: landscape) and (max-width: 767px){
+    							top: 5px;
+    							width: 25px;
+    						}
+
     						@media (min-width: 768px){
     							top: 10px; right: 6px;
     							width: 35px; height: 4px;
@@ -955,6 +970,10 @@ header.shrink{
     				.bottom{
     					height: 25px;
 
+    					@media (orientation: landscape) and (max-width: 767px){
+    						height: 40px;
+    					}
+
     					@media (min-width: 768px){
     						height: 55px;
     					}
@@ -964,8 +983,13 @@ header.shrink{
     						border: 1px solid @border;
     						border-radius: 50%;
     						margin: auto;
-    						position: relative; top: 5px;
+    						position: relative; top: 4px;
     						width: 15px; height: 15px;
+
+    						@media (orientation: landscape) and (max-width: 767px){
+    							top: 5px;
+    							width: 25px; height: 25px;
+    						}
 
     						@media (min-width: 768px){
     							top: 9px;
