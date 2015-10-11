@@ -1,20 +1,27 @@
 'use strict';
 
-var app = angular.module('personal_website', [
+angular.module('personal_website', [
     'ngRoute',
     'ngAnimate'
     //'angulartics',
     //'angulartics.google.analytics'
-]);
+])
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true).hashPrefix('!');
     
-    $routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
-}]);
+    //$routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
+    $routeProvider
+        .when('/',              { controller: 'MainController' })
+        .when('/about',         { controller: 'MainController' })
+        .when('/work',          { controller: 'MainController' })
+        .when('/work/:project', { controller: 'MainController' })
+        .when('/contact',       { controller: 'MainController' })
+        .otherwise( {redirectTo: '/'} );
+}])
 
-app.controller('MainController', ['$rootScope', '$scope', '$location', '$animate', '$timeout', '$route',
+.controller('MainController', ['$rootScope', '$scope', '$location', '$animate', '$timeout', '$route',
     function($rootScope, $scope, $location, $animate, $timeout, $route) {
     
         $scope.menu_open = false;
@@ -29,39 +36,45 @@ app.controller('MainController', ['$rootScope', '$scope', '$location', '$animate
 
         $scope.$on('$routeChangeStart', function (event, next, current) {
 
-            if (next.params.page) {
+            var url = $location.path().substr(1);
 
-                console.log(next.params);
-
-                if (next.params.page == 'about' || next.params.page == 'work' || next.params.page == 'contact') {
-
-                    if (next.params.sub_page) {
-
-                        var page_name = '';
-                        var capitalized_array = capitalizeFirstLetter(next.params.sub_page.split('-'));
-
-                        for (var i=0; i < capitalized_array.length; i++) {
-                            page_name += capitalized_array[i] + ' ';
-                        }
-
-                        $rootScope.page_name = page_name + '| ' + capitalizeFirstLetter(next.params.page);
-                        $scope.page_url = '/views/' + next.params.page + '/project/' + next.params.sub_page + '.html';
-                        $timeout(enableTransitions, 600);
-                    }
-                    else {
-                        $rootScope.page_name = capitalizeFirstLetter(next.params.page);
-                        $scope.page_url = '/views/' + next.params.page + '.html';
-                        $timeout(enableTransitions, 600);
-                    }
-                }
-                else {
-                    $location.url('/');
-                }
-            }
-            else {
+            // Path is /
+            if (url === '') {
+                
                 $rootScope.page_name = 'Home';
+                $scope.current = '';
                 $animate.enabled(false);
                 angular.element(document.querySelector('.menu')).removeClass('enable');
+            }
+            // Path is a page or sub page
+            else {
+
+                var url_array = url.split('/');
+
+                // Path is page
+                if (url_array.length === 1) {
+                    
+                    $rootScope.page_name = capitalizeFirstLetter(url_array[0]);
+                    $scope.current = url_array[0];
+                    $scope.page_url = '/views/' + url_array[0] + '/' + url_array[0] + '.html';
+                    
+                }
+                // Path is sub page
+                else {
+
+                    var page_name = '';
+                    var capitalized_array = capitalizeFirstLetter(url_array[1].split('-'));
+
+                    for (var i=0; i < capitalized_array.length; i++) {
+                        page_name += capitalized_array[i] + ' ';
+                    }
+
+                    $rootScope.page_name = page_name + '| ' + capitalizeFirstLetter(url_array[0]);
+                    $scope.current = url_array[0];
+                    $scope.page_url = '/views/' + url_array[0] + '/sub/' + url_array[1] + '.html';
+                }
+
+                $timeout(enableTransitions, 600);
             }
         });
 
@@ -87,11 +100,4 @@ app.controller('MainController', ['$rootScope', '$scope', '$location', '$animate
                 return input[0].toUpperCase() + input.substr(1);
             }
         }
-}]);
-
-app.controller('ProjectController', ['$rootScope', '$scope', function ($rootScope, $scope) {
-
-    $rootScope.page_name = 'Logoji Labs';
-    console.log('hello');
-
 }]);
