@@ -142,28 +142,31 @@ ul{
 
 	&.animation{
 
-		&.ng-enter, &.ng-leave{
-			
-			position:absolute; top:0; right: 0;
-			width: 100%;
-			transition: all .5s ease-in-out;
+		@media (min-width: 992px){
 
-			@media (min-width: 992px){
+			&.ng-enter, &.ng-leave{
+
 				float: right;
-				width: calc(~'100% - 300px');
+				position: absolute; top: 0; right: 0;
+				width: calc(~'100% - 250px');
+				transition: all .5s ease-in-out;
+
+				@media (min-width: 1025px){
+					width: calc(~'100% - 300px');
+				}
 			}
-		}
 
-		&.ng-enter{
-			top: 100%;
-		}
+			&.ng-enter{
+				top: 100%;
+			}
 
-		&.ng-enter.ng-enter-active{
-			top: 0;
-		}
+			&.ng-enter.ng-enter-active{
+				top: 0;
+			}
 
-		&.ng-leave.ng-leave-active{
-			top: -100%;
+			&.ng-leave.ng-leave-active{
+				top: -100%;
+			}
 		}
 	}
 }
@@ -245,7 +248,7 @@ header{
 		color: @dark-text-primary;
 		margin-bottom: 30px;
 		text-align: center;
-		transition: all .75s ease-in;
+		transition: all .5s ease-in;
 
 		@media (orientation: landscape){
 			margin-bottom: 20px;
@@ -343,6 +346,7 @@ header{
 header.shrink{
 	border-bottom: 1px solid @border;
 	box-shadow: 0px 2px 4px @border;
+	overflow: hidden;
 	padding: 0 30px;
 	width: 100%; height: 52px;
 	transition: width .75s ease-out, height .5s ease-in-out;
@@ -357,12 +361,17 @@ header.shrink{
 		border-bottom: none;
 		box-shadow: none;
 		float: left;
+		overflow: inherit;
 		padding: 0;
 		width: 250px; height: 100%;
 	}
 
 	@media (min-width: 1025px){
 		width: 300px;
+	}
+
+	&.open{
+		height: 100%;
 	}
 
 	.logo, hr, .hamburger{
@@ -389,10 +398,15 @@ header.shrink{
 		@media (min-width: 992px){
 			display: block;
 			float: none;
+			font-size: 20px;
 			font-weight: 400;
 			text-align: center;
 			width: 100%;
 			transition: opacity .15s ease-out .6s;
+		}
+
+		@media (min-width: 1025px){
+			font-size: 24px;
 		}
 
 		&:hover, &:focus{
@@ -424,7 +438,6 @@ header.shrink{
 		}
 
 		&.open{
-
 			span{
 
 				&:first-child{
@@ -460,7 +473,7 @@ header.shrink{
 			margin: 5px 0;
 			position: relative;
 			width: 100%; height: 3px;
-			transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+			transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 
 			@media (min-width: 768px){
 				margin: 6px 0;
@@ -469,17 +482,19 @@ header.shrink{
 	}
 
 	.avatar-container{
+		padding: 0;
+		transition: padding .5s ease-out;
+
 		@media (min-width: 992px){
-			border-bottom: 1px solid @border;
 			display: block;
 			padding: 30px 0;
 			width: 100%;
 		}
 
 		.avatar{
-			border: none;
+			border-width: 0px;
 			width: 0px; height: 0px;
-			transition: width .5s ease-out, height .5s ease-out;
+			transition: width .5s ease-out, height .5s ease-out, border-width .5s ease-out;
 
 			@media (min-width: 992px){
 				border: 5px solid white;
@@ -494,98 +509,89 @@ header.shrink{
 	}
 
 	.name{
+		height: 0;
+		margin-bottom: 0;
 		opacity: 0;
-
-		@media (min-width: 992px){
-			font-size: 0;
-			height: 0;
-			margin-bottom: 0;
-			transition: all .5s ease-out;
-		}
+		transition: all .5s ease-out;
 	}
 
 	.menu{
-		box-shadow: 0px 2px 5px @text-hint;
 		clear: both;
-		max-height: 0px;
-		overflow: hidden;
-		text-align: left;
-		width: auto;
-		transition: width 0s;
 
-		@media (max-width: 991px){
-			position: absolute; top: 52px; left: 0; right: 0;
-			transition: max-height .3s ease-in-out;
-			z-index: 10;
-		}
-		
+		&.enable{
+			margin: 0 -30px;
+			text-align: center;
+			width: auto;
 
-		@media (min-width: 768px){
-			top: 64px;
-		}
+			@media (min-width: 768px){
+				margin: 0 -50px;
+			}
 
-		&.open{
-			max-height: 500px;
-		}
+			li{
+				float: none;
+				padding-right: 0;
 
-		li{
-			padding-right: 0;
-			width: 100%;
+				&:first-child{
+					border-top: 1px solid @border;
+				}
 
-			a{
-				background: @primary;
-				border-bottom: 1px solid @border;
-				color: @dark-text-primary;
-				display: block;
-				font-size: 16px;
-				padding: 12px 16px 12px 0;
-				text-decoration: none;
-				width: 100%;
+				a{
+					border-bottom: 1px solid @border;
+					display: block;
+					padding: 30px 0;
 
-				i{
-					min-width: 16px;
-					margin: 0 16px 0 30px;
-					text-align: center;
+					i{
+						min-width: 16px;
+						margin: 0 16px 0 0;
+					}
 				}
 			}
 		}
 
 		@media (min-width: 992px){
 			box-shadow: none;
-			max-height: none;
 			overflow: visible;
 			width: 249px;
 			
-			&.enable li a{
-				transition: background-position .3s ease-out, color .3s ease-out;
+			&.enable{
+				margin: 0;
+				text-align: left;
 
-				&::before{
-					width: 5px;
-					transition: width .2s ease-in .3s;
-				}
-
-				&.current{
-					background-position: 300px 0;
-					color: @primary-dark;
-					transition: background-position .3s ease-in, color .3s ease-in;
+				li a{
+					border: none;
+					padding: 12px 0;
+					transition: background-position .3s ease-out, color .3s ease-out;
 
 					&::before{
-						left: 0;
+						width: 5px;
+						transition: width .2s ease-in .3s;
+					}
+
+					&.current{
+						background-position: 300px 0;
+						color: @primary-dark;
+						transition: background-position .3s ease-in, color .3s ease-in;
+
+						&::before{
+							left: 0;
+						}
+					}
+
+					i{
+						margin: 0 16px 0 50px;
 					}
 				}
 			}
 
 			li{
-
 				a{
 					background-image: linear-gradient(to right, transparent 50%, white 50%);
 					background-size: 600px;
 					background-position: 600px 0;
 					background-repeat: none;
-					border-bottom: none;
 					color: @dark-text-primary;
 					display: block;
-					padding: 12px 16px 12px 0;
+					font-size: 16px;
 					position: relative;
 					width: calc(~'100% + 1px');
 
@@ -607,10 +613,6 @@ header.shrink{
 							transition: left .2s ease-in;
 						}
 					}
-
-					i{
-						margin: 0 16px 0 50px;
-					}
 				}
 			}
 		}
@@ -627,13 +629,12 @@ header.shrink{
 /* ========================================================== */
 /* 						   06. CONTENT                        */
 /* ========================================================== */
-
 .body-container{
 
     .body{
         font-family: 'Lato';
         margin: auto;
-        text-align: justify;
+        text-align: left;
         color: @text-primary;
 
         .beta{

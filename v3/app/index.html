@@ -14,7 +14,7 @@
     <meta name="description" content="Portfolio of Full-stack web developer with a passion for Front-end web development, specializing in AngularJS, Parse, HTML, LessCSS, Bootstrap, Grunt, and Bower.">
 
     <!-- Main Template stylesheet used by all pages -->
-    <link href="assets/css/main_1.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/main_2.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,7 +69,7 @@
 
     <span ng-controller="MainController">
 
-        <header ng-class="{'shrink': page_name != 'Home'}">
+        <header ng-class="{'shrink': page_name != 'Home', 'open': menu_open == true}">
             <a href="/" class="beta logo">
                 M<span class="hidden">ichael </span>
                 C<span class="hidden">layton </span>
