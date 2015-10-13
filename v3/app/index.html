@@ -69,7 +69,7 @@
 
     <span ng-controller="MainController">
 
-        <header ng-class="{'shrink': page_name != 'Home', 'open': menu_open == true}">
+        <header ng-class="{'shrink': page_name != 'Home', 'open': menu_open }">
             <a href="/" class="beta logo">
                 M<span class="hidden">ichael </span>
                 C<span class="hidden">layton </span>
@@ -90,7 +90,7 @@
 
             <div class="name kilo">Michael Clayton Yuen</div>
 
-            <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open == true}">
+            <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open }">
 
                 <li>
                     <a href="/about" ng-class="{'current': page_name == 'About'}">
