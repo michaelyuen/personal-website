@@ -9,7 +9,7 @@ angular.module('personal_website', [
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    //$locationProvider.html5Mode(true).hashPrefix('!');
     
     //$routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
     $routeProvider
@@ -37,6 +37,7 @@ angular.module('personal_website', [
         $scope.$on('$routeChangeStart', function (event, next, current) {
 
             var url = $location.path().substr(1);
+            $scope.sub = false;
 
             // Path is /
             if (url === '') {
@@ -71,6 +72,7 @@ angular.module('personal_website', [
 
                     $rootScope.page_name = page_name + '| ' + capitalizeFirstLetter(url_array[0]);
                     $scope.current = url_array[0];
+                    $scope.sub = true;
                     $scope.page_url = '/views/' + url_array[0] + '/sub/' + url_array[1] + '.html';
                 }
 

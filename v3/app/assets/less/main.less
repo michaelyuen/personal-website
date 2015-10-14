@@ -149,32 +149,77 @@ ul{
 		width: calc(~'100% - 300px');
 	}
 
-	&.animation{
-
-		&.ng-enter, &.ng-leave{
-			
-			position:absolute; top:0; right: 0;
-			width: 100%;
-			transition: all .5s ease-in-out;
-
-			@media (min-width: 992px){
-				float: right;
-				width: calc(~'100% - 300px');
-			}
-		}
+	&.sub{
+		float: none;
+		padding: 0;
+		position: relative;
+		width: 100%;
+		z-index: 4;
 
 		&.ng-enter{
-			top: 100%;
+			position: absolute; top: 100%; left: 0;
+			transition: top .5s ease-in-out;
+			z-index: 4;
 		}
 
 		&.ng-enter.ng-enter-active{
 			top: 0;
 		}
-
-		&.ng-leave.ng-leave-active{
-			top: -100%;
-		}
 	}
+
+	
+
+		&.top{
+
+			&.ng-enter, &.ng-leave{
+				
+				position: absolute; top:0; right: 0;
+				width: 100%;
+				transition: all .5s ease-in-out;
+
+				@media (min-width: 992px){
+					float: right;
+					width: calc(~'100% - 300px');
+				}
+			}
+
+			&.ng-enter{
+				top: 100%;
+			}
+
+			&.ng-enter.ng-enter-active{
+				top: 0;
+			}
+
+			&.ng-leave.ng-leave-active{
+				top: -100%;
+			}
+		}
+
+		// &.sub{
+
+		// 	@media (min-width: 1025px){
+
+		// 		&.ng-enter{
+
+		// 			float: none;
+		// 			margin-left: 100px;
+		// 			position: absolute; top: 100%; left: 0;
+		// 			width: 100%;
+		// 			transition: all .5s ease-in-out;
+		// 			z-index: 4;
+
+		// 			.header{
+		// 				padding-left: 300px;
+		// 			}
+		// 		}
+
+		// 		&.ng-enter.ng-enter-active{
+		// 			top: 0;
+		// 		}
+		// 	}
+		// }
+	
 }
 /* ========================================================== */
 /* 				 		END PRIMARY STYLES               	  */
@@ -585,6 +630,7 @@ header.shrink{
 			}
 
 			li{
+				float: none;
 
 				a{
 					background-image: linear-gradient(to right, transparent 50%, white 50%);
@@ -629,6 +675,35 @@ header.shrink{
 		}
 	}
 }
+
+// header.sub{
+// 	width: 50px;
+
+// 	.logo .hidden{
+// 		display: none;
+// 	}
+
+// 	.avatar-container{
+// 		visibility: hidden;
+// 	}
+
+// 	.menu{
+// 		width: 50px;
+
+// 		li{
+// 			a{
+// 				i{
+// 					width: 50px;
+// 					margin: 0;
+// 				}
+
+// 				span{
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 /* ========================================================== */
 /* 						    END HEADER                        */
 /* ========================================================== */
@@ -792,17 +867,18 @@ header.shrink{
         	}
 
     		& > .beta{
-    			margin-bottom: 150px;
+    			margin-bottom: 0;
+    			padding-bottom: 150px;
 
     			&:last-child{
-    				margin-bottom: 25px;
+    				padding-bottom: 25px;
 
     				@media (min-width: 768px){
-    					margin-bottom: 0;
+    					padding-bottom: 0;
     				}
 
     				@media (min-width: 1025px){
-    					margin-bottom: 50px;
+    					padding-bottom: 50px;
     				}
     			}
 
@@ -852,7 +928,7 @@ header.shrink{
 
 						.beta{
 							@media (min-width: 768px){
-								margin-bottom: 0;
+								padding-bottom: 0;
 							}
 						}
 
@@ -1112,6 +1188,28 @@ header.shrink{
 	    				}
 	    			}
 				}
+    		}
+
+    		&.sub{
+    			background: white;
+
+    			.header{
+    				background: @logoji;
+    				color: @dark-text-primary;
+    				text-align: center;
+
+    				@media (min-width: 992px){
+    					padding: 78px 0;
+    				}
+
+    				.tagline{
+    					font-weight: 300;
+    				}
+    			}
+
+    			.beta{
+    				padding: 0 300px;
+    			}
     		}
         }
 
