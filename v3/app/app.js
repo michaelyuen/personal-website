@@ -14,10 +14,10 @@ angular.module('personal_website', [
     //$routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
     $routeProvider
         .when('/',              { controller: 'MainController' })
-        .when('/about',         { controller: 'MainController' })
-        .when('/work',          { controller: 'MainController' })
-        .when('/work/:project', { controller: 'MainController' })
-        .when('/contact',       { controller: 'MainController' })
+        .when('/about',         { controller: 'MainController', type: 'page' })
+        .when('/work',          { controller: 'MainController', type: 'page' })
+        .when('/work/:project', { controller: 'MainController', type: 'sub' })
+        .when('/contact',       { controller: 'MainController', type: 'page' })
         .otherwise( {redirectTo: '/'} );
 }])
 
@@ -37,7 +37,10 @@ angular.module('personal_website', [
         $scope.$on('$routeChangeStart', function (event, next, current) {
 
             var url = $location.path().substr(1);
-            $scope.sub = false;
+            $scope.page        = false;
+            $scope.sub         = false;
+            $scope.sub_to_page = false;
+            $scope.page_to_sub = false;
 
             // Path is /
             if (url === '') {
@@ -57,7 +60,12 @@ angular.module('personal_website', [
                     
                     $rootScope.page_name = capitalizeFirstLetter(url_array[0]);
                     $scope.current = url_array[0];
+                    $scope.page = true;
                     $scope.page_url = '/views/' + url_array[0] + '/' + url_array[0] + '.html';
+
+                    if (current && current.type == 'sub'){
+                        $scope.sub_to_page = true;
+                    }
                     
                 }
                 // Path is sub page
@@ -74,6 +82,10 @@ angular.module('personal_website', [
                     $scope.current = url_array[0];
                     $scope.sub = true;
                     $scope.page_url = '/views/' + url_array[0] + '/sub/' + url_array[1] + '.html';
+
+                    if (current && current.type == 'page'){
+                        $scope.page_to_sub = true;
+                    }
                 }
 
                 $timeout(enableTransitions, 600);

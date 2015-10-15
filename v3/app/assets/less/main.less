@@ -149,77 +149,170 @@ ul{
 		width: calc(~'100% - 300px');
 	}
 
-	&.sub{
-		float: none;
-		padding: 0;
-		position: relative;
-		width: 100%;
-		z-index: 4;
+	@media (min-width: 992px){
 
-		&.ng-enter{
-			position: absolute; top: 100%; left: 0;
+		&.animation{
 			transition: top .5s ease-in-out;
-			z-index: 4;
-		}
 
-		&.ng-enter.ng-enter-active{
-			top: 0;
+			&.page{
+
+				&.ng-enter, &.ng-leave{
+					
+					position: absolute; top: 0; right: 0;
+					width: calc(~'100% - 250px');
+				}
+
+				&.ng-enter{
+					top: 100%;
+				}
+
+				&.ng-enter.ng-enter-active{
+					top: 0;
+				}
+
+				&.ng-leave.ng-leave-active{
+					top: -100%;
+				}
+			}
+
+			&.sub{
+				padding: 0;
+				position: relative;
+				width: 100%;
+				z-index: 4;
+			}
+
+			@keyframes subToPage {
+
+				0% {
+					padding: 0;
+					width: 100%;
+				}
+
+				10% {
+					padding: 75px 50px;
+					width: calc(~'100% - 250px');
+				}
+
+				100% {
+					padding: 75px 50px;
+					width: calc(~'100% - 250px');
+				}
+			}
+
+			&.sub-to-page{
+				animation: subToPage .5s ease-in-out forwards;
+				padding: 75px 50px;
+				position: relative;
+				width: calc(~'100% - 250px');
+				z-index: 4;
+
+				&.ng-enter{
+					top: 0;
+				}
+
+				&.ng-leave{
+					padding: 0 !important;
+					position: absolute; top: 0; right: 0;
+					width: 100% !important;
+					z-index: 5;
+				}
+
+				&.ng-leave.ng-leave-active{
+					top: 100%;
+				}
+			}
+
+			@keyframes pageToSub {
+
+				0% {
+					padding: 75px 50px;
+					width: calc(~'100% - 250px');
+				}
+
+				90% {
+					padding: 75px 50px;
+					width: calc(~'100% - 250px');
+				}
+
+				100% {
+					padding: 0;
+					width: 100%;
+				}
+			}
+
+			&.page-to-sub{
+				animation: pageToSub .5s ease-in-out forwards;
+				position: relative;
+				z-index: 4;
+
+				&.ng-enter{
+					padding: 0 !important;
+					position: absolute; top: 100%; right: 0;
+					width: 100% !important;
+					z-index: 5;
+				}
+
+				&.ng-enter.ng-enter-active{
+					top: 0;
+					padding: 0;
+					width: 100%;
+					z-index: 5;
+				}
+			}
 		}
 	}
 
-	
-
-		&.top{
-
-			&.ng-enter, &.ng-leave{
-				
-				position: absolute; top:0; right: 0;
-				width: 100%;
-				transition: all .5s ease-in-out;
-
-				@media (min-width: 992px){
-					float: right;
+	@media (min-width: 1025px){
+		&.animation{
+			&.page{
+				&.ng-enter, &.ng-leave{
 					width: calc(~'100% - 300px');
 				}
 			}
 
-			&.ng-enter{
-				top: 100%;
+			@keyframes subToPage {
+
+				0% {
+					padding: 0;
+					width: 100%;
+				}
+
+				10% {
+					padding: 75px 100px;
+					width: calc(~'100% - 300px');
+				}
+
+				100% {
+					padding: 75px 100px;
+					width: calc(~'100% - 300px');
+				}
 			}
 
-			&.ng-enter.ng-enter-active{
-				top: 0;
+			&.sub-to-page{
+				padding: 75px 100px;
+				width: calc(~'100% - 300px');
 			}
 
-			&.ng-leave.ng-leave-active{
-				top: -100%;
+			@keyframes pageToSub {
+
+				0% {
+					padding: 75px 100px;
+					width: calc(~'100% - 300px');
+				}
+
+				90% {
+					padding: 75px 100px;
+					width: calc(~'100% - 300px');
+				}
+
+				100% {
+					padding: 0;
+					width: 100%;
+				}
 			}
-		}
-
-		// &.sub{
-
-		// 	@media (min-width: 1025px){
-
-		// 		&.ng-enter{
-
-		// 			float: none;
-		// 			margin-left: 100px;
-		// 			position: absolute; top: 100%; left: 0;
-		// 			width: 100%;
-		// 			transition: all .5s ease-in-out;
-		// 			z-index: 4;
-
-		// 			.header{
-		// 				padding-left: 300px;
-		// 			}
-		// 		}
-
-		// 		&.ng-enter.ng-enter-active{
-		// 			top: 0;
-		// 		}
-		// 	}
-		// }
-	
+		}	
+	}
 }
 /* ========================================================== */
 /* 				 		END PRIMARY STYLES               	  */
