@@ -1289,9 +1289,16 @@ header.shrink{
     			.header{
     				background: @logoji;
     				color: @dark-text-primary;
+    				margin: -50px -30px 0;
+    				padding: 50px 0;
     				text-align: center;
 
+    				@media (min-width: 768px){
+    					margin: -50px -50px 0;
+    				}
+
     				@media (min-width: 992px){
+    					margin: 0;
     					padding: 78px 0;
     				}
 
@@ -1301,7 +1308,9 @@ header.shrink{
     			}
 
     			.beta{
-    				padding: 0 300px;
+    				@media (min-width: 992px){
+    					padding: 0 300px;
+    				}
     			}
     		}
         }
