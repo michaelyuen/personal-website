@@ -34,6 +34,10 @@ angular.module('personal_website', [
             $scope.menu_open = false;
         }
 
+        $scope.click = function () {
+            $scope.clicked = true;
+        }
+
         $scope.$on('$routeChangeStart', function (event, next, current) {
 
             var url = $location.path().substr(1);
@@ -47,7 +51,7 @@ angular.module('personal_website', [
                 
                 $rootScope.page_name = 'Home';
                 $scope.current = '';
-                $animate.enabled(false);
+                //$animate.enabled(false);
                 angular.element(document.querySelector('.menu')).removeClass('enable');
             }
             // Path is a page or sub page
@@ -88,7 +92,7 @@ angular.module('personal_website', [
                     }
                 }
 
-                $timeout(enableTransitions, 600);
+                //$timeout(enableTransitions, 600);
             }
         });
 
@@ -114,4 +118,18 @@ angular.module('personal_website', [
                 return input[0].toUpperCase() + input.substr(1);
             }
         }
-}]);
+}])
+
+.animation('.header', [ function () {
+
+    return {
+        addClass: function (el, className, done) {
+            TweenLite.to(el, .75, {width: 300, ease: Power0.easeOut, onComplete: done});
+        },
+
+        removeClass: function (el, className, done) {
+            console.log(el[0].parentElement.offsetWidth);
+            TweenLite.to(el, .75, {width: el[0].parentElement.offsetWidth, ease: Power0.easeIn, onComplete: done});
+        }
+    }
+}])

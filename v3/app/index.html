@@ -35,6 +35,9 @@
         }
     </script>
 
+    <script src="assets/js/gsap/TweenLite.min.js"></script>
+    <script src="assets/js/gsap/CSSPlugin.min.js"></script>
+
     <!-- App -->
     <script src="app.js"></script>
 
@@ -43,6 +46,7 @@
         app.js, components, and views -->
     <!-- <script src="assets/js/uglify-all/app.min.js"></script> -->
 
+    
     <!-- <script src="assets/js/angulartics/angulartics.min.js"></script>
     <script src="assets/js/angulartics/angulartics-google-analytics.min.js"></script> -->
 
@@ -61,16 +65,14 @@
     </script> -->
 </head>
 
-<body class="preload">
+<body class="preload" ng-controller="MainController">
 
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <span ng-controller="MainController">
-
-        <header ng-class="{'shrink': page_name != 'Home'}">
-            <a href="/" class="beta logo">
+        <header class="header" ng-class="{'shrink': page_name != 'Home'}">
+            <a href="#/" class="beta logo">
                 M<span class="hidden">ichael </span>
                 C<span class="hidden">layton </span>
                 Y<span class="hidden">uen</span>
@@ -85,7 +87,7 @@
             </div>
 
             <div class="avatar-container">
-                <div class="avatar" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
+                <div class="avatar" ng-click="click()" ng-class="{'clicked': clicked}" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
             </div>
 
             <div class="name kilo">Michael Clayton Yuen</div>
@@ -120,9 +122,6 @@
 
         <div ng-include="page_url" class="view-container" 
             ng-class="{'animation': page_name != 'Home', 'page': page, 'sub': sub, 'sub-to-page': sub_to_page, 'page-to-sub': page_to_sub}" ng-click="closeMenu()"></div>
-        
-    </span> 
-    <!-- End of MainController -->
 
     <script>
         setTimeout( function() {
