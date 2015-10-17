@@ -146,173 +146,181 @@ ul{
 
 	@media (min-width: 1025px){
 		padding: 75px 100px;
+		position: absolute; right: 0;
 		width: calc(~'100% - 300px');
 	}
 
-	@media (min-width: 992px){
+	&.sub{
+		padding: 0;
+		position: relative;
+		width: 100%;
+		z-index: 4;
+	}
 
-		&.animation{
-			transition: top .5s ease-in-out;
+	// @media (min-width: 992px){
 
-			&.page{
+	// 	&.animation{
+	// 		//transition: top .5s ease-in-out;
 
-				&.ng-enter, &.ng-leave{
+	// 		&.page{
+
+	// 			&.ng-enter, &.ng-leave{
 					
-					position: absolute; top: 0; right: 0;
-					width: calc(~'100% - 250px');
-				}
+	// 				position: absolute; top: 0; right: 0;
+	// 				width: calc(~'100% - 250px');
+	// 			}
 
-				&.ng-enter{
-					top: 100%;
-				}
+	// 			&.ng-enter{
+	// 				top: 100%;
+	// 			}
 
-				&.ng-enter.ng-enter-active{
-					top: 0;
-				}
+	// 			&.ng-enter.ng-enter-active{
+	// 				//top: 0;
+	// 			}
 
-				&.ng-leave.ng-leave-active{
-					top: -100%;
-				}
-			}
+	// 			&.ng-leave.ng-leave-active{
+	// 				top: -100%;
+	// 			}
+	// 		}
 
-			&.sub{
-				padding: 0;
-				position: relative;
-				width: 100%;
-				z-index: 4;
-			}
+	// 		&.sub{
+	// 			padding: 0;
+	// 			position: relative;
+	// 			width: 100%;
+	// 			z-index: 4;
+	// 		}
 
-			@keyframes subToPage {
+	// 		// @keyframes subToPage {
 
-				0% {
-					padding: 0;
-					width: 100%;
-				}
+	// 		// 	0% {
+	// 		// 		padding: 0;
+	// 		// 		width: 100%;
+	// 		// 	}
 
-				10% {
-					padding: 75px 50px;
-					width: calc(~'100% - 250px');
-				}
+	// 		// 	10% {
+	// 		// 		padding: 75px 50px;
+	// 		// 		width: calc(~'100% - 250px');
+	// 		// 	}
 
-				100% {
-					padding: 75px 50px;
-					width: calc(~'100% - 250px');
-				}
-			}
+	// 		// 	100% {
+	// 		// 		padding: 75px 50px;
+	// 		// 		width: calc(~'100% - 250px');
+	// 		// 	}
+	// 		// }
 
-			&.sub-to-page{
-				animation: subToPage .5s ease-in-out forwards;
-				padding: 75px 50px;
-				position: relative;
-				width: calc(~'100% - 250px');
-				z-index: 4;
+	// 		&.sub-to-page{
+	// 			//animation: subToPage .5s ease-in-out forwards;
+	// 			padding: 75px 50px;
+	// 			position: relative;
+	// 			width: calc(~'100% - 250px');
+	// 			z-index: 4;
 
-				&.ng-enter{
-					top: 0;
-				}
+	// 			&.ng-enter{
+	// 				top: 0;
+	// 			}
 
-				&.ng-leave{
-					padding: 0 !important;
-					position: absolute; top: 0; right: 0;
-					width: 100% !important;
-					z-index: 5;
-				}
+	// 			&.ng-leave{
+	// 				padding: 0 !important;
+	// 				position: absolute; top: 0; right: 0;
+	// 				width: 100% !important;
+	// 				z-index: 5;
+	// 			}
 
-				&.ng-leave.ng-leave-active{
-					top: 100%;
-				}
-			}
+	// 			&.ng-leave.ng-leave-active{
+	// 				top: 100%;
+	// 			}
+	// 		}
 
-			@keyframes pageToSub {
+	// 		// @keyframes pageToSub {
 
-				0% {
-					padding: 75px 50px;
-					width: calc(~'100% - 250px');
-				}
+	// 		// 	0% {
+	// 		// 		padding: 75px 50px;
+	// 		// 		width: calc(~'100% - 250px');
+	// 		// 	}
 
-				99% {
-					padding: 75px 50px;
-					width: calc(~'100% - 250px');
-				}
+	// 		// 	99% {
+	// 		// 		padding: 75px 50px;
+	// 		// 		width: calc(~'100% - 250px');
+	// 		// 	}
 
-				100% {
-					padding: 0;
-					width: 100%;
-				}
-			}
+	// 		// 	100% {
+	// 		// 		padding: 0;
+	// 		// 		width: 100%;
+	// 		// 	}
+	// 		// }
 
-			&.page-to-sub{
-				animation: pageToSub .5s ease-in-out forwards;
-				position: relative;
-				z-index: 4;
+	// 		&.page-to-sub{
+	// 			//animation: pageToSub .5s ease-in-out forwards;
+	// 			position: relative;
+	// 			z-index: 4;
 
-				&.ng-enter{
-					padding: 0 !important;
-					position: absolute; top: 100%; right: 0;
-					width: 100% !important;
-					z-index: 5;
-				}
+	// 			&.ng-enter{
+	// 				padding: 0 !important;
+	// 				position: absolute; top: 100%; right: 0;
+	// 				width: 100% !important;
+	// 				z-index: 5;
+	// 			}
 
-				&.ng-enter.ng-enter-active{
-					top: 0;
-					padding: 0;
-					width: 100%;
-					z-index: 5;
-				}
-			}
-		}
-	}
+	// 			&.ng-enter.ng-enter-active{
+	// 				top: 0;
+	// 				padding: 0;
+	// 				width: 100%;
+	// 				z-index: 5;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
-	@media (min-width: 1025px){
-		&.animation{
-			&.page{
-				&.ng-enter, &.ng-leave{
-					width: calc(~'100% - 300px');
-				}
-			}
+	// @media (min-width: 1025px){
+	// 	&.animation{
+	// 		&.page{
+	// 			&.ng-enter, &.ng-leave{
+	// 				width: calc(~'100% - 300px');
+	// 			}
+	// 		}
 
-			@keyframes subToPage {
+	// 		// @keyframes subToPage {
 
-				0% {
-					padding: 0;
-					width: 100%;
-				}
+	// 		// 	0% {
+	// 		// 		padding: 0;
+	// 		// 		width: 100%;
+	// 		// 	}
 
-				10% {
-					padding: 75px 100px;
-					width: calc(~'100% - 300px');
-				}
+	// 		// 	10% {
+	// 		// 		padding: 75px 100px;
+	// 		// 		width: calc(~'100% - 300px');
+	// 		// 	}
 
-				100% {
-					padding: 75px 100px;
-					width: calc(~'100% - 300px');
-				}
-			}
+	// 		// 	100% {
+	// 		// 		padding: 75px 100px;
+	// 		// 		width: calc(~'100% - 300px');
+	// 		// 	}
+	// 		// }
 
-			&.sub-to-page{
-				padding: 75px 100px;
-				width: calc(~'100% - 300px');
-			}
+	// 		&.sub-to-page{
+	// 			padding: 75px 100px;
+	// 			width: calc(~'100% - 300px');
+	// 		}
 
-			@keyframes pageToSub {
+	// 		// @keyframes pageToSub {
 
-				0% {
-					padding: 75px 100px;
-					width: calc(~'100% - 300px');
-				}
+	// 		// 	0% {
+	// 		// 		padding: 75px 100px;
+	// 		// 		width: calc(~'100% - 300px');
+	// 		// 	}
 
-				99% {
-					padding: 75px 100px;
-					width: calc(~'100% - 300px');
-				}
+	// 		// 	99% {
+	// 		// 		padding: 75px 100px;
+	// 		// 		width: calc(~'100% - 300px');
+	// 		// 	}
 
-				100% {
-					padding: 0;
-					width: 100%;
-				}
-			}
-		}	
-	}
+	// 		// 	100% {
+	// 		// 		padding: 0;
+	// 		// 		width: 100%;
+	// 		// 	}
+	// 		// }
+	// 	}	
+	// }
 }
 /* ========================================================== */
 /* 				 		END PRIMARY STYLES               	  */
@@ -369,6 +377,7 @@ header{
 
 		.avatar{
 			width: 200px; height: 200px;
+			background-color: white;
 			background-image: url('/assets/img/cinemagraph.gif');
             background-repeat: no-repeat;
             background-position: center center;
@@ -376,14 +385,14 @@ header{
             border: 5px solid white;
 			border-radius: 50%;
 			margin: auto;
-			transition: all .5s ease-in-out;
+			//transition: all .5s ease-in-out;
 
 			@media (min-width: 768px){
 				width: 300px; height: 300px;
 			}
 
 			@media (min-width: 992px){
-				transition: width .75s ease-in, height .75s ease-in;
+				//transition: width .75s ease-in, height .75s ease-in;
 			}
 		}
 	}
@@ -392,7 +401,7 @@ header{
 		color: @dark-text-primary;
 		margin-bottom: 30px;
 		text-align: center;
-		transition: all .75s ease-in;
+		//transition: all .75s ease-in;
 
 		@media (orientation: landscape){
 			margin-bottom: 20px;
@@ -411,7 +420,7 @@ header{
 		margin: auto;
 		overflow: hidden;
 		width: 300px;
-		transition: width 0s ease-in .25s;
+		//transition: width 0s ease-in .25s;
 
 		@media (min-width: 768px){
 			width: 425px;
@@ -491,10 +500,11 @@ header.shrink{
 	border-bottom: 1px solid @border;
 	box-shadow: 0px 2px 4px @border;
 	padding: 0 30px;
-	width: 100%; height: 52px;
+	width: 100%;
+	//height: 52px;
 
 	@media (min-width: 768px){
-		height: 64px;
+		//height: 64px;
 		padding: 0 50px;
 	}
 
@@ -513,8 +523,8 @@ header.shrink{
 	}
 
 	.logo, hr, .hamburger{
-		opacity: 1;
-		transition: opacity .3s ease-in-out .3s;
+		//opacity: 1;
+		//transition: opacity .3s ease-in-out .3s;
 	}
 
 	hr{
@@ -539,7 +549,7 @@ header.shrink{
 			font-weight: 400;
 			text-align: center;
 			width: 100%;
-			transition: opacity .15s ease-out .6s;
+			//transition: opacity .15s ease-out .6s;
 		}
 
 		&:hover, &:focus{
@@ -624,32 +634,32 @@ header.shrink{
 		}
 
 		.avatar{
-			border: none;
-			width: 0px; height: 0px;
-			transition: width .5s ease-out, height .5s ease-out;
+			//border: none;
+			//width: 0px; height: 0px;
+			//transition: width .5s ease-out, height .5s ease-out;
 
 			@media (min-width: 992px){
-				border: 5px solid white;
-				width: 175px; height: 175px;
-				transition: width .75s ease-out, height .75s ease-out;
+				//border: 5px solid white;
+				//width: 175px; height: 175px;
+				//transition: width .75s ease-out, height .75s ease-out;
 			}
 
 			@media (min-width: 1025px){
-				width: 200px; height: 200px;
+				//width: 200px; height: 200px;
 			}
 		}
 	}
 
-	.name{
-		opacity: 0;
+	// .name{
+	// 	opacity: 0;
 
-		@media (min-width: 992px){
-			font-size: 0;
-			height: 0;
-			margin-bottom: 0;
-			transition: all .5s ease-out;
-		}
-	}
+	// 	@media (min-width: 992px){
+	// 		font-size: 0;
+	// 		height: 0;
+	// 		margin-bottom: 0;
+	// 		transition: all .5s ease-out;
+	// 	}
+	// }
 
 	.menu{
 		box-shadow: 0px 2px 5px @text-hint;
@@ -658,11 +668,11 @@ header.shrink{
 		overflow: hidden;
 		text-align: left;
 		width: auto;
-		transition: width 0s;
+		//transition: width 0s;
 
 		@media (max-width: 991px){
 			position: absolute; top: 52px; left: 0; right: 0;
-			transition: max-height .3s ease-in-out;
+			//transition: max-height .3s ease-in-out;
 			z-index: 10;
 		}
 		
@@ -684,7 +694,7 @@ header.shrink{
 				border-bottom: 1px solid @border;
 				color: @dark-text-primary;
 				display: block;
-				font-size: 16px;
+				//font-size: 16px;
 				padding: 12px 16px 12px 0;
 				text-decoration: none;
 				width: 100%;
@@ -704,17 +714,17 @@ header.shrink{
 			width: 249px;
 			
 			&.enable li a{
-				transition: background-position .3s ease-out, color .3s ease-out;
+				////transition: background-position .3s ease-out, color .3s ease-out;
 
 				&::before{
 					width: 5px;
-					transition: width .2s ease-in .3s;
+					//transition: width .2s ease-in .3s;
 				}
 
 				&.current{
 					background-position: 300px 0;
 					color: @primary-dark;
-					transition: background-position .3s ease-in, color .3s ease-in;
+					//transition: background-position .3s ease-in, color .3s ease-in;
 
 					&::before{
 						left: 0;
@@ -768,35 +778,6 @@ header.shrink{
 		}
 	}
 }
-
-// header.sub{
-// 	width: 50px;
-
-// 	.logo .hidden{
-// 		display: none;
-// 	}
-
-// 	.avatar-container{
-// 		visibility: hidden;
-// 	}
-
-// 	.menu{
-// 		width: 50px;
-
-// 		li{
-// 			a{
-// 				i{
-// 					width: 50px;
-// 					margin: 0;
-// 				}
-
-// 				span{
-// 					display: none;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 /* ========================================================== */
 /* 						    END HEADER                        */
 /* ========================================================== */
