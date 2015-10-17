@@ -273,7 +273,7 @@ angular.module('personal_website', [
     if (width > 992) {
         return {
             enter: function (el, done) {
-                TweenLite.fromTo(el, .75, {yPercent: 100}, {yPercent: 0, onComplete: done});
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
 
             },
             leave: function (el, done) {
