@@ -21,13 +21,8 @@ angular.module('personal_website', [
         .otherwise( {redirectTo: '/'} );
 }])
 
-.controller('MainController', ['$rootScope', '$scope', '$location', '$animate', '$timeout', '$route',
-    function($rootScope, $scope, $location, $animate, $timeout, $route) {
-    
-        // screen width
-        var html   = document.getElementsByTagName('html')[0],
-            width  = html.offsetWidth,
-            height = html.offsetHeight;
+.controller('MainController', ['$rootScope', '$scope', '$location', '$window', '$animate', '$timeout', '$route',
+    function($rootScope, $scope, $location, $window, $animate, $timeout, $route) {
 
         $scope.menu_open = false;
 
@@ -56,42 +51,12 @@ angular.module('personal_website', [
                 
                 $rootScope.page_name = 'Home';
                 $scope.current = '';
-                //$animate.enabled(false);
                 //angular.element(document.querySelector('.menu')).removeClass('enable');
 
                 // Animation from page to home
                 if (current && current.type == 'page') {
-
-                    if (width < 768) {
-                        TweenLite.to('.header', .5, {height: height});
-                        TweenLite.set('.logo', {display: 'none'});
-                        TweenLite.set('.hamburger', {display: 'none'});
-                        TweenLite.set('.avatar-container', {display: 'block'});
-                        TweenLite.to('.avatar', .5, {width: 200, height: 200});
-                        TweenLite.to('.name', .5, {fontSize: 30, display: 'block'});
-                    }
-                    else if (width < 992) {
-                        TweenLite.to('.header', .5, {height: height});
-                        TweenLite.set('.logo', {display: 'none'});
-                        TweenLite.set('.hamburger', {display: 'none'});
-                        TweenLite.set('.avatar-container', {display: 'block'});
-                        TweenLite.to('.avatar', .5, {width: 300, height: 300});
-                        TweenLite.to('.name', .5, {fontSize: 42, display: 'block'});
-                    }
-                    else if (width < 1025) {
-                        TweenLite.to('.header', .75, {width: width});
-                        TweenLite.set('.logo', {autoAlpha: 0});
-                        TweenLite.to('.avatar', .75, {width: 300, height: 300});
-                        TweenLite.to('.name', .75, {fontSize: 46, display: 'block'});
-                        TweenLite.to('.menu li a', .75, {fontSize: 20}); 
-                    }
-                    else {
-                        TweenLite.to('.header', .75, {width: width});
-                        TweenLite.set('.logo', {autoAlpha: 0});
-                        TweenLite.to('.avatar', .75, {width: 300, height: 300});
-                        TweenLite.to('.name', .75, {fontSize: 46, display: 'block'});
-                        TweenLite.to('.menu li a', .75, {fontSize: 20});   
-                    }
+                    TweenLite.to('.header', .75, {className: '-=shrink'});
+                    TweenLite.set('.menu', {className: '-=enable'});
                 }
             }
             // Path is a page or sub page
@@ -106,48 +71,12 @@ angular.module('personal_website', [
                     $scope.current = url_array[0];
                     $scope.page_url = '/views/' + url_array[0] + '/' + url_array[0] + '.html';
 
-                    // Animation
                     if (current) {
                         // From home to page
                         if (!current.type) {
 
-                            if (width < 768) {
-                                TweenLite.to('.header', .5, {height: 52});
-                                TweenLite.to('.logo', .1, {display: 'block', autoAlpha: 1, delay: .4});
-                                TweenLite.set('.logo .hidden', {display: 'none'});
-                                TweenLite.to('.hamburger', .1, {display: 'block', autoAlpha: 1, delay: .4});
-                                TweenLite.to('.avatar-container', 0, {display: 'none', delay: .5})
-                                TweenLite.to('.avatar', .5, {width: 0, height: 0});
-                                TweenLite.to('.name', .5, {fontSize: 0, display: 'none'});
-                            }
-                            else if (width < 992) {
-                                TweenLite.to('.header', .5, {height: 64});
-                                TweenLite.to('.logo', .1, {display: 'block', autoAlpha: 1, delay: .4});
-                                TweenLite.set('.logo .hidden', {display: 'none'});
-                                TweenLite.to('.hamburger', .1, {display: 'block', autoAlpha: 1, delay: .4});
-                                TweenLite.to('.avatar-container', 0, {display: 'none', delay: .5})
-                                TweenLite.to('.avatar', .5, {width: 0, height: 0});
-                                TweenLite.to('.name', .5, {fontSize: 0, display: 'none'});
-
-                            }
-                            else if (width < 1025) {
-                                TweenLite.to('.header', .75, {width: 250});
-                                TweenLite.to('.logo', .15, {autoAlpha: 1, delay: .6});
-                                TweenLite.to('.avatar', .75, {width: 175, height: 175});
-                                TweenLite.to('.name', .3, {fontSize: 0, display: 'none'});
-                                TweenLite.to('.menu li a', .75, {fontSize: 16});
-                            }
-                            else {
-                                TweenLite.to('.header', .75, {width: 300});
-                                TweenLite.to('.logo', .15, {autoAlpha: 1, delay: .6});
-                                TweenLite.to('.avatar', .75, {width: 200, height: 200});
-                                TweenLite.to('.name', .3, {fontSize: 0, display: 'none'});
-                                TweenLite.to('.menu li a', .75, {fontSize: 16});
-                            }
-                            
-                            // Disable then enable animation - prevents page enter animation
-                            $animate.enabled(false);
-                            $timeout(function () {$animate.enabled(true)},100);
+                            TweenLite.to('.header', .75, {className: '+=shrink'});
+                            TweenLite.set('.menu', {className: '+=enable', delay: .6});
                         }
                         // From page to page
                         else if (current.type == 'page') {
@@ -160,42 +89,8 @@ angular.module('personal_website', [
                     }
                     // Page on load
                     else {
-                        if (width < 768) {
-                            TweenLite.set('.header', {height: 52});
-                            TweenLite.set('.logo', {display: 'block', autoAlpha: 1});
-                            TweenLite.set('.logo .hidden', {display: 'none'});
-                            TweenLite.set('.hamburger', {display: 'block', autoAlpha: 1});
-                            TweenLite.set('.avatar-container', {display: 'none'});
-                            TweenLite.set('.avatar', {width: 0, height: 0});
-                            TweenLite.set('.name', {fontSize: 0, display: 'none'});
-                        }
-                        else if (width < 992) {
-                            TweenLite.set('.header', {height: 64});
-                            TweenLite.set('.logo', {display: 'block', autoAlpha: 1});
-                            TweenLite.set('.logo .hidden', {display: 'none'});
-                            TweenLite.set('.hamburger', {display: 'block', autoAlpha: 1});
-                            TweenLite.set('.avatar-container', {display: 'none'});
-                            TweenLite.set('.avatar', {width: 0, height: 0});
-                            TweenLite.set('.name', {fontSize: 0, display: 'none'});
-                        }
-                        else if (width < 1025) {
-                            TweenLite.set('.header', {width: 250});
-                            TweenLite.set('.logo', {opacity: 1});
-                            TweenLite.set('.avatar', {width: 175, height: 175});
-                            TweenLite.set('.name', {display: 'none'});
-                            TweenLite.set('.menu li a', {fontSize: 16});
-                        }
-                        else {
-                            TweenLite.set('.header', {width: 300});
-                            TweenLite.set('.logo', {opacity: 1});
-                            TweenLite.set('.avatar', {width: 200, height: 200});
-                            TweenLite.set('.name', {display: 'none'});
-                            TweenLite.set('.menu li a', {fontSize: 16});
-                        }
-                        
-                        // Disable then enable animation - prevents animation on load
-                        $animate.enabled(false);
-                        $timeout(function () {$animate.enabled(true)},100);
+                        TweenLite.set('.header', {className: '+=shrink'});
+                        TweenLite.set('.menu', {className: '+=enable', delay: .25});
                     } 
                 }
                 // Path is sub page
@@ -210,41 +105,23 @@ angular.module('personal_website', [
 
                     $rootScope.page_name = page_name + '| ' + capitalizeFirstLetter(url_array[0]);
                     $scope.current = url_array[0];
+                    $scope.sub = true;
                     $scope.page_url = '/views/' + url_array[0] + '/sub/' + url_array[1] + '.html';
 
-                    // Animation
                     if (current) {
                         if (current.type == 'page') {
+                            $scope.sub = false;
                             $scope.page_to_sub = true;
                         }
-                        else if (current.type == 'sub') {
-
-                        }
-                    }
-                    else {
-
                     }
                 }
 
-                $timeout(enableTransitions, 600);
+                //$timeout(enableTransitions, 600);
             }
         });
 
-        function enableTransitions () {
-            angular.element(document.querySelector('.menu')).addClass('enable');
-        }
-        
-        // if (width < 768) {
-
-        // }
-        // else if (width < 992) {
-
-        // }
-        // else if (width < 1025) {
-
-        // }
-        // else {
-            
+        // function enableTransitions () {
+        //     angular.element(document.querySelector('.menu')).addClass('enable');
         // }
 
         function capitalizeFirstLetter (input) {
@@ -266,53 +143,56 @@ angular.module('personal_website', [
         }
 }])
 
-.animation('.page', [ function () {
+.animation('.page', ['$window', function ($window) {
+    return {
+        enter: function (el, done) {
+            if ($window.innerWidth > 992) {
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0});
+            }
+            done();
 
-    var html = document.getElementsByTagName('html')[0], width = html.offsetWidth;
-
-    if (width > 992) {
-        return {
-            enter: function (el, done) {
-                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
-
-            },
-            leave: function (el, done) {
+        },
+        leave: function (el, done) {
+            if ($window.innerWidth > 992) {
                 TweenLite.to(el, .5, {yPercent: -100});
             }
+            done();
         }
     }
 }])
-.animation('.page-to-sub', [ function () {
-
-    var html = document.getElementsByTagName('html')[0], width = html.offsetWidth;
-
-    if (width > 992) {
-        return {
-            enter: function (el, done) {
-                TweenLite.set(el, {width: width, padding: 0, position: 'relative', zIndex: 4});
-                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
-
-            },
-            leave: function (el, done) {
-                TweenLite.set(el, {width: (width - 300), padding: '75px 100px', position: 'absolute', right: 0, zIndex: 0, onComplete: done});
+.animation('.page-to-sub', ['$window', function ($window) {
+    return {
+        enter: function (el, done) {
+            if ($window.innerWidth > 992) {
+                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0});
             }
+            done();
+
+        },
+        leave: function (el, done) {
+            if ($window.innerWidth > 992) {
+                TweenLite.set(el, {width: ($window.innerWidth - 300), padding: '75px 100px', position: 'absolute', right: 0, zIndex: 0});
+            }
+            done();
         }
     }
 }])
-.animation('.sub-to-page', [ function () {
+.animation('.sub-to-page', ['$window', function ($window) {
+    return {
+        // enter: function (el, done) {
+        //     if ($window.innerWidth > 992) {
+        //         TweenLite.fromTo(el, .5, {yPercent: 0}, {yPercent: 0});
+        //     }
+        //     done();
 
-    var html = document.getElementsByTagName('html')[0], width = html.offsetWidth;
-
-    if (width > 992) {
-        return {
-            enter: function (el, done) {
-                TweenLite.fromTo(el, .5, {yPercent: 0}, {yPercent: 0, onComplete: done});
-
-            },
-            leave: function (el, done) {
-                TweenLite.set(el, {width: width, padding: 0, position: 'relative', zIndex: 4});
-                TweenLite.to(el, .5, {yPercent: 100, onComplete: done});
+        // },
+        leave: function (el, done) {
+            if ($window.innerWidth > 992) {
+                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+                TweenLite.to(el, .5, {yPercent: 100});
             }
+            done();
         }
     }
 }]);
