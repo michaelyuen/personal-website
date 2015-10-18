@@ -122,19 +122,20 @@ ul{
 .view-container{
 	clear: left;
 	display: block;
-	height: 100%;
+	height: calc(~'100% - 52px');
 	overflow-y: scroll;
-	padding: 102px 30px 30px 30px;
+	padding: 50px 30px 30px 30px;
 	-webkit-overflow-scrolling: touch;
-	z-index: 0;
 
 	@media (min-width: 768px){
-		padding: 114px 50px 50px 50px;
+		height: calc(~'100% - 64px');
+		padding: 50px;
 	}
 
 	@media (min-width: 992px){
 		clear: none;
 		float: right;
+		height: 100%;
 		padding: 75px 50px;
 		position: absolute; right: 0;
 		width: calc(~'100% - 250px'); height: 100%;
@@ -163,10 +164,13 @@ ul{
 /* Initial welcome screen - covers full screen */
 header{
 	background: @primary;
-	position: absolute; top: 0; left: 0;
-	//transition: width .75s ease-in-out, height .5s ease-in-out;
+	position: relative;
 	width: 100%; height: 100%;
 	z-index: 3;
+
+	@media (min-width: 992px){
+		position: absolute; top: 0; left: 0;
+	}
 
 	.logo, hr, .hamburger{
 		opacity: 0;
@@ -604,6 +608,15 @@ header.shrink{
 		@media (min-width: 1025px){
 			width: 299px;
 		}
+	}
+}
+
+@media (max-width: 991px){
+	header.sub{
+		background-image: linear-gradient(to bottom, @primary 50%, @logoji-dark 50%);
+		background-size: 100% 200%;
+		background-position: 0 -100%;
+		border-bottom: @border;
 	}
 }
 /* ========================================================== */
@@ -1098,7 +1111,8 @@ header.shrink{
     			.header{
     				background: @logoji;
     				color: @dark-text-primary;
-    				margin: -50px -30px 0;
+    				//margin: -50px -30px 0;
+    				margin: 0;
     				padding: 50px 0;
     				text-align: center;
 

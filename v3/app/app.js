@@ -58,6 +58,9 @@ angular.module('personal_website', [
                     TweenLite.to('.header', .75, {className: '-=shrink'});
                     TweenLite.set('.menu', {className: '-=enable'});
                 }
+                else {
+                    TweenLite.set('.header', {className: 'header'});
+                }
             }
             // Path is a page or sub page
             else {
@@ -85,6 +88,7 @@ angular.module('personal_website', [
                         // From sub to page
                         else if (current.type == 'sub'){
                             $scope.sub_to_page = true;
+                            TweenLite.set('.menu', {className: '+=enable', delay: .6});
                         }
                     }
                     // Page on load
@@ -113,16 +117,18 @@ angular.module('personal_website', [
                             $scope.sub = false;
                             $scope.page_to_sub = true;
                         }
+                        else{
+                            TweenLite.set('header', {className: '+=shrink'});
+                            TweenLite.set('header', {className: '+=sub'});
+                        }
+                    }
+                    else{
+                        TweenLite.set('header', {className: '+=shrink'});
+                        TweenLite.set('header', {className: '+=sub'});
                     }
                 }
-
-                //$timeout(enableTransitions, 600);
             }
         });
-
-        // function enableTransitions () {
-        //     angular.element(document.querySelector('.menu')).addClass('enable');
-        // }
 
         function capitalizeFirstLetter (input) {
 
@@ -147,52 +153,63 @@ angular.module('personal_website', [
     return {
         enter: function (el, done) {
             if ($window.innerWidth > 992) {
-                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0});
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
             }
-            done();
-
+            else{
+                done();
+            }
         },
         leave: function (el, done) {
             if ($window.innerWidth > 992) {
-                TweenLite.to(el, .5, {yPercent: -100});
+                TweenLite.to(el, .5, {yPercent: -100, onComplete: done});
             }
-            done();
+            else{
+                done();
+            }
         }
     }
 }])
-.animation('.page-to-sub', ['$window', function ($window) {
+.animation('.page-to-sub', ['$window', '$timeout', function ($window, $timeout) {
     return {
         enter: function (el, done) {
-            if ($window.innerWidth > 992) {
-                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
-                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0});
+            if ($window.innerWidth < 992) {
+                TweenLite.set('.header', {className: '+=sub'});
             }
-            done();
-
+            TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+            TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
         },
         leave: function (el, done) {
-            if ($window.innerWidth > 992) {
-                TweenLite.set(el, {width: ($window.innerWidth - 300), padding: '75px 100px', position: 'absolute', right: 0, zIndex: 0});
+            if ($window.innerWidth < 991) {
+                TweenLite.set(el, {position: 'absolute', top: 52, zIndex: 0});
+                TweenLite.set(el, {delay: .5, onComplete: done});
             }
-            done();
+            else if ($window.innerWidth > 992) {
+                TweenLite.set(el, {delay: .5, onComplete: done});
+            }
+            else {
+                done();
+            }
         }
     }
 }])
 .animation('.sub-to-page', ['$window', function ($window) {
     return {
-        // enter: function (el, done) {
-        //     if ($window.innerWidth > 992) {
-        //         TweenLite.fromTo(el, .5, {yPercent: 0}, {yPercent: 0});
-        //     }
-        //     done();
-
-        // },
         leave: function (el, done) {
-            if ($window.innerWidth > 992) {
-                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
-                TweenLite.to(el, .5, {yPercent: 100});
+            if ($window.innerWidth < 767) {
+                TweenLite.fromTo(el, .5, {position: 'absolute', top: 52}, {yPercent: 100, onComplete: done});
+                TweenLite.set('.header', {className: '-=sub'});
             }
-            done();
+            else if ($window.innerWidth < 991) {
+                TweenLite.fromTo(el, .5, {position: 'absolute', top: 64}, {yPercent: 100, onComplete: done});
+                TweenLite.set('.header', {className: '-=sub'});
+            }
+            else if ($window.innerWidth > 992) {
+                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+                TweenLite.to(el, .5, {yPercent: 100, onComplete: done});
+            }
+            else{
+                done();
+            }
         }
     }
 }]);
