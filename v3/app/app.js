@@ -51,15 +51,14 @@ angular.module('personal_website', [
                 
                 $rootScope.page_name = 'Home';
                 $scope.current = '';
-                //angular.element(document.querySelector('.menu')).removeClass('enable');
 
                 // Animation from page to home
                 if (current && current.type == 'page') {
                     TweenLite.to('.header', .75, {className: '-=shrink'});
                     TweenLite.set('.menu', {className: '-=enable'});
                 }
-                else {
-                    TweenLite.set('.header', {className: 'header'});
+                else{
+                    TweenLite.to('.header', .75, {className: 'header'});
                 }
             }
             // Path is a page or sub page
@@ -118,13 +117,11 @@ angular.module('personal_website', [
                             $scope.page_to_sub = true;
                         }
                         else{
-                            TweenLite.set('header', {className: '+=shrink'});
-                            TweenLite.set('header', {className: '+=sub'});
+                            TweenLite.to('header', .75, {className: '+=shrink'});
                         }
                     }
                     else{
                         TweenLite.set('header', {className: '+=shrink'});
-                        TweenLite.set('header', {className: '+=sub'});
                     }
                 }
             }
@@ -152,7 +149,10 @@ angular.module('personal_website', [
 .animation('.page', ['$window', function ($window) {
     return {
         enter: function (el, done) {
-            if ($window.innerWidth > 992) {
+            if ($window.innerWidth > 992 && $window.innerWidth <= 1024) {
+                TweenLite.fromTo(el, .3, {autoAlpha: 0}, {autoAlpha: 1, delay: .3, onComplete: done});
+            }
+            else if ($window.innerWidth > 1024) {
                 TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
             }
             else{
@@ -160,7 +160,10 @@ angular.module('personal_website', [
             }
         },
         leave: function (el, done) {
-            if ($window.innerWidth > 992) {
+            if ($window.innerWidth > 992 && $window.innerWidth <= 1024) {
+                TweenLite.to(el, .3, {autoAlpha: 0, onComplete: done});
+            }
+            else if ($window.innerWidth > 1024) {
                 TweenLite.to(el, .5, {yPercent: -100, onComplete: done});
             }
             else{
@@ -172,16 +175,20 @@ angular.module('personal_website', [
 .animation('.page-to-sub', ['$window', '$timeout', function ($window, $timeout) {
     return {
         enter: function (el, done) {
-            if ($window.innerWidth < 992) {
-                TweenLite.set('.header', {className: '+=sub'});
+            if ($window.innerWidth < 991){
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.fromTo(el, .7, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
             }
-            TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
-            TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
+            else if ($window.innerWidth > 992){
+                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
+            }
+            
         },
         leave: function (el, done) {
             if ($window.innerWidth < 991) {
-                TweenLite.set(el, {position: 'absolute', top: 52, zIndex: 0});
-                TweenLite.set(el, {delay: .5, onComplete: done});
+                TweenLite.set(el, {position: 'absolute', top: 0, zIndex: 0});
+                TweenLite.set(el, {delay: .7, onComplete: done});
             }
             else if ($window.innerWidth > 992) {
                 TweenLite.set(el, {delay: .5, onComplete: done});
@@ -195,17 +202,13 @@ angular.module('personal_website', [
 .animation('.sub-to-page', ['$window', function ($window) {
     return {
         leave: function (el, done) {
-            if ($window.innerWidth < 767) {
-                TweenLite.fromTo(el, .5, {position: 'absolute', top: 52}, {yPercent: 100, onComplete: done});
-                TweenLite.set('.header', {className: '-=sub'});
-            }
-            else if ($window.innerWidth < 991) {
-                TweenLite.fromTo(el, .5, {position: 'absolute', top: 64}, {yPercent: 100, onComplete: done});
-                TweenLite.set('.header', {className: '-=sub'});
+            if ($window.innerWidth < 991) {
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.fromTo(el, .7, {position: 'absolute', top: 0}, {yPercent: 100, delay: .3, onComplete: done});
             }
             else if ($window.innerWidth > 992) {
-                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
-                TweenLite.to(el, .5, {yPercent: 100, onComplete: done});
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.to(el, .7, {yPercent: 100, delay: .3, onComplete: done});
             }
             else{
                 done();
