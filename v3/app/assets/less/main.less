@@ -1099,30 +1099,92 @@ header.shrink{
     		&.sub{
     			background: white;
 
+    			&.logoji .header{
+					background: @logoji;
+    			}
+
+    			&.printaire .header{
+    				background: @printaire;
+    			}
+
+    			&.animalfax .header{
+    				background: @animalfax;
+    			}
+
+    			&.spur .header{
+    				background: @spur;
+    			}
+
     			.header{
-    				background: @logoji;
     				color: @dark-text-primary;
-    				margin: -50px -30px 0;
+    				margin: -50px -30px 50px;
     				padding: 50px 0;
     				text-align: center;
 
     				@media (min-width: 768px){
-    					margin: -50px -50px 0;
+    					margin: -50px -50px 50px;
+    					padding: 75px 50px;
     				}
 
     				@media (min-width: 992px){
     					margin: 0;
+    					margin-bottom: 50px;
     					padding: 78px 0;
+    				}
+
+    				.emphasis{
+    					margin-bottom: 25px;
+
+    					@media (min-width: 768px){
+    						margin-bottom: 35px;
+    					}
     				}
 
     				.tagline{
     					font-weight: 300;
+    					margin-bottom: 0;
+    					padding: 0 50px;
+
+    					@media (min-width: 768px){
+    						padding: 0;
+    					}
     				}
     			}
 
     			.beta{
     				@media (min-width: 992px){
+    					padding: 0 175px;
+    				}
+    				@media (min-width: 1025px){
     					padding: 0 300px;
+    				}
+
+    				&.project{
+    					padding-bottom: 100px;
+
+    					@media (min-width: 500px){
+    						padding-bottom: 160px;
+    					}
+
+    					@media (min-width: 768px){
+    						padding-bottom: 200px;
+    					}
+
+    					.mobile-container{
+
+    						.browser{
+    							margin-right: 7%;
+    						}
+
+    						.phone{
+    							@media (min-width: 500px){
+    								display: block;
+    								position: absolute; top: 25px; right: 0;
+    								width: 33%;
+    								z-index: 2;
+    							}
+    						}
+    					}
     				}
     			}
     		}
