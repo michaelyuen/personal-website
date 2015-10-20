@@ -2,21 +2,28 @@
 
 angular.module('personal_website', [
     'ngRoute',
-    'ngAnimate',
-    'angulartics',
-    'angulartics.google.analytics'
+    'ngAnimate'
+    //'angulartics',
+    //'angulartics.google.analytics'
 ])
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    //$locationProvider.html5Mode(true).hashPrefix('!');
     
-    $routeProvider.when('/:page_name?', { controller: 'MainController' });
+    //$routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
+    $routeProvider
+        .when('/',              { controller: 'MainController' })
+        .when('/about',         { controller: 'MainController', type: 'page' })
+        .when('/work',          { controller: 'MainController', type: 'page' })
+        .when('/work/:project', { controller: 'MainController', type: 'sub' })
+        .when('/contact',       { controller: 'MainController', type: 'page' })
+        .otherwise( {redirectTo: '/'} );
 }])
 
-.controller('MainController', ['$rootScope', '$scope', '$location', '$animate', '$timeout', '$route',
-    function($rootScope, $scope, $location, $animate, $timeout, $route) {
-    
+.controller('MainController', ['$rootScope', '$scope', '$location', '$window', '$animate', '$timeout', '$route',
+    function($rootScope, $scope, $location, $window, $animate, $timeout, $route) {
+
         $scope.menu_open = false;
 
         $scope.toggleMenu = function () {
@@ -27,28 +34,185 @@ angular.module('personal_website', [
             $scope.menu_open = false;
         }
 
+        $scope.click = function () {
+            $scope.clicked = true;
+        }
+
         $scope.$on('$routeChangeStart', function (event, next, current) {
 
-            if (next.params.page_name) {
+            var url = $location.path().substr(1);
+            $scope.page        = false;
+            $scope.sub         = false;
+            $scope.sub_to_page = false;
+            $scope.page_to_sub = false;
 
-                if (next.params.page_name == 'about' || next.params.page_name == 'work' || next.params.page_name == 'contact') {
-                    $rootScope.page_name = next.params.page_name[0].toUpperCase() + next.params.page_name.slice(1);
-                    $scope.page_url = '/views/' + next.params.page_name + '.html';
-                    $timeout(enableTransitions, 600);
+            // Path is /
+            if (url === '') {
+                
+                $rootScope.page_name = 'Home';
+                $scope.current = '';
+
+                // Animation from page to home
+                if (current && current.type == 'page') {
+                    TweenLite.to('.header', .75, {className: '-=shrink'});
+                    TweenLite.set('.menu', {className: '-=enable'});
                 }
-                else {
-                    $location.url('/');
+                else{
+                    TweenLite.to('.header', .75, {className: 'header'});
                 }
             }
+            // Path is a page or sub page
             else {
-                $rootScope.page_name = 'Home';
-                $animate.enabled(false);
-                angular.element(document.querySelector('.menu')).removeClass('enable');
+
+                var url_array = url.split('/');
+
+                // Path is page
+                if (url_array.length === 1) {
+                    
+                    $rootScope.page_name = capitalizeFirstLetter(url_array[0]);
+                    $scope.current = url_array[0];
+                    $scope.page_url = '/views/' + url_array[0] + '/' + url_array[0] + '.html';
+
+                    if (current) {
+                        // From home to page
+                        if (!current.type) {
+
+                            TweenLite.to('.header', .75, {className: '+=shrink'});
+                            TweenLite.set('.menu', {className: '+=enable', delay: .6});
+                        }
+                        // From page to page
+                        else if (current.type == 'page') {
+                            $scope.page = true;
+                        }
+                        // From sub to page
+                        else if (current.type == 'sub'){
+                            $scope.sub_to_page = true;
+                            TweenLite.set('.menu', {className: '+=enable', delay: .6});
+                        }
+                    }
+                    // Page on load
+                    else {
+                        TweenLite.set('.header', {className: '+=shrink'});
+                        TweenLite.set('.menu', {className: '+=enable', delay: .25});
+                    } 
+                }
+                // Path is sub page
+                else {
+
+                    var page_name = '';
+                    var capitalized_array = capitalizeFirstLetter(url_array[1].split('-'));
+
+                    for (var i=0; i < capitalized_array.length; i++) {
+                        page_name += capitalized_array[i] + ' ';
+                    }
+
+                    $rootScope.page_name = page_name + '| ' + capitalizeFirstLetter(url_array[0]);
+                    $scope.current = url_array[0];
+                    $scope.sub = true;
+                    $scope.page_url = '/views/' + url_array[0] + '/sub/' + url_array[1] + '.html';
+
+                    if (current) {
+                        if (current.type == 'page') {
+                            $scope.sub = false;
+                            $scope.page_to_sub = true;
+                        }
+                        else{
+                            TweenLite.to('header', .75, {className: '+=shrink'});
+                        }
+                    }
+                    else{
+                        TweenLite.set('header', {className: '+=shrink'});
+                    }
+                }
             }
         });
 
-        function enableTransitions () {
-            angular.element(document.querySelector('.menu')).addClass('enable');
-            $animate.enabled(true);
+        function capitalizeFirstLetter (input) {
+
+            if(Array.isArray(input)){
+
+                var new_array = [];
+
+                for(var i=0; i<input.length; i++){
+                    var string = input[i];
+                    new_array[i]   = string[0].toUpperCase() + string.substr(1);
+                }
+
+                return new_array;
+            }
+            else{
+                return input[0].toUpperCase() + input.substr(1);
+            }
         }
+}])
+
+.animation('.page', ['$window', function ($window) {
+    return {
+        enter: function (el, done) {
+            if ($window.innerWidth > 992 && $window.innerWidth <= 1024) {
+                TweenLite.fromTo(el, .3, {autoAlpha: 0}, {autoAlpha: 1, delay: .3, onComplete: done});
+            }
+            else if ($window.innerWidth > 1024) {
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, onComplete: done});
+            }
+            else{
+                done();
+            }
+        },
+        leave: function (el, done) {
+            if ($window.innerWidth > 992 && $window.innerWidth <= 1024) {
+                TweenLite.to(el, .3, {autoAlpha: 0, onComplete: done});
+            }
+            else if ($window.innerWidth > 1024) {
+                TweenLite.to(el, .5, {yPercent: -100, onComplete: done});
+            }
+            else{
+                done();
+            }
+        }
+    }
+}])
+.animation('.page-to-sub', ['$window', '$timeout', function ($window, $timeout) {
+    return {
+        enter: function (el, done) {
+            if ($window.innerWidth < 991){
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.fromTo(el, .7, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
+            }
+            else if ($window.innerWidth > 992){
+                TweenLite.set(el, {width: $window.innerWidth, padding: 0, position: 'relative', zIndex: 4});
+                TweenLite.fromTo(el, .5, {yPercent: 100}, {yPercent: 0, clearProps: 'y', onComplete: done});
+            }
+            
+        },
+        leave: function (el, done) {
+            if ($window.innerWidth < 991) {
+                TweenLite.set(el, {position: 'absolute', top: 0, zIndex: 0});
+                TweenLite.set(el, {delay: .7, onComplete: done});
+            }
+            else if ($window.innerWidth > 992) {
+                TweenLite.set(el, {delay: .5, onComplete: done});
+            }
+            else {
+                done();
+            }
+        }
+    }
+}])
+.animation('.sub-to-page', ['$window', function ($window) {
+    return {
+        leave: function (el, done) {
+            if ($window.innerWidth < 991) {
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.fromTo(el, .7, {position: 'absolute', top: 0}, {yPercent: 100, delay: .3, onComplete: done});
+            }
+            else if ($window.innerWidth > 992) {
+                TweenLite.set(el, {className: '+= sub'});
+                TweenLite.to(el, .7, {yPercent: 100, delay: .3, onComplete: done});
+            }
+            else{
+                done();
+            }
+        }
+    }
 }]);

@@ -80,16 +80,11 @@ ul{
 }
 
 .btn-container{
+	line-height: 62px;
+	text-align: center;
 
 	@media (max-width: 767px){
 		padding: 6px 4px;
-	}
-
-	input[type="submit"], input[type="reset"], input[type="button"], button, .btn{
-		height: 36px;
-		line-height: 24px;
-		min-width: 64px;
-		text-transform: uppercase;
 	}
 
 	.btn{
@@ -97,20 +92,29 @@ ul{
 		border-radius: 2px;
 		color: @dark-text-primary;
 		font-weight: 500;
+		min-width: 64px;
+		padding: 10px 15px;
+		text-transform: uppercase;
+		transition: all .2s ease-in-out;
 
-		&:hover:not(:disabled){
-			background: @primary-dark;
-		}
+		&:not(:disabled){
 
-		&:focus{
-			background: @primary-light;
-			color: @primary;
-			outline: none;
+			&:hover, &:active, &:focus{
+				background: @primary-dark;
+			}
 		}
 
 		&:disabled{
 			cursor: not-allowed;
 			pointer-events: inherit;
+		}
+
+		&.raised{
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+			&:hover, &:active, &:focus{
+				box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
+			}
 		}
 	}
 }
@@ -122,16 +126,16 @@ ul{
 	overflow-y: scroll;
 	padding: 102px 30px 30px 30px;
 	-webkit-overflow-scrolling: touch;
-	z-index: 0;
 
 	@media (min-width: 768px){
-		padding: 114px 50px 50px 50px;
+		padding: 114px 50px 50px;
 	}
 
 	@media (min-width: 992px){
 		clear: none;
 		float: right;
 		padding: 75px 50px;
+		position: absolute; right: 0;
 		width: calc(~'100% - 250px'); height: 100%;
 	}
 
@@ -140,33 +144,15 @@ ul{
 		width: calc(~'100% - 300px');
 	}
 
-	&.animation{
+	&.sub{
+		//padding: 0;
+		position: relative;
+		width: 100%;
+		z-index: 2;
 
 		@media (min-width: 992px){
-
-			&.ng-enter, &.ng-leave{
-
-				float: right;
-				position: absolute; top: 0; right: 0;
-				width: calc(~'100% - 250px');
-				transition: all .5s ease-in-out;
-
-				@media (min-width: 1025px){
-					width: calc(~'100% - 300px');
-				}
-			}
-
-			&.ng-enter{
-				top: 100%;
-			}
-
-			&.ng-enter.ng-enter-active{
-				top: 0;
-			}
-
-			&.ng-leave.ng-leave-active{
-				top: -100%;
-			}
+			padding: 0;
+			z-index: 4;
 		}
 	}
 }
@@ -182,7 +168,6 @@ ul{
 header{
 	background: @primary;
 	position: absolute; top: 0; left: 0;
-	transition: width .75s ease-in, height .5s ease-in-out;
 	width: 100%; height: 100%;
 	z-index: 3;
 
@@ -225,6 +210,7 @@ header{
 
 		.avatar{
 			width: 200px; height: 200px;
+			background-color: white;
 			background-image: url('/assets/img/cinemagraph.gif');
             background-repeat: no-repeat;
             background-position: center center;
@@ -232,7 +218,7 @@ header{
             border: 5px solid white;
 			border-radius: 50%;
 			margin: auto;
-			transition: all .5s ease-in-out;
+			transition: all .5s ease-in;
 
 			@media (min-width: 768px){
 				width: 300px; height: 300px;
@@ -260,6 +246,7 @@ header{
 
 		@media (min-width: 992px){
 			font-weight: 400;
+			transition: all .75s ease-in;
 		}
 	}
 
@@ -348,8 +335,8 @@ header.shrink{
 	box-shadow: 0px 2px 4px @border;
 	overflow: hidden;
 	padding: 0 30px;
-	width: 100%; height: 52px;
-	transition: width .75s ease-out, height .5s ease-in-out;
+	width: 100%;
+	height: 52px;
 
 	@media (min-width: 768px){
 		height: 64px;
@@ -363,7 +350,8 @@ header.shrink{
 		float: left;
 		overflow: inherit;
 		padding: 0;
-		width: 250px; height: 100%;
+		width: 250px;
+		height: 100%;
 	}
 
 	@media (min-width: 1025px){
@@ -448,7 +436,6 @@ header.shrink{
 					@media (min-width: 768px){
 						top: 9px;
 					}
-
 				}
 
 				&:nth-child(2){
@@ -483,7 +470,7 @@ header.shrink{
 
 	.avatar-container{
 		padding: 0;
-		transition: padding .5s ease-out;
+		transition: all .5s ease-out;
 
 		@media (min-width: 992px){
 			display: block;
@@ -509,6 +496,7 @@ header.shrink{
 	}
 
 	.name{
+		font-size: 0;
 		height: 0;
 		margin-bottom: 0;
 		opacity: 0;
@@ -517,33 +505,39 @@ header.shrink{
 
 	.menu{
 		clear: both;
+		max-height: 0px;
+		overflow: hidden;
+		text-align: left;
+		width: auto;
+		transition: width 0s;
 
-		&.enable{
-			margin: 0 -30px;
-			text-align: center;
-			width: auto;
+		@media (max-width: 991px){
+			position: absolute; top: 52px; left: 0; right: 0;
+			transition: max-height .3s ease-in-out;
+			z-index: 10;
+		}
+		
+		@media (min-width: 768px){
+			top: 64px;
+			margin: 0 -50px;
+		}
 
-			@media (min-width: 768px){
-				margin: 0 -50px;
+		li{
+			float: none;
+			padding-right: 0;
+
+			&:first-child{
+				border-top: 1px solid @border;
 			}
 
-			li{
-				float: none;
-				padding-right: 0;
+			a{
+				border-bottom: 1px solid @border;
+				display: block;
+				padding: 30px 0;
 
-				&:first-child{
-					border-top: 1px solid @border;
-				}
-
-				a{
-					border-bottom: 1px solid @border;
-					display: block;
-					padding: 30px 0;
-
-					i{
-						min-width: 16px;
-						margin: 0 16px 0 0;
-					}
+				i{
+					min-width: 16px;
+					margin: 0 16px 0 0;
 				}
 			}
 		}
@@ -584,6 +578,8 @@ header.shrink{
 			}
 
 			li{
+				float: none;
+
 				a{
 					background-image: linear-gradient(to right, transparent 50%, white 50%);
 					background-size: 600px;
@@ -784,17 +780,18 @@ header.shrink{
         	}
 
     		& > .beta{
-    			margin-bottom: 150px;
+    			margin-bottom: 0;
+    			padding-bottom: 150px;
 
     			&:last-child{
-    				margin-bottom: 25px;
+    				padding-bottom: 25px;
 
     				@media (min-width: 768px){
-    					margin-bottom: 0;
+    					padding-bottom: 0;
     				}
 
     				@media (min-width: 1025px){
-    					margin-bottom: 50px;
+    					padding-bottom: 50px;
     				}
     			}
 
@@ -843,6 +840,12 @@ header.shrink{
 						}
 
 						.beta{
+							@media (min-width: 768px){
+								padding-bottom: 0;
+							}
+						}
+
+						.btn-container{
 							margin-bottom: 0;
 						}
 					}
@@ -1098,6 +1101,99 @@ header.shrink{
 	    				}
 	    			}
 				}
+    		}
+
+    		&.sub{
+    			background: white;
+
+    			&.logoji .header{
+					background: @logoji;
+    			}
+
+    			&.printaire .header{
+    				background: @printaire;
+    			}
+
+    			&.animalfax .header{
+    				background: @animalfax;
+    			}
+
+    			&.spur .header{
+    				background: @spur;
+    			}
+
+    			.header{
+    				color: @dark-text-primary;
+    				margin: -50px -30px 50px;
+    				padding: 50px 0;
+    				text-align: center;
+
+    				@media (min-width: 768px){
+    					margin: -50px -50px 50px;
+    					padding: 75px 50px;
+    				}
+
+    				@media (min-width: 992px){
+    					margin: 0;
+    					margin-bottom: 50px;
+    					padding: 78px 0;
+    				}
+
+    				.emphasis{
+    					margin-bottom: 25px;
+
+    					@media (min-width: 768px){
+    						margin-bottom: 35px;
+    					}
+    				}
+
+    				.tagline{
+    					font-weight: 300;
+    					margin-bottom: 0;
+    					padding: 0 50px;
+
+    					@media (min-width: 768px){
+    						padding: 0;
+    					}
+    				}
+    			}
+
+    			.beta{
+    				@media (min-width: 992px){
+    					padding: 0 175px;
+    				}
+    				@media (min-width: 1025px){
+    					padding: 0 300px;
+    				}
+
+    				&.project{
+    					padding-bottom: 100px;
+
+    					@media (min-width: 500px){
+    						padding-bottom: 160px;
+    					}
+
+    					@media (min-width: 768px){
+    						padding-bottom: 200px;
+    					}
+
+    					.mobile-container{
+
+    						.browser{
+    							margin-right: 7%;
+    						}
+
+    						.phone{
+    							@media (min-width: 500px){
+    								display: block;
+    								position: absolute; top: 25px; right: 0;
+    								width: 33%;
+    								z-index: 2;
+    							}
+    						}
+    					}
+    				}
+    			}
     		}
         }
 
