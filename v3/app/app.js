@@ -82,6 +82,7 @@ angular.module('personal_website', [
                         if (!current.type) {
 
                             TweenLite.to('.header', .75, {className: '+=shrink'});
+                            TweenLite.set('.header', {className: '+=switch', delay: .75});
                             TweenLite.set('.menu', {className: '+=enable', delay: .6});
                         }
                         // From page to page
@@ -97,6 +98,7 @@ angular.module('personal_website', [
                     // Page on load
                     else {
                         TweenLite.set('.header', {className: '+=shrink'});
+                        TweenLite.set('.header', {className: '+=switch'});
                         TweenLite.set('.menu', {className: '+=enable', delay: .25});
                     } 
                 }
@@ -122,10 +124,11 @@ angular.module('personal_website', [
                         }
                         else{
                             TweenLite.to('header', .75, {className: '+=shrink'});
+                            TweenLite.set('header', {className: '+=switch', delay: .75});
                         }
                     }
                     else{
-                        TweenLite.set('header', {className: '+=shrink'});
+                        TweenLite.set('header', {className: '+=shrink switch'});
                     }
                 }
             }
