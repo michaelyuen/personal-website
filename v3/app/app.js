@@ -28,14 +28,18 @@ angular.module('personal_website', [
 
         $scope.toggleMenu = function () {
             $scope.menu_open = !$scope.menu_open;
+            
+            if ($scope.menu_open) {
+                TweenLite.to('.header', .5, {className: '+=open'});
+            }
+            else {
+                TweenLite.to('.header', .5, {className: '-=open'});
+            }
         };
 
         $scope.closeMenu = function () {
             $scope.menu_open = false;
-        }
-
-        $scope.click = function () {
-            $scope.clicked = true;
+            TweenLite.to('.header', .75, {className: '-=open'});
         }
 
         $scope.$on('$routeChangeStart', function (event, next, current) {
@@ -54,7 +58,7 @@ angular.module('personal_website', [
 
                 // Animation from page to home
                 if (current && current.type == 'page') {
-                    TweenLite.to('.header', .75, {className: '-=shrink'});
+                    TweenLite.to('.header', .75, {className: 'header'});
                     TweenLite.set('.menu', {className: '-=enable'});
                 }
                 else{

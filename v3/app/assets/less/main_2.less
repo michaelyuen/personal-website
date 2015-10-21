@@ -145,7 +145,6 @@ ul{
 	}
 
 	&.sub{
-		//padding: 0;
 		position: relative;
 		width: 100%;
 		z-index: 2;
@@ -505,7 +504,6 @@ header.shrink{
 
 	.menu{
 		clear: both;
-		max-height: 0px;
 		overflow: hidden;
 		text-align: left;
 		width: auto;
@@ -519,12 +517,12 @@ header.shrink{
 		
 		@media (min-width: 768px){
 			top: 64px;
-			margin: 0 -50px;
 		}
 
 		li{
 			float: none;
 			padding-right: 0;
+			text-align: center;
 
 			&:first-child{
 				border-top: 1px solid @border;
@@ -579,6 +577,7 @@ header.shrink{
 
 			li{
 				float: none;
+				text-align: left;
 
 				a{
 					background-image: linear-gradient(to right, transparent 50%, white 50%);

@@ -87,12 +87,12 @@
         </div>
 
         <div class="avatar-container">
-            <div class="avatar" ng-click="click()" ng-class="{'clicked': clicked}" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
+            <div class="avatar" title="Cinemagraph portrait of Michael Clayton Yuen, Web Developer with a passion for the Front-end"></div>
         </div>
 
         <div class="name kilo">Michael Clayton Yuen</div>
 
-        <ul class="menu" ng-click="closeMenu()" ng-class="{'open': menu_open }">
+        <ul class="menu" ng-click="closeMenu()">
 
             <li>
                 <a href="#/about" ng-class="{'current': current == 'about'}">
@@ -121,7 +121,7 @@
     </header>
 
     <div ng-include="page_url" autoscroll class="view-container" 
-        ng-class="{'page': page, 'sub': sub, 'sub-to-page': sub_to_page, 'page-to-sub': page_to_sub}" ng-click="closeMenu()"></div>
+        ng-class="{'page': page, 'sub': sub, 'sub-to-page': sub_to_page, 'page-to-sub': page_to_sub}"></div>
 
     <script>
         setTimeout( function() {
