@@ -1,22 +1,17 @@
 AddDefaultCharset UTF-8
 
 RewriteEngine On 
+# Rewrites /#/ as / so html mode will work
 Options FollowSymLinks
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /#/$1 [L]
 
-# BEGIN Compress text files
-<ifModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
-  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
-  AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
-  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
-  AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
-  AddOutputFilterByType DEFLATE font/truetype font/opentype
-</ifModule>
-# END Compress text files
+# provide gzip if accepted, or regular file
+RewriteCond %{HTTP:Accept-Encoding} gzip 
+RewriteCond %{REQUEST_FILENAME}.gz -f 
+RewriteRule ^(.*)$ $1.gz [L] 
 
 ExpiresActive on
 
