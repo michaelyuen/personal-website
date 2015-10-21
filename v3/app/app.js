@@ -71,7 +71,6 @@ angular.module('personal_website', [
 
                 // Path is page
                 if (url_array.length === 1) {
-                    
                     $rootScope.page_name = capitalizeFirstLetter(url_array[0]);
                     $scope.current = url_array[0];
                     $scope.page_url = '/views/' + url_array[0] + '/' + url_array[0] + '.html';

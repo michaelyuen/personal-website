@@ -553,6 +553,7 @@ header.shrink{
 			box-shadow: none;
 			overflow: visible;
 			width: 249px;
+			transition: width 0s;
 			
 			&.enable{
 				margin: 0;
@@ -560,7 +561,6 @@ header.shrink{
 
 				li a{
 					border: none;
-					padding: 12px 0;
 					transition: background-position .3s ease-out, color .3s ease-out;
 
 					&::before{
@@ -597,6 +597,7 @@ header.shrink{
 					color: @dark-text-primary;
 					display: block;
 					font-size: 16px;
+					padding: 12px 0;
 					position: relative;
 					width: calc(~'100% + 1px');
 
@@ -617,6 +618,10 @@ header.shrink{
 							left: 0;
 							transition: left .2s ease-in;
 						}
+					}
+
+					i{
+						margin: 0 16px 0 50px;
 					}
 				}
 			}
