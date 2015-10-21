@@ -81,10 +81,14 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'app/index.min.html': 'app/index.html',
-                    'app/views/about.min.html': 'app/views/about.html',
-                    'app/views/work.min.html': 'app/views/work.html',
-                    'app/views/contact.min.html': 'app/views/contact.html',
-                    'app/views/blog.min.html': 'app/views/blog.html'
+                    'app/views/about/about.min.html': 'app/views/about/about.html',
+                    'app/views/work/work.min.html': 'app/views/work/work.html',
+                    'app/views/work/sub/animalfax.min.html': 'app/views/work/sub/animalfax.html',
+                    'app/views/work/sub/logoji-labs.min.html': 'app/views/work/sub/logoji-labs.html',
+                    'app/views/work/sub/printaire.min.html': 'app/views/work/sub/printaire.html',
+                    'app/views/work/sub/spur.min.html': 'app/views/work/sub/spur.html',
+                    'app/views/contact/contact.min.html': 'app/views/contact/contact.html',
+                    'app/views/blog/blog.min.html': 'app/views/blog/blog.html'
                 }
             }
         }

@@ -2,16 +2,15 @@
 
 angular.module('personal_website', [
     'ngRoute',
-    'ngAnimate'
-    //'angulartics',
-    //'angulartics.google.analytics'
+    'ngAnimate',
+    'angulartics',
+    'angulartics.google.analytics'
 ])
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    //$locationProvider.html5Mode(true).hashPrefix('!');
-    
-    //$routeProvider.when('/:page?/:sub_page?', { controller: 'MainController' });
+    $locationProvider.html5Mode(true).hashPrefix('!');
+
     $routeProvider
         .when('/',              { controller: 'MainController' })
         .when('/about',         { controller: 'MainController', type: 'page' })
@@ -21,8 +20,8 @@ angular.module('personal_website', [
         .otherwise( {redirectTo: '/'} );
 }])
 
-.controller('MainController', ['$rootScope', '$scope', '$location', '$window', '$animate', '$timeout', '$route',
-    function($rootScope, $scope, $location, $window, $animate, $timeout, $route) {
+.controller('MainController', ['$rootScope', '$scope', '$location', '$window', '$timeout', '$route',
+    function($rootScope, $scope, $location, $window, $timeout, $route) {
 
         $scope.menu_open = false;
 
