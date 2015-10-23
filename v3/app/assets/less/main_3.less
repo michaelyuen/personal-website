@@ -79,6 +79,15 @@ ul{
 	padding: 0;
 }
 
+figure{
+	margin: 0;
+
+	figcaption{
+		margin-top: 10px;
+		text-align: center;
+	}
+}
+
 .btn-container{
 	line-height: 62px;
 	text-align: center;
@@ -664,21 +673,6 @@ header.shrink{
 
         	.beta{
 
-        		figure{
-        			margin: 0;
-
-        			figcaption{
-        				font-size: 14px;
-        				font-weight: 400;
-        				margin-top: 10px;
-        				text-align: center;
-
-        				@media (min-width: 768px){
-        					font-size: 16px;
-        				}
-        			}
-        		}
-
         		.kayak{
         			background-image: url('/assets/img/kayak_phone.jpg');
         			background-repeat: no-repeat;
@@ -1231,6 +1225,22 @@ header.shrink{
     								z-index: 2;
     							}
     						}
+    					}
+    				}
+
+    				figure{
+    					margin: 0;
+
+    					img{
+    						border: 1px solid @border;
+    					}
+    				}
+
+    				&.responsive{
+    					.phone{
+    						float: left;
+    						margin-right: 30px;
+    						width: 33%
     					}
     				}
     			}
