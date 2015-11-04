@@ -202,7 +202,46 @@
 
 			<br><br>
 
-			The solution I used was actually rather simple - tables! 
+			The solution I used was actually rather simple - tables! The rows containing the columns are styled as tables and the columns are styled as table cells. Voila! Each section's information and code examples have the same height regardless of the content.
+
+			<br><br>
+			<figure>
+				<div class="browser">
+
+					<div class="top">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+
+						<span>
+							<i class="fa fa-globe"></i>
+							printaire.com/#/docs
+						</span>
+						
+						<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<img class="screenshot" src="/assets/img/printaire_docs2.png" alt="Screenshot of PrintAire Documentation page on desktop device">
+				</div>
+			</figure>
+
+			<br>
+
+			The last cool feature I want to highlight is the menu highlighting. While the implementation isn't the most complex, I love this feature because I think it really enhances the user experience. One of the most overlooked aspects of many websites is the navigation, and how simple styling cues make a big difference. I always place a lot of focus on any menus I build, ensuring they are clear and easy to understand at a glance. PrintAire's documentation menu embodies this focus.
+
+			<br><br>
+
+			As the screenshot above demonstrates, the menu item coordinating with the active section is clearly highlighted. If a section has sub-sections then the menu item will expand and highlight its child appropriately. What's more, as the user scrolls the menu highlighting is updated dynamically. Using the <a target="_blank" href="https://github.com/oblador/angular-scroll">Angular Scrollspy</a> directive, an active class is added to the appropriate menu item and from there the styling is simple.
+
 		</div>
+
+		<h1 class="emphasis">conclusion</h1>
+
+		<div class="beta"></div>
 	</div>
 </div>
