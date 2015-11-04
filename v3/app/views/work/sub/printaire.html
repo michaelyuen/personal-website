@@ -92,7 +92,7 @@
 							<span></span>
 						</div>
 					</div>
-					<img class="screenshot" src="/assets/img/printaire_origin.png" alt="Gif of Logoji Labs Login page material design on desktop device">
+					<img class="screenshot" src="/assets/img/printaire_origin.png" alt="Screenshot of original theme on desktop device">
 				</div>
 			    
 			    <figcaption class="epsilon">Bogdan's Marketing Theme - the origin of PrintAire</figcaption>
@@ -133,7 +133,7 @@
 							<span></span>
 						</div>
 					</div>
-					<img class="screenshot" src="/assets/img/printaire_dashboard_desktop.png" alt="Gif of Logoji Labs Login page material design on desktop device">
+					<img class="screenshot" src="/assets/img/printaire_dashboard_desktop.png" alt="Screenshot of PrintAire Dashboard page on desktop device">
 				</div>
 			</figure>
 			<br>
@@ -147,7 +147,7 @@
 					<div class="camera"></div>
 					<div class="speaker"></div>
 				</div>
-				<img class="screenshot" src="/assets/img/printaire_dashboard_phone.png" alt="Screenshot of Logoji Labs Post Feedback page on mobile device">
+				<img class="screenshot" src="/assets/img/printaire_dashboard_phone.png" alt="Screenshot of PrintAire Dashboard page on mobile device">
 				<div class="bottom">
 					<div class="home"></div>
 				</div>
@@ -161,7 +161,48 @@
 		<h1 class="emphasis" style="clear: both;">docs</h1>
 
 		<div class="beta">
-			
+			By far, my favorite page to build for PrintAire was the documentation! The same challenge presented on the dashboard takes place here, but to an even greater extent. There's a lot of important information to display, and doing so in an orderly way is of the utmost importance. After all, with PrintAire being a service targeting developers, having good documentation is critical.
+			<br><br>
+			<figure>
+				<div class="browser">
+
+					<div class="top">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+
+						<span>
+							<i class="fa fa-globe"></i>
+							printaire.com/#/docs
+						</span>
+						
+						<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<img class="screenshot" src="/assets/img/printaire_docs.png" alt="Gif of Logoji Labs Login page material design on desktop device">
+				</div>
+			</figure>
+
+			<br>
+
+			The design for the documentation page was inspired by <a target="_blank" href="https://stripe.com/docs/api#intro">Stripe's documentation.</a> That being said, their exact implementation remains a mystery which gave me a great opportunity to rebuild and tweak the design, and it was a blast.
+
+			<br><br>
+
+			One notable difference is that with Stripe the documentation page opens in a new tab, whereas I felt it was a more desirable experience to keep it contained within the site as a whole. When the user scrolls and the header exits the viewport, the documentation container will stick to the top and cover the entire page. If the user returns to the top, the header will reappear as one would expect. This creates a more cohesive experience since the user isn't forced to jump between tabs.
+
+			<br><br>
+
+			Using Bootstrap, creating the columns containing the information and associated code examples was trivial. However, by default they don't exactly behave the way I wanted in this case. The default styling will create columns that have heights according to their content, but I wanted both columns to be coordinated with the same height determined by the column with more content.
+
+			<br><br>
+
+			The solution I used was actually rather simple - tables! 
 		</div>
 	</div>
 </div>
