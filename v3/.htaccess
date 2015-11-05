@@ -33,6 +33,10 @@ ExpiresActive on
 
 # BEGIN Cache-Control Headers
 <ifModule mod_headers.c>
+  <filesMatch ".(gz)$">
+    Header set Cache-Control "public"
+    Header append Vary: Accept-Encoding
+  </filesMatch>
   <filesMatch ".(ico|jpe?g|png|gif|swf)$">
     Header set Cache-Control "public"
   </filesMatch>

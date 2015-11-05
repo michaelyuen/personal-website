@@ -18,16 +18,27 @@ module.exports = function(grunt) {
             options: {
                 srcPrefix: 'bower_components'
             },
-            scripts: {
+            dev: {
                 options: {
-                    destPrefix: 'app/assets'
+                    destPrefix: 'app/development/assets/js'
                 },
                 files: {
-                    'js/angular/angular.min.js': 'angular/angular.min.js',
-                    'js/angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
-                    'js/angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js',
-                    'js/angulartics/angulartics.min.js': 'angulartics/dist/angulartics.min.js',
-                    'js/angulartics/angulartics-google-analytics.min.js': 'angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
+                    'angular/angular.min.js': 'angular/angular.min.js',
+                    'angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
+                    'angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js',
+                    'angulartics/angulartics.min.js': 'angulartics/dist/angulartics.min.js',
+                    'angulartics/angulartics-google-analytics.min.js': 'angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
+                }
+            },
+            prod: {
+                options: {
+                    destPrefix: 'app/production/assets/js',
+                    runBower: false
+                },
+                files: {
+                    'angular/angular.min.js': 'angular/angular.min.js',
+                    'angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
+                    'angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js'
                 }
             }
         },
@@ -36,7 +47,7 @@ module.exports = function(grunt) {
                 options: {
                     port: 3000,
                     hostname: '*',
-                    base: 'app/',
+                    base: 'app/development/',
                     livereload: true
                 }
             }
@@ -67,7 +78,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'app/assets/js/uglify-all/all.min.js': ['app/app.js', 'app/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*', '!**/angular-animate/*']
+                    'app/production/assets/js/uglify-all/all.min.js': ['app/development/app.js', 'app/development/assets/js/**/*.js', '!**/angular/*', '!**/angular-route/*', '!**/angular-animate/*']
                 }
             }
         },
@@ -77,18 +88,38 @@ module.exports = function(grunt) {
                 collapseWhitespace: true,
                 minifyJS: true
             },
-            build: {
+            prod: {
                 files: {
-                    'app/index.min.html': 'app/index.html',
-                    'app/views/about/about.min.html': 'app/views/about/about.html',
-                    'app/views/work/work.min.html': 'app/views/work/work.html',
-                    'app/views/work/sub/animalfax.min.html': 'app/views/work/sub/animalfax.html',
-                    'app/views/work/sub/logoji-labs.min.html': 'app/views/work/sub/logoji-labs.html',
-                    'app/views/work/sub/printaire.min.html': 'app/views/work/sub/printaire.html',
-                    'app/views/work/sub/spur.min.html': 'app/views/work/sub/spur.html',
-                    'app/views/contact/contact.min.html': 'app/views/contact/contact.html',
-                    'app/views/blog/blog.min.html': 'app/views/blog/blog.html'
+                    'app/production/index.html': 'app/development/index.html',
+                    'app/production/views/about/about.html': 'app/development/views/about/about.html',
+                    'app/production/views/work/work.html': 'app/development/views/work/work.html',
+                    'app/production/views/work/sub/animalfax.html': 'app/development/views/work/sub/animalfax.html',
+                    'app/production/views/work/sub/logoji-labs.html': 'app/development/views/work/sub/logoji-labs.html',
+                    'app/production/views/work/sub/printaire.html': 'app/development/views/work/sub/printaire.html',
+                    'app/production/views/work/sub/spur.html': 'app/development/views/work/sub/spur.html',
+                    'app/production/views/contact/contact.html': 'app/development/views/contact/contact.html',
+                    'app/production/views/blog/blog.html': 'app/development/views/blog/blog.html'
                 }
+            }
+        },
+        copy: {
+            prod: {
+                cwd: 'app/development/assets',
+                src: ['css/*', 'fonts/*', 'img/*'],
+                dest: 'app/production/assets',
+                expand: true
+            }
+        },
+        compress: {
+            prod: {
+                options: {
+                    mode: 'gzip'
+                },
+                cwd: 'app/production',
+                src: ['assets/css/*.css', 'assets/js/uglify-all/*.js', 'views/**/*.html', 'index.html'],
+                dest: 'app/production',
+                expand: true,
+                ext: '.gz'
             }
         }
     });
@@ -99,9 +130,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
-    grunt.registerTask('default', ['bowercopy', 'connect', 'watch']);
-    grunt.registerTask('bower', ['bowercopy']);
-    grunt.registerTask('uglify-all', ['uglify']);
+    grunt.registerTask('default', ['bowercopy:dev', 'connect', 'watch']);
     grunt.registerTask('htmlmin-all', ['htmlmin']);
+    grunt.registerTask('compress-all', ['compress']);
+
+    // Automate everything for production
+    grunt.registerTask('prod', ['bowercopy:prod', 'copy', 'uglify', 'htmlmin', 'compress']);
 };
