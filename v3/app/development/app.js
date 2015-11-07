@@ -2,14 +2,14 @@
 
 angular.module('personal_website', [
     'ngRoute',
-    'ngAnimate',
-    'angulartics',
-    'angulartics.google.analytics'
+    'ngAnimate'//,
+    //'angulartics',
+    //'angulartics.google.analytics'
 ])
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    //$locationProvider.html5Mode(true).hashPrefix('!');
 
     $routeProvider
         .when('/',              { controller: 'MainController' })
