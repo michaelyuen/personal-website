@@ -134,6 +134,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.registerTask('default', ['bowercopy:dev', 'connect', 'watch']);
+    grunt.registerTask('uglify-all', ['uglify']);
     grunt.registerTask('htmlmin-all', ['htmlmin']);
     grunt.registerTask('compress-all', ['compress']);
 

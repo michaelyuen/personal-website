@@ -70,10 +70,58 @@
 		<h1 class="emphasis">angular</h1>
 
 		<div class="beta">
-			Prior to AnimalFAX, I was working with applications built using Node and Express which was comfortable and familiar, but also messy and unstructured. When I began to learn Angular, there was definitely a bit of a learning curve. However, once the clouds started to part and the patterns started to emerge I began to see a beauty among the madness. The description from the introduction in Angular's Developer Guide, "Angular is what HTML would have been, had it been designed for applications", becomes more valid the longer I use it. Additionally, its definition as a structural framework is poignant, and one of my favorite reasons for recommending Angular.
+			Prior to AnimalFAX, I was working with applications built using Node and Express which was comfortable and familiar, but also messy and unstructured. When I began to learn Angular, there was definitely a bit of a learning curve. However, once the clouds started to part and the patterns started to emerge I began to see a beauty among the madness.
+
+			<br><br>
+
+			The description from the introduction in Angular's Developer Guide, "Angular is what HTML would have been, had it been designed for applications", becomes more valid the longer I use it. Additionally, its definition as a structural framework is poignant, and one of my favorite reasons for recommending Angular.
+
+			<br><br>
+
+			I think Angular and JavaScript share some of the same qualities which make for a complimentary environment. The framework is flexible enough to allow me to do what I need to do without getting in the way, but structured enough to provide good constructs for organization and reinforcement of maintainable, scalable code.
+
+			<br><br>
+			
+			<figure>
+				<img class="screenshot" src="/assets/img/angular_example_1.jpg" alt="Screenshot of Angular Search Module for this AnimalFAX">
+			    
+			    <figcaption class="epsilon">Module for the Search Page of AnimalFAX</figcaption>
+			</figure>
 		</div>
 
 		<h1 class="emphasis">grunt</h1>
+
+		<div class="beta">
+			DRY (Don't Repeat Yourself) is a common development principle and part of the foundation I've used to consistently improve. In this context, it was the impetus that lead me to find Grunt, The JavaScript Task Runner. While DRY is typically thought of in terms of actual code being written, I saw the enormous opportunity to streamline my workflow by automating as many of the set up and optimization tasks that happen repeatedly with any project. In doing so, I've effectively created more time that can be spent developing fun things and solving complex problems rather than being a glorified data-processor.
+
+			<br><br>
+			
+			<figure>
+				<img class="screenshot" src="/assets/img/grunt.jpg" alt="Screenshot of Gruntfile for this website">
+			    
+			    <figcaption class="epsilon">End of Gruntfile for this website</figcaption>
+			</figure>
+
+			<br>
+
+			With AnimalFAX being my first introduction to Grunt, I only made use of the less, connect, and watch modules. For the purposes of a better demonstration, the screenshot is from this website and illustrates how much further it is possible to automate tasks.
+
+			<br><br>
+
+			The lines most important to focus on are 136 and 142, which are the main tasks I use to accomplish practically everything for development and production - just two tasks!
+
+			<br><br>
+
+			The default task is what runs when you type the 'grunt' command in the terminal. What this means is that I'm able to begin development by just typing a single word. Amazing! In the second argument, the array contains the names of the subtasks that will be run when the default command is issues; these are bowercopy, connect, and watch. First, bowercopy will ensure that all external assets I've registered in my bower.json file are available and then copy them into my development assets folder as I've specified. Once that is confirmed, connect will spin up a local server instance and watch will then continuously run and update html, css, and js files upon being changed. It's also important to note that because I use LESS, the watch task will technically watch for changes in the less files and then run the less task which minifys and compiles them to css.
+
+			<br><br>
+
+			Once development completes a milestone and is ready to update production, the task on like 142 is run simple, with the 'grunt prod' command. Again, bowercopy is run initially, but this time with its 'prod' subtask that will update assets in the production folder. Copy simply copies the css, img, and fonts assets folders from development to production. Uglify will minify and concatenate all of the JavaScript into a single file and htmlmin does as is self-described, minifying the html files. Lastly, compress will iterate through the html, css, and js assets in the production folder and create gzipped copies for maximum optimization.
+
+			<br><br>
+
+			While this is just a glimpse into the power of Grunt, it represents a huge improvement over the days of compiling less manually or even worse, writing pure css. There's no question in my mind, Grunt is the unsung hero for web developers and one of my most valued tools.
+		</div>
 
 		<div class="beta">
 			
