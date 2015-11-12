@@ -159,6 +159,14 @@
 			    
 			    <figcaption class="epsilon">Module for the Search Page of AnimalFAX</figcaption>
 			</figure>
+
+			<br>
+
+			Angular's pattern for creating modules is a fantastic way of structuring an application. It makes for a clean, easy to navigate file structure as well as encapsulation within the code. I can easily see everything I need to know about the search page in two files, <em>search.js</em> and <em>search.html</em>.
+
+			<br><br>
+
+			On line 3, I define the module "search_view" along with any dependencies to be injected; in this case, "ngRoute" is the only dependency. Beginning on line 5 is the search module's config block, where "routeProvider" is injected as a dependency and used to define the route. It references search.html as the view template and "SearchViewController" as the view controller, which begins on line 14. 
 		</div>
 
 		<h2 class="emphasis">grunt</h2>
