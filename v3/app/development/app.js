@@ -27,7 +27,7 @@ angular.module('personal_website', [
 
         $scope.toggleMenu = function () {
             $scope.menu_open = !$scope.menu_open;
-            
+
             if ($scope.menu_open) {
                 TweenLite.to('.header', .5, {className: '+=open'});
             }
@@ -99,7 +99,7 @@ angular.module('personal_website', [
                         TweenLite.set('.header', {className: '+=shrink'});
                         TweenLite.set('.header', {className: '+=switch'});
                         TweenLite.set('.menu', {className: '+=enable', delay: .25});
-                    } 
+                    }
                 }
                 // Path is sub page
                 else {
