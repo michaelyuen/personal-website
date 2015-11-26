@@ -166,7 +166,11 @@
 
 			<br><br>
 
-			On line 3, I define the module "search_view" along with any dependencies to be injected; in this case, "ngRoute" is the only dependency. Beginning on line 5 is the search module's config block, where "routeProvider" is injected as a dependency and used to define the route. It references search.html as the view template and "SearchViewController" as the view controller, which begins on line 14. 
+			On line 3, I define the module "search_view" along with any dependencies to be injected; in this case, "ngRoute" is the only dependency. Beginning on line 5 is the search module's config block, where "routeProvider" is injected as a dependency and used to define the route. It references search.html as the view template and "SearchViewController" as the view controller, which begins on line 14.
+
+			<br><br>
+
+			Of course, this is a relatively simple example, and even without adding functionality the code could be structured completely different. Thus, while Angular provides the tools necessary to build a well-structured, extensible application, it becomes highly important to enforce design standards that define said structure. At the time of writing this, I've been diving into <a target="_blank" href="https://github.com/johnpapa/angular-styleguide">John Papa's Angular Styleguide</a> to educate myself of best practices moving forward.
 		</div>
 
 		<h2 class="emphasis">grunt</h2>
