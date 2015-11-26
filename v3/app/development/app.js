@@ -9,7 +9,7 @@ angular.module('personal_website', [
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    //$locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(true).hashPrefix('!');
 
     $routeProvider
         .when('/',              { controller: 'MainController' })
