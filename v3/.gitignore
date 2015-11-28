@@ -1,4 +1,7 @@
 *.DS_Store
 node_modules/
 bower_components/
-cloudcode/public/
+app/development/assets/img
+app/development/assets/js
+app/production/assets/img
+app/production/assets/js
