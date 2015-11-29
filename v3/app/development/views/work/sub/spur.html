@@ -80,6 +80,78 @@
 			In more technical terms, I produced working interfaces from the designs provided as well as collaborated with the designer to make compromises where I saw concerns. This was my introduction to Bootstrap and Less, and was a trial-by-fire in creating well-constructed markup and styling. Also, the majority of the views required a substantial amount of application logic using node.js and express.js which I developed as well. In hindsight, the amount of work would have been better distributed among more than one developer, but I was happy and proud to have so much ownership over the product. I can browse through SPUR and see my direct impact in everything, and that's what I love about front end.
 		</div>
 
+		<h1 class="emphasis">live map</h1>
+
+		<div class="beta responsive">
+
+			<div class="browser">
+
+				<div class="top">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+
+					<span>
+						<i class="fa fa-globe"></i>
+						www.spur.com/live-map
+					</span>
+					
+					<div class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<img class="screenshot" src="/assets/img/spur_map_buyer_desktop.jpg" alt="Screenshot of SPUR live map for buyers page on desktop device">
+			</div>
+
+			<br>
+
+			The core of SPUR is the live map, which features all the magic for buyers to browse listings on the map in real time. For sellers, it will also provide visual context for the proximity of buyers that have requested their service. There is also an alternative list view, where the listings are displayed with more emphasis on the buyer and their product or service; that won't be highlighted here.
+
+			<br><br>
+
+			<div class="phone">
+				<div class="top">
+					<div class="camera"></div>
+					<div class="speaker"></div>
+				</div>
+				<img class="screenshot" src="/assets/img/spur_map_buyer_mobile.jpg" alt="Screenshot of SPUR live map for buyers page on mobile device">
+				<div class="bottom">
+					<div class="home"></div>
+				</div>
+			</div>
+
+			The live map consists of two main components - the map and the filter. First, is the actual map, powered by the Google Maps API, that displays markers for all sellers in the visible area. The markers have custom icons that coordinate with the categories and are color coded according to availability. The most awesome feature is that they are real-time, tracking along the roads as the seller travels. This means that buyers can make purchasing decisions based on convenience, empowered by the knowledge that the seller is nearby; and once a seller is requested they can watch the map and know exactly when they will arrive.
+
+			<br><br>
+
+			The filter gives users the power to tailor the listings shown in the map to be exactly what they want. There are five main categories to choose from, as well as numerous subcategories that will autopopulate. Still too many? The distance selection will create a radius down to a minimum of 5 miles to increase the specificity. Also, there is the alternative to type in a keyword to only show listings containing the key. Perhaps the buyer will be travelling soon and is interested in what is offered in that area? Using the location search will center the map around the given address or city and show the listings in that area.
+
+			<br><br>
+
+			<div class="phone">
+				<div class="top">
+					<div class="camera"></div>
+					<div class="speaker"></div>
+				</div>
+				<img class="screenshot" src="/assets/img/spur_map_buyer_open_filters_mobile.jpg" alt="Screenshot of SPUR live map for buyers page with the filter drawer open on mobile device">
+				<div class="bottom">
+					<div class="home"></div>
+				</div>
+			</div>
+
+			On mobile, the filter is implemented as a drawer to account for the limited screen real estate. The category slider is visible at all times because it is given the highest priority. It can be used without needing to open the drawer and will update automatically. If the buyer desires more exact results, the drawer can be seamlessly slid up using the tab to reveal the full filtering options. Aside from a logical reordering, the drawer is practically identical to the sidebar on the desktop view.
+		</div>
+
+		<h1 class="emphasis">other features</h1>
+
+		<div class="beta">
+			
+		</div>
+
 		<h1 class="emphasis">conclusion</h1>
 
 		<div class="beta">
