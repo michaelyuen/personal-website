@@ -26,7 +26,11 @@ The core framework is angular. The only additional js is GreenSock for animation
 
 In regards to design, I'm fairly pleased with my current design efforts being that I'm not a designer. I take inspiration from Google's Material Design, which is where I came to form the color palette. The typography consists of 2 fonts, generally 1 for headers and 1 for paragraphs. Otherwise, there's not a ton going on and I think that's a good thing. I've said that my ideal website is clean and delightful, and I feel that I've managed to achieve that.
 
-Outside of core development, one of the main features is my cinemagraph avatar. My hope is that it's mostly subtle, but with just enough uniqueness to make it delightful to those who notice. It was a lot of fun to play around in Photoshop learning how to make it.
+Outside of core development, one of the main features is my cinemagrcontentaph avatar. My hope is that it's mostly subtle, but with just enough uniqueness to make it delightful to those who notice. It was a lot of fun to play around in Photoshop learning how to make it.
 
 Although there are still (and probably always will be) things that irk me, overall I am quite proud of what I've accomplished so far...
 
+## What's Next
+
+- I sorely need to update some of the content in the **About** section.
+- My current focus is in building out ngWordpress 1.0, but after that I plan to implement ngWordpress to make updating and creating content a breeze.
