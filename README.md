@@ -22,5 +22,11 @@ The exploration of SVG to create the desired panel hover animation was really ne
 
 This is the current version that can be seen live today. I've spent a considerable amount of time going through every aspect of development to really produce my best code to not only be a portfolio for my professional work but function as something worth admiring in its own right.
 
-The core framework is angular. The only additional js is GreenSock for animations. Additional tooling is less and grunt, with the addition of bower. Also worth noting is the addition of the htaccess file to remove the hash from the url, as well as optimize things to utilize gzipped files if possible and cache effectively.
+The core framework is angular. The only additional js is GreenSock for animations. Additional tooling is less and grunt, with the addition of bower. Also worth noting is the addition of the htaccess file to remove the hash from the url, as well as optimize things to utilize gzipped files if possible and cache effectively. While it doesn't tell the whole story, from a performance perspective I'm pleased with 97% scores from PageSpeed and YSlow, and a load time of .7s. [Reference](https://gtmetrix.com/reports/michaelclaytonyuen.com/w0xzUmHA "GTmetrix Performance Report")
+
+In regards to design, I'm fairly pleased with my current design efforts being that I'm not a designer. I take inspiration from Google's Material Design, which is where I came to form the color palette. The typography consists of 2 fonts, generally 1 for headers and 1 for paragraphs. Otherwise, there's not a ton going on and I think that's a good thing. I've said that my ideal website is clean and delightful, and I feel that I've managed to achieve that.
+
+Outside of core development, one of the main features is my cinemagraph avatar. My hope is that it's mostly subtle, but with just enough uniqueness to make it delightful to those who notice. It was a lot of fun to play around in Photoshop learning how to make it.
+
+Although there are still (and probably always will be) things that irk me, overall I am quite proud of what I've accomplished so far...
 
