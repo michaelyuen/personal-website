@@ -1,7 +1,9 @@
 {
 	"name": "personal-website",
 	"version": "3.0.0",
-	"author": "Michael Yuen <michaelclaytonyuen@gmail.com>",
+	"authors": [
+		"Michael Yuen <michaelclaytonyuen@gmail.com>"
+	],
 	"description": "My Personal/Portfolio Website",
 	"license": "MIT",
 	"homepage": "michaelclaytonyuen.com",
