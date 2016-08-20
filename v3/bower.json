@@ -1,24 +1,21 @@
 {
-  "name": "Personal_Website",
-  "version": "3.0.0",
-  "authors": [
-    "Michael Yuen <michaelclaytonyuen@gmail.com>"
-  ],
-  "description": "N/A",
-  "main": "index.html",
-  "license": "MIT",
-  "homepage": "michaelclaytonyuen.com",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "angular": "1.2.27",
-    "angular-route": "1.2.27",
-    "angular-animate": "1.2.27"
-  }
+	"name": "personal-website",
+	"version": "3.0.0",
+	"author": "Michael Yuen <michaelclaytonyuen@gmail.com>",
+	"description": "My Personal/Portfolio Website",
+	"license": "MIT",
+	"homepage": "michaelclaytonyuen.com",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"devDependencies": {
+		"angular": "1.2.27",
+		"angular-route": "1.2.27",
+		"angular-animate": "1.2.27"
+	}
 }
