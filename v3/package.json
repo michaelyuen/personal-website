@@ -1,8 +1,8 @@
 {
 	"name": "personal-website",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"description": "My Personal/Portfolio Website",
-	"homepage": "michaelclaytonyuen.com",
+	"homepage": "http://michaelclaytonyuen.com",
 	"bugs": {
 		"url": "https://github.com/michaelyuen/personal-website/issues",
 		"email": "michaelclaytonyuen@gmail.com"
@@ -17,6 +17,7 @@
 		"grunt": "^0.4.5",
 		"grunt-bowercopy": "^1.2.0",
 		"grunt-contrib-compress": "^0.13.0",
+		"grunt-contrib-copy": "*",
 		"grunt-contrib-connect": "^0.9.0",
 		"grunt-contrib-htmlmin": "^0.5.0",
 		"grunt-contrib-less": "~1.0.0",

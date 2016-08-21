@@ -8,9 +8,9 @@ module.exports = function(grunt) {
 			},
 			compile: {
 				expand: true,
-				cwd: 'app/assets/less/',
+				cwd: 'app/development/assets/less/',
 				src: ['*.less', '!**/variables.less', '!**/mixins.less', '!**/font-standards.less'],
-				dest: 'app/assets/css/',
+				dest: 'app/development/assets/css/',
 				ext: '.css'
 			}
 		},
@@ -25,9 +25,9 @@ module.exports = function(grunt) {
 				files: {
 					'angular/angular.min.js': 'angular/angular.min.js',
 					'angular-route/angular-route.min.js': 'angular-route/angular-route.min.js',
-					'angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js',
-					'angulartics/angulartics.min.js': 'angulartics/dist/angulartics.min.js',
-					'angulartics/angulartics-google-analytics.min.js': 'angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
+					'angular-animate/angular-animate.min.js': 'angular-animate/angular-animate.min.js'
+					//'angulartics/angulartics.min.js': 'angulartics/dist/angulartics.min.js',
+					//'angulartics/angulartics-google-analytics.min.js': 'angulartics-google-analytics/dist/angulartics-google-analytics.min.js'
 				}
 			},
 			prod: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 		watch: {
 			styles: {
 				files: [
-					'app/assets/less/*.less'
+					'app/development/assets/less/*.less'
 				],
 				tasks: ['less'],
 				options: {
