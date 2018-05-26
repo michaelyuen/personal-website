@@ -1,0 +1,35 @@
+{
+	"name": "personal-website",
+	"version": "4.0.0",
+	"description": "My Personal/Portfolio Website",
+	"homepage": "http://michaelclaytonyuen.com",
+	"bugs": {
+		"url": "https://github.com/michaelyuen/personal-website/issues",
+		"email": "michaelclaytonyuen@gmail.com"
+	},
+	"license": "MIT",
+	"author": "Michael Yuen <michaelclaytonyuen@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/michaelyuen/personal-website"
+	},
+	"keywords": [
+		"gatsby"
+	],
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"format": "prettier --write 'src/**/*.js'",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"gatsby": "^1.9.247",
+		"gatsby-link": "^1.6.40",
+		"gatsby-plugin-react-helmet": "^2.0.10",
+		"gatsby-plugin-sass": "^1.0.26",
+		"react-helmet": "^5.2.0"
+	},
+	"devDependencies": {
+		"prettier": "^1.12.0"
+	}
+}

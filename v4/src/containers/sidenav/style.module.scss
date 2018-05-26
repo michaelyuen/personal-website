@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.article {
+    background: $primary;
+    border-right: 1px solid $border;
+    position: fixed; left: 0; top: 0;
+    width: 300px; height: 100vh;
+
+    h1 {
+        align-items: center;
+        color: $dark-text-primary;
+        display: flex;
+        height: 64px;
+        justify-content: center;
+
+        a {
+            color: $dark-text-primary;
+        }
+    }
+}
