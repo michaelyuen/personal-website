@@ -1,12 +1,12 @@
 export const config = {
     items: [
         {
-            "name": "Page 1",
+            "name": "Home",
             "path": "/"
         },
         {
-            "name": "Page 2",
-            "path": "page-2"
+            "name": "About",
+            "path": "about"
         }
     ]
 }
