@@ -4,6 +4,15 @@ module.exports = {
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sass'
-	],
+		'gatsby-plugin-sass',
+		{
+			resolve: 'gatsby-plugin-google-fonts',
+			options: {
+				fonts: [
+					'limelight',
+					'source sans pro\:300,400,400i,700'
+				]
+			}
+		}
+	]
 }

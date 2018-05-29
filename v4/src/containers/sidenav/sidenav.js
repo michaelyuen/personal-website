@@ -12,8 +12,8 @@ const SidenavContainer = ({ data }) => (
 		<h1>
 			<Link to="/">Michael Clayton Yuen</Link>
 		</h1>
-		<Avatar />
-		<Sidenav items={config.items} />
+		{/* <Avatar />
+		<Sidenav items={config.items} /> */}
 	</article>
 )
 

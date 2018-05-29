@@ -4,16 +4,20 @@ import Helmet from 'react-helmet'
 
 import SidenavContainer from '../containers/sidenav/sidenav';
 import '../styles/main.scss'
-import './index.scss'
+import style from './style.module.scss'
 
 const Layout = ({ children, data }) => (
-	<div id="My">
+	<div id="My" className={style.My}>
 		<Helmet title={data.site.siteMetadata.title} />
 
 		<SidenavContainer />
 
-		<div className="MyContent">
+		<div className={style.MyContent}>
+			<div className={style.stars}></div>
+			<div className={style.stars2}></div>
+			<div className={style.stars3}></div>
 			{children()}
+			<div className={style.skyline}></div>
 		</div>
 	</div>
 )

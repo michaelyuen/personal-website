@@ -1,7 +1,13 @@
 @import 'variables';
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
+    color: $dark-text-primary;
+    background: black;
     margin: 0;
 }
 

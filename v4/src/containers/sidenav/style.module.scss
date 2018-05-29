@@ -1,10 +1,16 @@
 @import '../../styles/variables';
 
 .article {
-    background: $primary;
-    border-right: 1px solid $border;
+    background:rgba(0,0,0,.87);
+    //display: none;
+    //box-shadow: 2px 0px 4px #9093a3;
+    //border-right: 1px solid $border;
     position: fixed; left: 0; top: 0;
-    width: 300px; height: 100vh;
+    //width: 300px; height: 100vh;
+
+    // Trash
+    width: 100%; height: 70px;
+    z-index: 1;
 
     h1 {
         align-items: center;
