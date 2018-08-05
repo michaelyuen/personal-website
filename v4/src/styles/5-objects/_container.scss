@@ -1,0 +1,24 @@
+@import '../1-settings/variables';
+
+$containerPadding: 25px;
+$containerGradient__rectangle: radial-gradient(rgba(#fff, 0.1) $containerPadding, rgba(#fff, 0));
+$containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0));
+
+.MyContainer {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    padding: $containerPadding;
+
+    > div {
+        background-color: $dark-border;
+        padding: $containerPadding * 2;
+    }
+}
+
+.MyContainer__rectangle {
+    background: $containerGradient__rectangle;
+}
+
+.MyContainer__circle {
+    background: $containerGradient__circle;
+}

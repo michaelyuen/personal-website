@@ -1,10 +1,15 @@
-@import '../../styles/variables';
+@import '../../styles/1-settings/variables';
 
 .article {
-    background:rgba(0,0,0,.87);
+    align-items: center;
+    background:rgba(0,0,0,.6);
+    display: flex;
+    font-family: 'Gaegu', serif;
+    justify-content: space-between;
     //display: none;
     //box-shadow: 2px 0px 4px #9093a3;
     //border-right: 1px solid $border;
+    padding: 0 30px;
     position: fixed; left: 0; top: 0;
     //width: 300px; height: 100vh;
 
@@ -14,13 +19,17 @@
 
     h1 {
         align-items: center;
-        color: $dark-text-primary;
         display: flex;
-        height: 64px;
+        height: 100%;
         justify-content: center;
+        padding: 0 15px;
 
         a {
             color: $dark-text-primary;
+
+            &:hover {
+                color: $primary-dark;
+            }
         }
     }
 }

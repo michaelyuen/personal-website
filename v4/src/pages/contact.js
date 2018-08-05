@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const ContactPage = () => (
-	<div className="body-container">
+
+	<div className="MyContainer MyContainer__rectangle">
 		<div className="body contact">
+
 			<h1 className="emphasis">contact</h1>
 			<div className="beta">
 				Thank you for visiting my website and I hope you enjoyed the experience. If you would like to contact me, the best method is to email me directly.

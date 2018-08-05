@@ -1,8 +1,4 @@
-@import 'variables';
-
-* {
-    box-sizing: border-box;
-}
+@import '../1-settings/variables';
 
 html,
 body {
@@ -26,7 +22,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        background: $dark-text-primary;
+        //background: $dark-text-primary;
         color: $primary-dark;
     }
 }

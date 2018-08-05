@@ -1,27 +1,24 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import Avatar from '../components/avatar/avatar';
+
+import style from './index.module.scss'
 
 const IndexPage = () => (
-	<div style={{ margin: 'auto', maxWidth: 768 }}>
-		<h1>Richard Hamming on Luck</h1>
-		<div>
-			<p>
-				From Richard Hamming’s classic and must-read talk, “
-				<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">You and Your Research</a>”.
-			</p>
-			<blockquote>
-				<p>
-					There is indeed an element of luck, and no, there isn’t. The prepared
-					mind sooner or later finds something important and does it. So yes, it
-					is luck.{" "}
-					<em>
-						The particular thing you do is luck, but that you do something is
-						not.
-					</em>
-				</p>
-			</blockquote>
+
+	<div className={style.MyIndex}>
+
+		<Avatar/>
+
+		<div className="MyContainer MyContainer__rectangle">
+			<div>
+
+				<h1>Brooklyn Based Frontend Engineer</h1>
+
+				<p>I make resy.com</p>
+
+			</div>
 		</div>
-		<p>Posted April 09, 2011</p>
+		
   	</div>
 )
 

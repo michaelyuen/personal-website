@@ -1,16 +1,22 @@
+@import '../styles/1-settings/variables';
 
 .My {
+	color: $dark-text-primary;
 	overflow: hidden;
 }
 
 .MyContent {
-	//background: linear-gradient(#18254d, #597aa3, #9094b5, #f5e0dc, #fae075, #f37536);
 	background: linear-gradient(#04050f, #1e2345, #364a78, #7a536e, #fc5b66, #f0d96f);
 	min-height: 200vh;
 	padding: 50px;
 	padding-top: 120px;
 	overflow: hidden;
 	position: relative;
+}
+
+.MyChildren {
+	position: relative;
+	z-index: 1;
 }
 
 // n is number of stars required

@@ -3,9 +3,9 @@ import Link from 'gatsby-link'
 
 import style from './style.module.scss';
 
-export const SidenavContainer = ({ items }) => (
+export const Menu = ({ items }) => (
     
-    <ul className={style.sidenav}>
+    <ul className={style.menu}>
 
         {items.map((item, i) => 
 
@@ -15,4 +15,4 @@ export const SidenavContainer = ({ items }) => (
     </ul>
 )
 
-export default SidenavContainer
+export default Menu

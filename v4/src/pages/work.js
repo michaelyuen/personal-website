@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const WorkPage = () => (
-	<div className="body-container">
+
+	<div className="MyContainer MyContainer__rectangle">
 		<div className="body work">
 
 			<h1 className="emphasis">work</h1>

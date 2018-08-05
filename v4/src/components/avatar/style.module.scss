@@ -1,15 +1,19 @@
-.avatarContainer {
-    padding: 30px 0;
+@import '../../styles/1-settings/variables';
+
+.MyAvatar__container {
+    border-radius: 50%;
+    box-sizing: content-box;
+    margin: 0 auto 50px;
+    width: 300px; height: 300px;
 }
 
-.avatar {
-    background-color: white;
-    background-image: url('../../assets/images/cinemagraph.gif');
+.MyAvatar {
+    background-color: black;
+    background-image: url('../../assets/images/my.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    border: 5px solid white;
     border-radius: 50%;
     margin: auto;
-    width: 200px; height: 200px;
+    width: 100%; height: 100%;
 }

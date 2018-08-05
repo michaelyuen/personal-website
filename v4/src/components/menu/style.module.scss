@@ -1,0 +1,20 @@
+@import '../../styles/1-settings/variables';
+
+.menu {
+    display: flex;
+    height: 100%;
+
+    li {
+
+        a {
+            color: $dark-text-primary;
+            display: flex;
+            justify-content: center;
+            width: 100px; height: 100%;
+    
+            &:hover {
+                color: $primary-dark;
+            }
+        }
+    } 
+}
