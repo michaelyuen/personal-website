@@ -5,7 +5,8 @@ $containerGradient__rectangle: radial-gradient(rgba(#fff, 0.1) $containerPadding
 $containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0));
 
 .MyContainer {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: $maxWidth;
     padding: $containerPadding;
 
