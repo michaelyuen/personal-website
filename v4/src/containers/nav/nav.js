@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import Menu from '../../components/menu/menu';
 
-import config from './config';
+import { config } from './config';
 import style from './nav.module.scss';
 
 const NavContainer = () => (
