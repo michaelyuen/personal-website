@@ -3,25 +3,25 @@ import Link from 'gatsby-link'
 
 const ContactPage = () => (
 
-	<div className="MyContainer MyContainer__rectangle">
-		<div className="body contact">
+	<div className="MyContainer MyContainer__rectangle MyContainer__fixed">
+		<div>
 
-			<h1 className="emphasis">contact</h1>
-			<div className="beta">
+			<h1 className="center uppercase">contact</h1>
+			<p>
 				Thank you for visiting my website and I hope you enjoyed the experience. If you would like to contact me, the best method is to email me directly.
-			</div>
+			</p>
 
-			<div className="beta">
+			<p>
 				For professional networking and more information about my job history and experience, visit my LinkedIn.
-			</div>
+			</p>
 
-			<div className="beta">
+			<p>
 				If my website has sparked your curiosity, you can dig into the code at Github.
-			</div>
+			</p>
 
-			<div className="beta last">
+			<p>
 				I look forward to hearing from you!
-			</div>
+			</p>
 
 			<div className="row icons text-center">
 

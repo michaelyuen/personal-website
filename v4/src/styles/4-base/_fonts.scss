@@ -1,6 +1,13 @@
 @font-face {
 	font-family: 'Gaegu';
 	font-style: normal;
+	font-weight: 300;
+	src: url(../assets/fonts/Gaegu/Gaegu-Light.ttf);
+}
+
+@font-face {
+	font-family: 'Gaegu';
+	font-style: normal;
 	font-weight: 400;
 	src: url(../assets/fonts/Gaegu/Gaegu-Regular.ttf);
 }
@@ -12,38 +19,26 @@
 	src: url(../assets/fonts/Gaegu/Gaegu-Bold.ttf);
 }
 
-@font-face {
-	font-family: 'RobotoCondensed';
-	font-style: normal;
-	font-weight: 300;
-	src: url(../assets/fonts/RobotoCondensed/RobotoCondensed-Light.ttf);
-}
-
-@font-face {
-	font-family: 'RobotoCondensed';
-	font-style: normal;
-	font-weight: 400;
-	src: url(../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf);
-}
-
-@font-face {
-	font-family: 'RobotoCondensed';
-	font-style: normal;
-	font-weight: 700;
-	src: url(../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf);
-}
-
 html, body{
-	font-family: 'Gaegu', 'RobotoCondensed', sans-serif;
+	font-family: 'Gaegu', sans-serif;
 	font-size: 16px;
-	font-weight: 500;
-	/* line-height will be 24px (This is now our magic number;
-		all subsequent margin-bottoms and line-heights
-		want to be a multiple of this number in order
-		to maintain vertical rhythm.) */
+	font-weight: 400;
 	line-height: 1.5;
 
 	@media (min-width: 768px){
 		font-size: 20px;
 	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+	font-weight: 300;
 }

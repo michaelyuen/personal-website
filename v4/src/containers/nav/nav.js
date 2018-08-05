@@ -1,15 +1,14 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import Avatar from '../../components/avatar/avatar';
 import Menu from '../../components/menu/menu';
 
-import { config } from './config';
-import style from './style.module.scss';
+import config from './config';
+import style from './nav.module.scss';
 
 const NavContainer = () => (
 
-	<article className={style.article}>
+	<nav className={style.MyNav}>
 
 		<h1>
 			<Link to="/">Michael Clayton Yuen</Link>
@@ -17,7 +16,7 @@ const NavContainer = () => (
 
 		<Menu items={config.items}/>
 
-	</article>
+	</nav>
 )
 
 export default NavContainer

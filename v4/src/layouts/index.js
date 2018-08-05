@@ -4,10 +4,12 @@ import Helmet from 'react-helmet'
 
 import NavContainer from '../containers/nav/nav';
 import '../styles/main.scss'
-import style from './style.module.scss'
+import style from './index.module.scss'
 
 const Layout = ({ children, data }) => (
+
 	<div id="My" className={style.My}>
+
 		<Helmet title={data.site.siteMetadata.title} />
 
 		<NavContainer />
@@ -21,6 +23,7 @@ const Layout = ({ children, data }) => (
 			</div>
 			<div className={style.skyline}></div>
 		</div>
+		
 	</div>
 )
 

@@ -1,7 +1,19 @@
 @import '../styles/1-settings/variables';
 
-.MyIndex {
-    max-width: $maxWidth;
-    position: fixed; left: 50%;
-    transform: translateX(-50%);
+.MyContent {
+    text-align: center;
+
+    h1 {
+        margin-bottom: .5em;
+    }
+
+    p {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+
+        a {
+            color: $dark-text-primary;
+        }
+    }
 }
