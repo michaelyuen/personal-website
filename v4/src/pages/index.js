@@ -1,26 +1,28 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Avatar from '../components/avatar/avatar';
+import Layout from '../components/layout/layout';
 
 import style from './index.module.scss'
 
 const IndexPage = () => (
 
-	<div className="MyContainer__fixed">
+	<Layout>
+		<div className="MyContainer__fixed">
 
-		<Avatar/>
+			<Avatar/>
 
-		<div className="MyContainer MyContainer__rectangle">
-			<div className={style.MyContent}>
+			<div className="MyContainer MyContainer__rectangle">
+				<div className={style.MyContent}>
 
-				<h1>Brooklyn Based Frontend Engineer</h1>
+					<h1>Brooklyn Based Frontend Engineer</h1>
 
-				<p><span>enjoying myself</span><span>&&</span><span>improving myself</span><span>&&</span><span>making <a href="https://resy.com">resy.com</a></span></p>
+					<p><span>enjoying myself</span><span>&&</span><span>improving myself</span><span>&&</span><span>making <a href="https://resy.com">resy.com</a></span></p>
 
+				</div>
 			</div>
+
 		</div>
-		
-  	</div>
+	</Layout>
 )
 
 export default IndexPage
