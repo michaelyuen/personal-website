@@ -17,3 +17,20 @@
         }
     }
 }
+
+.MySecondLine {
+
+	span {
+		align-items: center;
+		display: flex;
+
+		a {
+			display: flex;
+		}
+	}
+}
+
+.ResyLogo {
+	background: $white;
+	fill: $resy;
+}
