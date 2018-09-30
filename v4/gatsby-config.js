@@ -6,6 +6,7 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
 		{
+			// leave as example and for testing
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: [

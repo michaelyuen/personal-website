@@ -19,6 +19,13 @@
 	src: url(../assets/fonts/Gaegu/Gaegu-Bold.ttf);
 }
 
+@font-face {
+	font-family: 'Fira Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../assets/fonts/FiraMono/FiraMono-Regular.ttf);
+}
+
 html, body{
 	font-family: 'Gaegu', sans-serif;
 	font-size: 16px;
