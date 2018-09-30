@@ -1,4 +1,4 @@
-@import '../styles/1-settings/variables';
+@import '../../styles/1-settings/variables';
 
 .My {
 	color: $dark-text-primary;
@@ -90,7 +90,7 @@ $shadows-big: multiple-box-shadow(400);
 }
 
 .skyline {
-	background-image: url('../assets/images/skyline.png');
+	background-image: url('../../assets/images/skyline.png');
 	background-repeat: no-repeat;
     background-position: center bottom;
 	background-size: contain;
