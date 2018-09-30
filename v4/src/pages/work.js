@@ -12,7 +12,7 @@ const WorkPage = () => (
 				My ideal website is clean and delightful, with beautiful form that empowers the function. I believe using a website should be fun and I aspire to build experiences that leave the user happy and satisfied. Have a look at what I've created so far and enjoy yourself.
 			</div>
 
-			<div>
+			{/* <div>
 
 				<div className="row">
 
@@ -424,7 +424,7 @@ const WorkPage = () => (
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	</div>
 )

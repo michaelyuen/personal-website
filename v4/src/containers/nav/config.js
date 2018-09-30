@@ -1,16 +1,20 @@
 export const config = {
     items: [
         {
-            "name": "About",
-            "path": "about"
+            name: "About",
+            path: "about"
         },
         {
-            "name": "Work",
-            "path": "work"
-        },
+            name: "Work",
+            path: "work"
+		},
+		{
+			name: "Blog",
+			path: "blog"
+		},
         {
-            "name": "Contact",
-            "path": "contact"
+            name: "Contact",
+            path: "contact"
         }
     ]
 }

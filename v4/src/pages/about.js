@@ -27,7 +27,7 @@ const AboutPage = () => (
             </div>
         </div>
 
-        <div className="MyContainer MyContainer__rectangle">
+        {/* <div className="MyContainer MyContainer__rectangle">
             <div>
 
                 <h1 className="center uppercase">hobbies</h1>
@@ -61,7 +61,7 @@ const AboutPage = () => (
                 </p>
 
             </div>
-        </div>
+        </div> */}
 
     </div>
 )
