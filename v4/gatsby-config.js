@@ -13,6 +13,14 @@ module.exports = {
 					'source sans pro\:300,400,400i,700'
 				]
 			}
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /svg/
+				}
+			}
 		}
 	]
 }

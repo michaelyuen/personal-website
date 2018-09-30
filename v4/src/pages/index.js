@@ -3,6 +3,7 @@ import Avatar from '../components/avatar/avatar';
 import Layout from '../components/layout/layout';
 
 import style from './index.module.scss'
+import ResyLogo from '../assets/images/svg/resy-logo.svg'
 
 const IndexPage = () => (
 
@@ -16,7 +17,13 @@ const IndexPage = () => (
 
 					<h1>Brooklyn Based Frontend Engineer</h1>
 
-					<p><span>enjoying myself</span><span>&&</span><span>improving myself</span><span>&&</span><span>making <a href="https://resy.com">resy.com</a></span></p>
+					<p className={style.MySecondLine}>
+						<span>enjoying myself</span>
+						<span>&&</span>
+						<span>improving myself</span>
+						<span>&&</span>
+						<span>building&nbsp;<a href="https://resy.com"><ResyLogo className={style.ResyLogo} /></a></span>
+					</p>
 
 				</div>
 			</div>
