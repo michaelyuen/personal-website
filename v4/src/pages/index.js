@@ -20,7 +20,7 @@ const IndexPage = () => (
 					<span>&&</span>
 					<span>improving myself</span>
 					<span>&&</span>
-					<span>building&nbsp;<a href="https://resy.com"><ResyLogo className={style.ResyLogo} /></a></span>
+					<span>building<a href="https://resy.com"><ResyLogo className={style.ResyLogo} /></a></span>
 				</p>
 
 			</div>

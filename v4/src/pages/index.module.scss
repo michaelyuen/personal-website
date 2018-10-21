@@ -20,28 +20,20 @@
 			margin-bottom: .5em;
 		}
     }
-
-    p {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		font-size: 1.25em;
-        justify-content: space-around;
-		margin: 0;
-
-		@media #{$mq-md} {
-			flex-direction: row;
-		}
-
-        a {
-            color: $dark-text-primary;
-        }
-    }
 }
 
 .MySecondLine {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 	font-family: 'Fira Mono', monospace;
-	font-size: .9em;
+	justify-content: space-around;
+	line-height: 1.5;
+	margin: 0;
+
+	@media #{$mq-md} {
+		flex-direction: row;
+	}
 
 	span {
 		align-items: center;
@@ -60,9 +52,22 @@
 		&:last-child {
 			flex-wrap: wrap;
 			justify-content: center;
+
+			a {
+				margin-left: 10px;
+
+				@media #{$mq-md} {
+					margin-left: 0;
+				}
+
+				@media #{$mq-lg} {
+					margin-left: 10px;
+				}
+			}
 		}
 
 		a {
+			color: $dark-text-primary;
 			display: flex;
 		}
 	}
