@@ -15,7 +15,7 @@
 
 	@media #{$mq-md} {
 		padding: 50px;
-		padding-top: 120px;
+		padding-top: $navHeight + 10px;
 	}
 }
 

@@ -2,12 +2,16 @@
 
 .MyContainer__fixed {
 	padding-top: 15px;
+
+	@media #{$mq-md} {
+		padding-top: 50px;
+	}
 }
 
 .MyContent {
 	font-size: .9rem;
 	line-height: 1.3;
-    text-align: center;
+	text-align: center;
 
     h1 {
 		margin-bottom: .694444em;
@@ -45,10 +49,15 @@
 		&:nth-child(4) {
 			margin-top: 5px;
 			margin-bottom: 5px;
+
+			@media #{$mq-md} {
+				margin: 0;
+			}
 		}
 
-		@media #{$mq-md} {
-
+		&:last-child {
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 
 		a {

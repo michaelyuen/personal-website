@@ -11,7 +11,11 @@ $containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0
 	padding: $containerPadding;
 
 	@media #{$mq-md} {
-		width: $maxWidth; max-width: $maxWidth;
+		max-width: $maxWidth;
+	}
+
+	@media #{$mq-lg} {
+		width: $maxWidth;
 	}
 
     > div {
@@ -36,4 +40,8 @@ $containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0
     position: fixed; left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
+
+	@media #{$mq-md} {
+		padding: 0 50px;
+	}
 }

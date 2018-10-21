@@ -8,6 +8,7 @@
 	width: 150px !important; height: 150px;
 
 	@media #{$mq-md} {
+		margin-bottom: 50px;
 		padding: 25px;
 		width: 300px !important; height: 300px;
 	}
