@@ -4,6 +4,10 @@
 	font-size: 2rem;
 	height: 100%;
 
+	@media #{$mq-md} {
+		font-size: 1rem;
+	}
+
 	div {
 
 		@media #{$mq-md} {
@@ -23,8 +27,12 @@
 	width: 100vw; height: calc(100vh - #{$navHeight});
 
 	@media #{$mq-md} {
+		background: none;
 		flex-direction: row;
+		padding: 0;
 		position: initial; left: initial;
+		transform: none;
+		transition: none;
 		width: auto; height: 100%;
 	}
 }
@@ -41,6 +49,7 @@
 
 	@media #{$mq-md} {
 		flex-grow: initial;
+		margin: 0;
 		transform: initial;
 		transition: initial;
 	}
@@ -54,6 +63,7 @@
 		justify-content: center;
 
 		@media #{$mq-md} {
+			background: none;
 			width: 100px; height: 100%;
 		}
 	}
