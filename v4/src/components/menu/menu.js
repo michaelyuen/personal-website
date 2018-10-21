@@ -25,7 +25,9 @@ class Menu extends Component {
 
 					{this.props.items.map((item, i) =>
 
-						<li key={i} className={style.li}><Link to={item.path}>{item.name}</Link></li>
+						<li key={i} className={style.li}>
+							<Link to={item.path} onClick={this.onClick}>{item.name}</Link>
+						</li>
 					)}
 
 				</ul>
