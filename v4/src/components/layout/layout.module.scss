@@ -8,10 +8,16 @@
 .MyContent {
 	background: linear-gradient(#04050f, #1e2345, #364a78, #7a536e, #fc5b66, #f0d96f);
 	min-height: 200vh;
-	padding: 50px;
-	padding-top: 120px;
+	padding: 25px;
+	padding-top: 100px;
 	overflow: hidden;
 	position: relative;
+	z-index: 1;
+
+	@media #{$mq-md} {
+		padding: 50px;
+		padding-top: 120px;
+	}
 }
 
 .MyChildren {

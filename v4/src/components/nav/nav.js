@@ -11,7 +11,10 @@ const NavContainer = () => (
 	<nav className={style.MyNav}>
 
 		<h1>
-			<Link to="/">Michael Clayton Yuen</Link>
+			<Link to="/">
+				<span>mcy</span>
+				<span>Michael Clayton Yuen</span>
+			</Link>
 		</h1>
 
 		<Menu items={config.items}/>

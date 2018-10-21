@@ -1,16 +1,29 @@
 @import '../styles/1-settings/variables';
 
 .MyContent {
+	font-size: .9rem;
+	line-height: 1.3;
     text-align: center;
 
     h1 {
-        margin-bottom: .5em;
+		margin-bottom: .694444em;
+
+		@media #{$mq-md} {
+			margin-bottom: .5em;
+		}
     }
 
     p {
-        display: flex;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		font-size: 1.25em;
         justify-content: space-around;
-        margin: 0;
+		margin: 0;
+
+		@media #{$mq-md} {
+			flex-direction: row;
+		}
 
         a {
             color: $dark-text-primary;
@@ -23,6 +36,16 @@
 	span {
 		align-items: center;
 		display: flex;
+
+		&:nth-child(2),
+		&:nth-child(4) {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		@media #{$mq-md} {
+
+		}
 
 		a {
 			display: flex;

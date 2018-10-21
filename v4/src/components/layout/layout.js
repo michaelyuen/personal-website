@@ -6,7 +6,7 @@ import NavContainer from '../../components/nav/nav';
 import '../../styles/main.scss'
 import style from './layout.module.scss'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			{
