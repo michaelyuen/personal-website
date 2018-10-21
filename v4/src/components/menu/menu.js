@@ -1,18 +1,39 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from 'gatsby'
+import Hamburger from '../hamburger/hamburger'
 
 import style from './menu.module.scss';
 
-export const Menu = ({ items }) => (
+class Menu extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {isOpen: false};
+		this.onClick = this.onClick.bind(this);
+	}
 
-    <ul className={style.menu}>
+	onClick() {
+		this.setState(prevState => ({
+			isOpen: !prevState.isOpen
+		}))
+	}
 
-        {items.map((item, i) =>
+	render() {
+		return(
+			<div className={style.menu}>
+				<Hamburger onClick={() => this.onClick} isOpen={this.state.isOpen}/>
+				<ul className={`${style.ul} ${this.state.isOpen ? style.ulOpen : ''}`}>
 
-            <li key={i}><Link to={item.path}>{item.name}</Link></li>
-        )}
+					{this.props.items.map((item, i) =>
 
-    </ul>
-)
+						<li key={i} className={style.li}>
+							<Link to={item.path} onClick={this.onClick}>{item.name}</Link>
+						</li>
+					)}
+
+				</ul>
+			</div>
+		)
+	}
+}
 
 export default Menu

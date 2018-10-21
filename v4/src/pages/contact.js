@@ -1,10 +1,9 @@
 import React from 'react'
-import Layout from '../components/layout/layout';
 
 const ContactPage = () => (
 
-	<Layout>
-		<div className="MyContainer MyContainer__rectangle MyContainer__fixed">
+	<div className="MyContainer__fixed">
+		<div className="MyContainer MyContainer__rectangle">
 			<div>
 
 				<h1 className="center uppercase">contact</h1>
@@ -38,9 +37,10 @@ const ContactPage = () => (
 						<a className="fa fa-github-alt fa-3x" target="_blank" rel="noopener noreferrer" href="https://www.github.com/michaelyuen">.</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
-	</Layout>
+	</div>
 )
 
 export default ContactPage

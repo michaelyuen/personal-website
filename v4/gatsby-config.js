@@ -22,6 +22,12 @@ module.exports = {
 					include: /svg/
 				}
 			}
+		},
+		{
+			resolve: 'gatsby-plugin-layout',
+			options: {
+				component: require.resolve('./src/components/layout/layout.js')
+			}
 		}
 	]
 }

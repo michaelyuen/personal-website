@@ -1,10 +1,9 @@
 import React from 'react'
-import Layout from '../components/layout/layout';
 
 const BlogPage = () => (
 
-	<Layout>
-		<div className="MyContainer MyContainer__rectangle MyContainer__fixed">
+	<div className="MyContainer__fixed">
+		<div className="MyContainer MyContainer__rectangle">
 			<div>
 				<h1 className="center uppercase">blog</h1>
 				<p className="center">
@@ -12,7 +11,7 @@ const BlogPage = () => (
 				</p>
 			</div>
 		</div>
-	</Layout>
+	</div>
 )
 
 export default BlogPage

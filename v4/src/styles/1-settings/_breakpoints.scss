@@ -1,0 +1,11 @@
+$bp-xs: 375px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+$mq-xs: '(min-width: #{$bp-xs})';
+$mq-sm: '(min-width: #{$bp-sm})';
+$mq-md: '(min-width: #{$bp-md})';
+$mq-lg: '(min-width: #{$bp-lg})';
+$mq-xl: '(min-width: #{$bp-xl})';

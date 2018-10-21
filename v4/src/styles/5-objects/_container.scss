@@ -8,13 +8,23 @@ $containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0
     margin-left: auto;
     margin-right: auto;
     margin-bottom: $containerPadding * 2;
-    max-width: $maxWidth;
-    padding: $containerPadding;
-    width: $maxWidth;
+	padding: $containerPadding;
+
+	@media #{$mq-md} {
+		max-width: $maxWidth;
+	}
+
+	@media #{$mq-lg} {
+		width: $maxWidth;
+	}
 
     > div {
         background-color: $dark-border;
-        padding: $containerPadding * 2;
+		padding: $containerPadding;
+
+		@media #{$mq-md} {
+			padding: $containerPadding * 2;
+		}
     }
 }
 
@@ -28,5 +38,10 @@ $containerGradient__circle: linear-gradient(135deg, rgba(#fff, .1), rgba(#fff, 0
 
 .MyContainer__fixed {
     position: fixed; left: 50%;
-    transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 100%;
+
+	@media #{$mq-md} {
+		padding: 0 50px;
+	}
 }

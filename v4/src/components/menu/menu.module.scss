@@ -1,17 +1,70 @@
 @import '../../styles/1-settings/variables';
 
 .menu {
-    display: flex;
-    height: 100%;
+	font-size: 2rem;
+	height: 100%;
 
-    li {
+	@media #{$mq-md} {
+		font-size: 1rem;
+	}
 
-        a {
-            align-items: center;
-            display: flex;
-            font-weight: 300;
-            justify-content: center;
-            width: 100px; height: 100%;
-        }
-    } 
+	div {
+
+		@media #{$mq-md} {
+			display: none;
+		}
+	}
+}
+
+.ul {
+	background: linear-gradient(#1e2345, #364a78, #7a536e, #fc5b66, #f0d96f);
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	position: absolute; left: 0;
+	transform: translateX(100%);
+	transition: transform .3s ease-in-out;
+	width: 100vw; height: calc(100vh - #{$navHeight});
+
+	@media #{$mq-md} {
+		background: none;
+		flex-direction: row;
+		padding: 0;
+		position: initial; left: initial;
+		transform: none;
+		transition: none;
+		width: auto; height: 100%;
+	}
+}
+
+.ulOpen {
+	transform: translateX(0);
+}
+
+.li {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	margin: 15px;
+
+	@media #{$mq-md} {
+		flex-grow: initial;
+		margin: 0;
+		transform: initial;
+		transition: initial;
+	}
+
+	a {
+		background: rgba(#1e2345, .4);
+		align-items: center;
+		display: flex;
+		flex-grow: 1;
+		font-weight: 300;
+		justify-content: center;
+
+		@media #{$mq-md} {
+			background: none;
+			width: 100px; height: 100%;
+		}
+	}
 }
