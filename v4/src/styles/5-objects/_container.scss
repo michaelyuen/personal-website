@@ -1,11 +1,15 @@
 @import '../1-settings/variables';
 
+#My {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
 .MyContainer {
 	display: flex;
 	justify-content: center;
   margin: auto;
-  min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: inherit;
   padding: $padding calc(#{$padding}/2);
   width: 100vw;
 
