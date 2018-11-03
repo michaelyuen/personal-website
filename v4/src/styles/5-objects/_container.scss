@@ -4,8 +4,10 @@
 	display: flex;
 	justify-content: center;
   margin: auto;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   padding: $padding calc(#{$padding}/2);
-  width: 100vw; min-height: 100%;
+  width: 100vw;
 
   @media #{$mq-md} {
     padding: $padding-md calc(#{$padding}/2);

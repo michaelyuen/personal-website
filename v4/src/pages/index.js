@@ -1,6 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+resize();
+window.addEventListener('resize', resize);
+
+function resize() {
+  let vh = window.innerHeight * .01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 const IndexPage = () => (
   <div className="MyContainer MyContainer__hero">
     <div>
