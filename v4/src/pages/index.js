@@ -1,32 +1,23 @@
 import React from 'react'
-import Avatar from '../components/avatar/avatar';
-
-import style from './index.module.scss'
-import ResyLogo from '../assets/images/svg/resy-logo.svg'
+import { Link } from 'gatsby'
 
 const IndexPage = () => (
-
-	<div className={['MyContainer__fixed', style.MyContainer__fixed].join(' ')}>
-
-		<Avatar/>
-
-		<div className="MyContainer MyContainer__rectangle">
-			<div className={style.MyContent}>
-
-				<h1>Brooklyn Based Frontend Engineer</h1>
-
-				<p className={style.MySecondLine}>
-					<span>enjoying myself</span>
-					<span>&&</span>
-					<span>improving myself</span>
-					<span>&&</span>
-					<span>building<a href="https://resy.com"><ResyLogo className={style.ResyLogo} /></a></span>
-				</p>
-
-			</div>
-		</div>
-
-	</div>
+  <div className="MyContainer MyContainer__hero">
+    <div>
+      <h1>Michael Clayton Yuen</h1>
+      <h3>Frontend Engineer</h3>
+      <hr/>
+      <h6>
+        <Link to="about">About.</Link>
+        &nbsp;
+        <Link to="work">Work.</Link>
+        &nbsp;
+        <Link to="blog">Blog.</Link>
+        &nbsp;
+        <Link to="contact">Contact.</Link>
+      </h6>
+    </div>
+  </div>
 )
 
 export default IndexPage

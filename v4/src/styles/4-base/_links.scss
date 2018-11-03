@@ -1,11 +1,10 @@
 @import '../1-settings/variables';
 
 a {
-    color: $primary;
-    text-decoration: none;
+  color: $primary;
+  text-decoration: none;
 
-    &:hover {
-		cursor: pointer;
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }

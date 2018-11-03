@@ -1,39 +1,10 @@
-@font-face {
-	font-family: 'Gaegu';
-	font-style: normal;
-	font-weight: 300;
-	src: url(../assets/fonts/Gaegu/Gaegu-Light.ttf);
-}
-
-@font-face {
-	font-family: 'Gaegu';
-	font-style: normal;
-	font-weight: 400;
-	src: url(../assets/fonts/Gaegu/Gaegu-Regular.ttf);
-}
-
-@font-face {
-	font-family: 'Gaegu';
-	font-style: normal;
-	font-weight: 500;
-	src: url(../assets/fonts/Gaegu/Gaegu-Bold.ttf);
-}
-
-@font-face {
-	font-family: 'Fira Mono';
-	font-style: normal;
-	font-weight: 400;
-	src: url(../assets/fonts/FiraMono/FiraMono-Regular.ttf);
-}
-
 html, body{
-	font-family: 'Gaegu', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	font-weight: 400;
 	line-height: 1.5;
 
-	@media (min-width: 768px){
-		font-size: 20px;
+	@media #{$mq-sm} {
+		font-size: 22px;
 	}
 }
 
@@ -43,9 +14,11 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
 }
 
 p {
-	font-weight: 300;
+  line-height: 2;
+  margin: 0;
 }

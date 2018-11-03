@@ -2,14 +2,12 @@ import React from 'react'
 
 const WorkPage = () => (
 
-	<div className="MyContainer MyContainer__rectangle">
+	<div className="MyContainer MyContainer__content">
 		<div>
-
-			<h1 className="center uppercase">work</h1>
-
-			<div>
+			<h1>Work</h1>
+			<p>
 				My ideal website is clean and delightful, with beautiful form that empowers the function. I believe using a website should be fun and I aspire to build experiences that leave the user happy and satisfied. Have a look at what I've created so far and enjoy yourself.
-			</div>
+			</p>
 
 			{/* <div>
 
