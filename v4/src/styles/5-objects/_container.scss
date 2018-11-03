@@ -5,7 +5,7 @@
 	justify-content: center;
   margin: auto;
   padding: $padding calc(#{$padding}/2);
-  width: 100vw; min-height: 100vh;
+  width: 100vw; min-height: 100%;
 
   @media #{$mq-md} {
     padding: $padding-md calc(#{$padding}/2);
