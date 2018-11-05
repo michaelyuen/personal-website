@@ -11,10 +11,12 @@
   margin: auto;
   min-height: inherit;
   padding: $padding calc(#{$padding}/2);
+  padding-top: $padding + $navHeight;
   width: 100vw;
 
   @media #{$mq-md} {
-    padding: $padding-md calc(#{$padding}/2);
+    padding: $paddingMd calc(#{$padding}/2);
+    padding-top: $padding + $navHeightMd;
     max-width: $bp-md;
   }
 }
@@ -33,12 +35,6 @@
 
   > div {
     text-align: center;
-  }
-
-  h1,
-  h3,
-  h6 {
-    font-weight: normal;
   }
 
   h1 {

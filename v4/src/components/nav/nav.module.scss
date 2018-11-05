@@ -1,49 +1,23 @@
 @import '../../styles/1-settings/variables';
 
 .MyNav {
-    align-items: center;
-    background: $navBackground;
-	display: flex;
-    font-family: 'Gaegu', serif;
-    justify-content: space-between;
-    padding: 0 15px;
-    position: fixed; left: 0; top: 0;
-    width: 100%; height: $navHeight;
+  align-items: center;
+  background: $dark-text-primary;
+  box-shadow: 0 2px 5px $border;
+  display: flex;
+  font-family: 'Playfair Display', serif;
+  justify-content: space-between;
+  padding: 0 15px;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: $navHeight;
 	z-index: 2;
 
 	@media #{$mq-md} {
-		height: $navHeight + 10px;
+		height: $navHeightMd;
 		padding: 0 25px;
-	}
+  }
 
-    h1 {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        justify-content: center;
-    }
-
-    a {
-        color: $dark-text-primary;
-
-        &:hover {
-            text-decoration: none;
-		}
-
-		> * {
-			&:first-child {
-				@media #{$mq-md} {
-					display: none;
-				}
-			}
-
-			&:last-child {
-				display: none;
-
-				@media #{$mq-md} {
-					display: initial;
-				}
-			}
-		}
-    }
+  > a {
+    font-size: 1.5rem;
+  }
 }
