@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../../styles/main.scss'
 import NavContainer from '../nav/nav'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
 	<StaticQuery
 		query={graphql`
 			{
@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
 		render={data => (
 			<div id="My">
 				<Helmet titleTemplate={`%s | ${data.site.siteMetadata.title}`} defaultTitle={data.site.siteMetadata.title} />
-        { children.key !== '/' ? <NavContainer /> : null }
+        { location.pathname === '/' ? null : <NavContainer /> }
         {children}
 			</div>
 		)}
