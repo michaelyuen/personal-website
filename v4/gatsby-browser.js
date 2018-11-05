@@ -3,8 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
- exports.onClientEntry = () => {
+exports.onClientEntry = () => {
   resize();
   window.addEventListener('resize', resize);
 
@@ -12,4 +11,4 @@
     let vh = window.innerHeight * .01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
- }
+}

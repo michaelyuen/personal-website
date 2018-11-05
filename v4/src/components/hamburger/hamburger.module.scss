@@ -4,35 +4,32 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 40px; height: 100%;
+	width: 30px; height: 100%;
 
 	span {
 		&:before {
-			background: $white;
-			border-radius: 4px;
+			background: $text-primary;
 			content: '';
-			position: absolute; top: -10px;
+			position: absolute; top: -8px;
 			transition: top 0.1s 0.25s ease-in,
                     opacity 0.1s ease-in;
-			width: 40px; height: 4px;
+			width: 30px; height: 2px;
 		}
 
-		background: $white;
-		border-radius: 4px;
+		background: $text-primary;
 		margin-top: -2px;
 		position: absolute; top: 50%;
 		transition-duration: 0.22s;
       	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-		width: 40px; height: 4px;
+		width: 30px; height: 2px;
 
 		&:after {
-			background: $white;
-			border-radius: 4px;
+			background: $text-primary;
 			content: '';
-			position: absolute; bottom: -10px;
+			position: absolute; bottom: -8px;
 			transition: bottom 0.1s 0.25s ease-in,
                     transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-			width: 40px; height: 4px;
+			width: 30px; height: 2px;
 		}
 	}
 }

@@ -4,6 +4,10 @@ import Hamburger from '../hamburger/hamburger'
 
 import style from './menu.module.scss';
 
+const isActive = ({ isPartiallyCurrent }) => {
+  return isPartiallyCurrent ? {style:{display: 'none'}} : null
+}
+
 class Menu extends Component {
 	constructor(props) {
 		super(props);
@@ -19,17 +23,21 @@ class Menu extends Component {
 
 	render() {
 		return(
-			<div className={style.menu}>
+			<div className={`${style.menu} ${this.state.isOpen ? style.menuOpen : ''}`}>
 				<Hamburger onClick={() => this.onClick} isOpen={this.state.isOpen}/>
-				<ul className={`${style.ul} ${this.state.isOpen ? style.ulOpen : ''}`}>
-
+				<ul>
 					{this.props.items.map((item, i) =>
 
-						<li key={i} className={style.li}>
-							<Link to={item.path} onClick={this.onClick}>{item.name}</Link>
+						<li key={i}>
+							<Link
+                to={item.path}
+                getProps={isActive}
+                onClick={this.onClick}
+              >
+                {item.name}
+              </Link>
 						</li>
 					)}
-
 				</ul>
 			</div>
 		)
