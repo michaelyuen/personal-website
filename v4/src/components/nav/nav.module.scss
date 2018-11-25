@@ -3,6 +3,8 @@
 .MyNav {
   align-items: center;
   background: $dark-text-primary;
+  background: url(../../assets/images/marble.jpg) no-repeat;
+  background-size: cover;
   box-shadow: 0 2px 5px $border;
   display: flex;
   font-family: 'Playfair Display', serif;

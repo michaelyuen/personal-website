@@ -18,13 +18,16 @@
     background: $dark-text-primary;
     display: flex;
     flex-direction: column;
-    position: absolute; left: 0;
+    padding-top: $padding;
+    position: absolute; left: 0; top: calc(100% + 5px);
     transform: translateX(100%);
     transition: transform .3s ease-in-out;
-    width: 100vw; height: calc(100vh - #{$navHeight});
+    width: 100vw; height: calc(100vh - #{$navHeight} - 5px);
 
     @media #{$mq-md} {
+      background: none;
       flex-direction: row;
+      padding-top: 0;
       position: initial; left: initial;
       transform: none;
       transition: none;
