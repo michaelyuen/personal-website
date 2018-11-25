@@ -33,8 +33,18 @@
     font-size: 1.6rem;
   }
 
+  &:before {
+    content: '';
+    background: url(../assets/images/marble.jpg) no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100vw; height: 100vh;
+  }
+
   > div {
+    position: relative;
     text-align: center;
+    z-index: 1;
   }
 
   h1 {
