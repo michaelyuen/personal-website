@@ -7,7 +7,7 @@ export default function Home() {
         <span>my</span>Bio
       </h1>
       <p>
-        👋🏻 I'm Michael but sometimes I go by <b>my</b>. My purpose in live is to
+        👋🏻 I'm Michael but sometimes I go by <b>my</b>. My purpose in life is to
         create order.
       </p>
       <p>
@@ -49,7 +49,7 @@ export default function Home() {
         Star Wars Galaxy of Heroes, Tap Sports Baseball, and Clash of Clans.
       </p>
       <p>
-        As someone that loves order, I enjoy taking notes and trying to manage
+        As someone who loves order, I enjoy taking notes and trying to manage
         them over time. Recently, I came across the concept of a{" "}
         <a
           href="https://fortelabs.co/blog/how-to-take-smart-notes/"
