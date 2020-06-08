@@ -13,7 +13,8 @@ type Props = {
 
 export const NavContainer = styled.nav`
   a {
-    font-size: 1.5em;
+    font-size: ${({ theme }) => theme.fontSizes[4]}px;
+    line-height: 1;
   }
 `;
 

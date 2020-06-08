@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
-const AvatarContainer = styled.section`
-  text-align: center;
-
-  svg,
-  img {
-    border-radius: 50%;
-    height: 8em;
-    width: 8em;
-  }
+const AvatarContainer = styled.img`
+  border-radius: 50%;
+  height: ${({ theme }) => theme.sizes.avatar};
+  width: ${({ theme }) => theme.sizes.avatar};
 `;
 
 export default function Avatar() {
   return (
-    <AvatarContainer className="Avatar">
-      <img src="/images/portrait.png" alt="Michael Yuen" />
+    <AvatarContainer
+      className="Avatar"
+      src="/images/portrait.png"
+      alt="Michael Yuen"
+    >
       {/* <img src="/images/avatar.svg" alt="Michael Yuen" /> */}
       {/* <svg
         width="264px"

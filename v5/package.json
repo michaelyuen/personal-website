@@ -18,7 +18,8 @@
     "remark": "^12.0.0",
     "remark-html": "^11.0.1",
     "styled-components": "^5.0.0",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",

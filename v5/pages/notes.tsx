@@ -15,10 +15,6 @@ import styled from "styled-components";
 // };
 
 const NotesContainer = styled.section`
-  .Notes__description {
-    margin-bottom: ${({ theme }) => theme.spacing.gutter};
-  }
-
   .Note {
     a {
       font-weight: bolder;
