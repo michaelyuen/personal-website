@@ -37,7 +37,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   transition: transform 300ms ease;
   width: 100%;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndices[2]};
 
   &.HeaderContainer--not-top {
     transform: translateY(-150px);

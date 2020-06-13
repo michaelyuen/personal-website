@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
 
     &:hover {
@@ -25,6 +26,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     font-family: ${theme.fonts.body};
     font-size: ${theme.fontSizes[3]}px;
     line-height: ${theme.lineHeights.body};

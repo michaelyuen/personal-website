@@ -2,7 +2,7 @@ import { parseISO, format } from "date-fns";
 import styled from "styled-components";
 
 const DateContainer = styled.time`
-  color: ${({ theme }) => theme.colors.midgray};
+  color: ${({ theme }) => theme.colors.gray};
 `;
 
 export default function Date({ dateString }: { dateString: string }) {

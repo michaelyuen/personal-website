@@ -1,10 +1,12 @@
+import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
 import { color, layout, space, typography } from "styled-system";
+import ColorModeButton from "../components/ColorModeButton";
 import Header from "../containers/Header";
 import GlobalStyle from "../styles/GlobalStyle";
-import theme from "../styles/theme";
+import baseTheme from "../styles/theme";
 
 const LayoutContainer = styled.main`
   ${layout};
@@ -20,7 +22,31 @@ const LayoutContainer = styled.main`
   }
 `;
 
+const modes = ["light", "dark", "gray", "rose", "chocolate", "teal"];
+const getTheme = (mode) => ({
+  ...baseTheme,
+  colors: baseTheme.colors.modes[mode] || baseTheme.colors,
+});
+
 export default function App({ Component, pageProps }: AppProps) {
+  const [mode, setMode] = useState(modes[0]);
+  useEffect(() => {
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mql.matches) {
+      return setMode("dark");
+    } else {
+      return setMode("light");
+    }
+  }, []);
+  const setNextMode = () => {
+    let nextModeIndex = modes.indexOf(mode) + 1;
+    if (nextModeIndex >= modes.length) {
+      nextModeIndex = 0;
+    }
+    setMode(modes[nextModeIndex]);
+  };
+  const theme = getTheme(mode);
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -31,6 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyle />
+      <ColorModeButton mode={mode} setMode={setNextMode} />
       <Header />
       <LayoutContainer maxWidth="maxWidth" mx="auto" p="4">
         <Component {...pageProps} />

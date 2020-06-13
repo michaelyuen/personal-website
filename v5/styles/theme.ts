@@ -3,7 +3,7 @@ const breakpoints = ["578px", "768px", "1024px"];
 const theme = {
   breakpoints,
   colors: {
-    text: "#000",
+    text: "#212529",
     background: "#fff",
     primary: "#00f",
     secondary: "#00a",
@@ -14,9 +14,9 @@ const theme = {
     midgray: "#777",
     modes: {
       dark: {
-        text: "#fff",
-        background: "#000",
-        primary: "#0cf",
+        text: "#f0f4f6",
+        background: "#040d14",
+        primary: "#2FBEFF",
         secondary: "#f0e",
         gray: "#222",
         lightgray: "#111",
@@ -25,9 +25,36 @@ const theme = {
       gray: {
         text: "#eef",
         background: "#333336",
-        primary: "#09f",
+        primary: "#2FBEFF",
         secondary: "#0bf",
         gray: "#55555a",
+        lightgray: "#444448",
+        highlight: "#33444c",
+      },
+      rose: {
+        text: "#0e172c",
+        background: "#fec7d7",
+        primary: "#8841ff",
+        secondary: "#0bf",
+        gray: "#a786df",
+        lightgray: "#444448",
+        highlight: "#33444c",
+      },
+      chocolate: {
+        text: "#fff3ec",
+        background: "#55423d",
+        primary: "#e78fb3",
+        secondary: "#306",
+        gray: "#271c19",
+        lightgray: "#444448",
+        highlight: "#33444c",
+      },
+      teal: {
+        text: "#abd1c6",
+        background: "#004643",
+        primary: "#f9bc60",
+        secondary: "#306",
+        gray: "#271c19",
         lightgray: "#444448",
         highlight: "#33444c",
       },
@@ -53,6 +80,7 @@ const theme = {
     maxWidth: "768px",
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  zIndices: [-1, 0, 1, 2],
 };
 
 export default theme;
