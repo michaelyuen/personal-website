@@ -1,115 +1,52 @@
+import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { normalize } from "styled-normalize";
+import styled, { ThemeProvider } from "styled-components";
+import { color, layout, space, typography } from "styled-system";
+import ColorModeButton from "../components/ColorModeButton";
 import Header from "../containers/Header";
-
-const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
-  // Other globals
-  * {
-    box-sizing: border-box;
-  }
-
-  html,
-  body,
-  #__next {
-    height: 100%;
-    min-height: 100%;
-  }
-
-  a {
-    color: ${({ theme }) => theme.color.primary};
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  body {
-    margin: 0;
-    font-family: "Merriweather", serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    margin-top: 0;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid ${({ theme }) => theme.color.accent.two};
-    margin: ${({ theme }) => theme.spacing.gutter} 0;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  small {
-    font-size: 1rem;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-const theme = {
-  color: {
-    accent: {
-      one: "#fafafa",
-      two: "#eaeaea",
-      three: "#999",
-      four: "#888",
-      five: "#666",
-      six: "#444",
-      seven: "#333",
-      eight: "#111",
-    },
-    background: "#fff",
-    foreground: "#000",
-    primary: "#0070f3",
-  },
-  maxWidth: "768px",
-  spacing: {
-    gutter: "2em",
-  },
-};
+import GlobalStyle from "../styles/GlobalStyle";
+import baseTheme from "../styles/theme";
 
 const LayoutContainer = styled.main`
-  color: ${({ theme }) => theme.color.foreground};
+  ${layout};
+  ${space};
+  -webkit-overflow-scrolling: touch;
 
-  .Layout__page-container {
-    font-size: 18px;
-    line-height: 1.5;
-    padding: ${({ theme }) => theme.spacing.gutter};
-    -webkit-overflow-scrolling: touch;
-
-    > * {
-      margin: auto;
-      max-width: ${({ theme }) => theme.maxWidth};
-
-      h1 span {
-        font-family: "Pacifico";
-        display: inline-block;
-        padding-right: 5px;
-      }
+  > * {
+    h1 span {
+      font-family: "Pacifico";
+      display: inline-block;
+      padding-right: 5px;
     }
   }
 `;
 
+const modes = ["light", "dark", "gray", "rose", "chocolate", "teal"];
+const getTheme = (mode) => ({
+  ...baseTheme,
+  colors: baseTheme.colors.modes[mode] || baseTheme.colors,
+});
+
 export default function App({ Component, pageProps }: AppProps) {
+  const [mode, setMode] = useState(modes[0]);
+  useEffect(() => {
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mql.matches) {
+      return setMode("dark");
+    } else {
+      return setMode("light");
+    }
+  }, []);
+  const setNextMode = () => {
+    let nextModeIndex = modes.indexOf(mode) + 1;
+    if (nextModeIndex >= modes.length) {
+      nextModeIndex = 0;
+    }
+    setMode(modes[nextModeIndex]);
+  };
+  const theme = getTheme(mode);
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -120,11 +57,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyle />
-      <LayoutContainer>
-        <Header />
-        <section className="Layout__page-container">
-          <Component {...pageProps} />
-        </section>
+      <ColorModeButton mode={mode} setMode={setNextMode} />
+      <Header />
+      <LayoutContainer maxWidth="maxWidth" mx="auto" p="4">
+        <Component {...pageProps} />
       </LayoutContainer>
     </ThemeProvider>
   );

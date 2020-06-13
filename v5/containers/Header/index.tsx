@@ -28,16 +28,16 @@ const navItems = [
 
 export const HeaderContainer = styled.header`
   align-items: center;
-  background: ${({ theme }) => theme.color.background};
-  border-bottom: 1px solid ${({ theme }) => theme.color.accent.two};
+  background: ${({ theme }) => theme.colors.background};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
   display: flex;
   flex-direction: column;
-  padding: 1em 0;
+  padding: ${({ theme }) => theme.space[3]}px;
   position: sticky;
   top: 0;
   transition: transform 300ms ease;
   width: 100%;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndices[2]};
 
   &.HeaderContainer--not-top {
     transform: translateY(-150px);
@@ -63,10 +63,14 @@ export const HeaderContainer = styled.header`
     }
   }
 
-  .Avatar,
+  .Avatar {
+    margin-bottom: ${({ theme }) => theme.space[2]}px;
+  }
+
   h1 {
     font-family: "Pacifico", serif;
-    margin-bottom: 0.5em;
+    line-height: 1.15;
+    margin-bottom: ${({ theme }) => theme.space[3]}px;
 
     span {
       display: inline-block;
@@ -74,7 +78,7 @@ export const HeaderContainer = styled.header`
       transition: opacity 600ms ease 600ms, width 300ms ease 300ms;
 
       &:first-child {
-        width: 79px;
+        width: 80px;
       }
 
       &:nth-child(2) {
@@ -95,7 +99,7 @@ export const HeaderContainer = styled.header`
 
       a {
         color: inherit;
-        padding-right: 10px;
+        padding-right: ${({ theme }) => theme.space[2]}px;
       }
     }
   }
