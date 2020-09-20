@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
-import { color, layout, space, typography } from "styled-system";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 import ColorModeButton from "../components/ColorModeButton";
-import Header from "../containers/Header";
+import Header from "../components/Header";
 import GlobalStyle from "../styles/GlobalStyle";
 import baseTheme from "../styles/theme";
 
-const LayoutContainer = styled.main`
+type LayoutContainerProps = LayoutProps & SpaceProps;
+
+const LayoutContainer = styled.main<LayoutContainerProps>`
   ${layout};
   ${space};
   -webkit-overflow-scrolling: touch;

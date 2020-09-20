@@ -1,3 +1,5 @@
+import { Theme } from "styled-system";
+
 type ColorMode = {
   background: string;
   gray: string;

@@ -12,11 +12,12 @@ export default function Home() {
       </p>
       <p>
         I am a <s>🤖 robot</s>, <s>👽 alien</s>, 👨🏻‍🌾 human bean, and I live in
-        📍East Village, New York City with my beautiful girl bean{" "}
+        📍Edison, New Jersey with my beautiful girl bean{" "}
         <a href="https://sue.fyi" target="_blank" rel="noopener noreferrer">
           Sue
         </a>
-        .
+        . We are in the process of buying a condo in Bushwick and could not be
+        more thrilled! 🏡
       </p>
       <p>
         I'm also a software engineer and I love building{" "}
@@ -31,7 +32,12 @@ export default function Home() {
         <a href="https://www.mlb.com" target="_blank">
           mlb.com
         </a>
-        . Previously, I worked at Resy on{" "}
+        . I recently had the amazing opportunity to lead the frontend
+        development effort of the{" "}
+        <a href="https://www.mlb.com/cheer" target="_blank">
+          Cheer at the Ballpark
+        </a>{" "}
+        project. Previously, I worked at Resy on{" "}
         <a href="https://www.resy.com" target="_blank">
           resy.com
         </a>
@@ -43,10 +49,9 @@ export default function Home() {
       </p>
       <p>
         When I'm not <s>🤖 computing</s> coding, I enjoy playing video games.
-        Right now that's primarily Red Dead Redemption 2 and Super Mega Baseball
-        3, with some Minecraft, Overcooked, and Tricky Towers sprinkled in. I
-        don't <em>really</em> enjoy the mobile games, but I still play them -
-        Star Wars Galaxy of Heroes, Tap Sports Baseball, and Clash of Clans.
+        Right now that's primarily Minecraft ⛏️. I don't <em>really</em> enjoy
+        the mobile games, but I still play them - Star Wars Galaxy of Heroes and
+        Tap Sports Baseball.
       </p>
       <p>
         As someone who loves order, I enjoy taking notes and trying to manage

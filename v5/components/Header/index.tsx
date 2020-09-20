@@ -3,8 +3,8 @@ import { useState } from "react";
 import cx from "classnames";
 import _throttle from "lodash.throttle";
 import styled from "styled-components";
-import Avatar from "../../components/Avatar";
-import Nav, { NavContainer } from "../../components/Nav";
+import Avatar from "../Avatar";
+import Nav, { NavContainer } from "../Nav";
 import { useEventListener } from "../../hooks";
 
 const navItems = [
