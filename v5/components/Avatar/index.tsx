@@ -8,11 +8,7 @@ const AvatarContainer = styled.img`
 
 export default function Avatar() {
   return (
-    <AvatarContainer
-      className="Avatar"
-      src="/images/portrait.png"
-      alt="Michael Yuen"
-    >
+    <AvatarContainer className="Avatar" src="/images/me.jpg" alt="Michael Yuen">
       {/* <img src="/images/avatar.svg" alt="Michael Yuen" /> */}
       {/* <svg
         width="264px"
