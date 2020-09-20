@@ -1,6 +1,8 @@
+import Theme from "./theme.d";
+
 const breakpoints = ["578px", "768px", "1024px"];
 
-const theme = {
+const theme: Theme = {
   breakpoints,
   colors: {
     text: "#212529",
