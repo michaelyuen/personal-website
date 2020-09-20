@@ -1,8 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import theme from "./theme";
+import Theme from "./theme.d";
 
-const GlobalStyle = createGlobalStyle`
+type Props = {
+  theme: Theme;
+};
+
+const GlobalStyle = createGlobalStyle<Props>`
   ${normalize}
 
   * {
@@ -28,9 +32,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
-    font-family: ${theme.fonts.body};
-    font-size: ${theme.fontSizes[3]}px;
-    line-height: ${theme.lineHeights.body};
+    font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.fontSizes[3]}px;
+    line-height: ${({ theme }) => theme.lineHeights.body};
     margin: 0;
   }
 
@@ -40,13 +44,13 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${theme.fonts.header};
+    font-family: ${({ theme }) => theme.fonts.header};
     font-weight: bold;
     margin-top: 0;
   }
 
   h1 {
-    font-size: ${theme.fontSizes[5]}px;
+    font-size: ${({ theme }) => theme.fontSizes[5]}px;
   }
 
   hr {
