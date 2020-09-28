@@ -1,21 +1,27 @@
 import React from "react";
-// import { GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
-// import Link from "next/link";
+import Link from "next/link";
 import styled from "styled-components";
-// import Date from "../components/Date";
-// import { getSortedNotesData } from "../lib/notes";
+import Date from "../components/Date";
+import { getSortedNotesData } from "../lib/notes";
 
-// type Props = {
-//   allNotesData: {
-//     date: string;
-//     title: string;
-//     id: string;
-//   }[];
-// };
+type Props = {
+  allNotesData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+};
 
 const NotesContainer = styled.section`
+  .Notes__description {
+    margin-bottom: 4rem;
+  }
+
   .Note {
+    margin-bottom: 2rem;
+
     a {
       font-weight: bolder;
     }
@@ -30,8 +36,7 @@ const NotesContainer = styled.section`
   }
 `;
 
-// { allNotesData }: Props
-export default function Notes() {
+export default function Notes({ allNotesData }: Props) {
   return (
     <NotesContainer className="Notes">
       <Head>
@@ -40,11 +45,11 @@ export default function Notes() {
       <h1>
         <span>my</span>Notes
       </h1>
-      <p className="Notes__description">
+      {/* <p className="Notes__description">
         Coming soon... I just need to write a bit of logic to filter out notes
         that should not be public.
-      </p>
-      {/* <p className="Notes__description">
+      </p> */}
+      <p className="Notes__description">
         These are my raw notes since I have begun trying to use the zettelkasten
         approach.
       </p>
@@ -64,16 +69,16 @@ export default function Notes() {
             <hr />
           </React.Fragment>
         ))}
-      </ul> */}
+      </ul>
     </NotesContainer>
   );
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const allNotesData = getSortedNotesData();
-//   return {
-//     props: {
-//       allNotesData,
-//     },
-//   };
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  const allNotesData = getSortedNotesData();
+  return {
+    props: {
+      allNotesData,
+    },
+  };
+};

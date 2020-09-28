@@ -40,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
       return setMode("light");
     }
   }, []);
+
   const setNextMode = () => {
     let nextModeIndex = modes.indexOf(mode) + 1;
     if (nextModeIndex >= modes.length) {

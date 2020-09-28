@@ -1,19 +1,23 @@
 import { Theme } from "styled-system";
 
 type ColorMode = {
+  _name: string;
   background: string;
   gray: string;
   highlight: string;
+  accent: string;
   lightgray: string;
+  midgray: string;
   primary: string;
   secondary: string;
   text: string;
 };
 
-// color has inconsisten properties
+// color has inconsistent properties
 type Theme = {
   breakpoints: string[];
   colors: {
+    _name: string;
     background: string;
     text: string;
     primary: string;
