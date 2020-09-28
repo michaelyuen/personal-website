@@ -62,7 +62,6 @@ export default function Notes({ allNotesData }: Props) {
                 <Date dateString={date} />
               </small>
             </li>
-            <hr />
           </React.Fragment>
         ))}
       </ul>
