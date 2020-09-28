@@ -1,3 +1,0 @@
-[build]
-base = "v4"
-publish = "v4/public"

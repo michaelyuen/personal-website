@@ -40,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
       return setMode("light");
     }
   }, []);
+
   const setNextMode = () => {
     let nextModeIndex = modes.indexOf(mode) + 1;
     if (nextModeIndex >= modes.length) {
@@ -53,6 +54,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Head>
         <title>Michael Yuen's Personal Website</title>
+        <meta
+          name="description"
+          content="👋🏻 I'm Michael but sometimes I go by my. My purpose in life is to create order. I am a 👨🏻‍🌾 human bean and software engineer."
+        />
         <link
           href="https://fonts.googleapis.com/css?family=Gaegu|Open+Sans:400,700|Pacifico|Merriweather&display=swap"
           rel="stylesheet"

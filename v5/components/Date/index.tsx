@@ -2,10 +2,14 @@ import { parseISO, format } from "date-fns";
 import styled from "styled-components";
 
 const DateContainer = styled.time`
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.midgray};
 `;
 
-export default function Date({ dateString }: { dateString: string }) {
+type Props = {
+  dateString: string;
+};
+
+export default function Date({ dateString }: Props) {
   const date = parseISO(dateString);
   return (
     <DateContainer dateTime={dateString}>

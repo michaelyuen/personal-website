@@ -4,30 +4,26 @@ import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 
-const typoraDirectory =
-  "/Users/my/Library/Mobile Documents/com~apple~CloudDocs/typora";
+const notesDirectory = path.resolve(process.cwd(), "./public/notes");
 
 export function getSortedNotesData() {
   // Get file names under /notes
-  const fileNames = fs.readdirSync(typoraDirectory);
-  const filteredFileNames = fileNames.filter(
-    (fileName) => !fileName.endsWith(".png")
-  );
-  const allNotesData = filteredFileNames.map((fileName) => {
+  const fileNames = fs.readdirSync(notesDirectory);
+  const allNotesData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
-    const fullPath = path.join(typoraDirectory, fileName);
+    const fullPath = path.join(notesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the note metadata section
-    const matterResult = matter(fileContents);
+    const { data } = matter(fileContents);
 
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...data,
     };
   });
   // Sort notes by date
@@ -41,9 +37,7 @@ export function getSortedNotesData() {
 }
 
 export function getAllNoteIds() {
-  const fileNames = fs
-    .readdirSync(typoraDirectory)
-    .filter((fileName) => !fileName.endsWith(".png"));
+  const fileNames = fs.readdirSync(notesDirectory);
 
   // Returns an array that looks like this:
   // [
@@ -68,22 +62,16 @@ export function getAllNoteIds() {
 }
 
 export async function getNoteData(id: string) {
-  const fullPath = path.join(typoraDirectory, `${id}.md`);
+  const fullPath = path.join(notesDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the note metadata section
-  const matterResult = matter(fileContents);
-
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const { content, data } = matter(fileContents);
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
-    ...matterResult.data,
+    content,
+    ...data,
   };
 }
