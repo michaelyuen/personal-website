@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
-const typoraDirectory =
-  "/Users/my/Library/Mobile Documents/com~apple~CloudDocs/typora";
+const { typoraDirectory } = require("./env");
 
 const fileNames = fs.readdirSync(typoraDirectory);
 const fileNamesExcludingPng = fileNames.filter(
@@ -40,6 +39,6 @@ fileNamesExcludingWork.map((fileName) => {
     if (error) {
       throw error;
     }
-    console.log(`[SUCCESS] ${fileToCopy} => ${destination}`);
+    console.log(`✅ ${fileToCopy} => ${destination}`);
   });
 });

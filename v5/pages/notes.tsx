@@ -45,10 +45,6 @@ export default function Notes({ allNotesData }: Props) {
       <h1>
         <span>my</span>Notes
       </h1>
-      {/* <p className="Notes__description">
-        Coming soon... I just need to write a bit of logic to filter out notes
-        that should not be public.
-      </p> */}
       <p className="Notes__description">
         These are my raw notes since I have begun trying to use the zettelkasten
         approach.

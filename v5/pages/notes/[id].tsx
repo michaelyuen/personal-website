@@ -15,7 +15,9 @@ export default function NotePage({ postData }: Props) {
   return (
     <>
       <Head>
-        <title>{postData.title}</title>
+        <title>
+          {postData.title} | Notes | Michael Yuen's Personal Website
+        </title>
       </Head>
       <Note data={postData} />
     </>
