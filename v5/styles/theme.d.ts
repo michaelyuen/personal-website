@@ -39,7 +39,7 @@ type Theme = {
   fonts: {
     body: string;
     header: string;
-    monospace: string;
+    mono: string;
   };
   fontSizes: number[];
   lineHeights: {
