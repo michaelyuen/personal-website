@@ -81,7 +81,7 @@ const theme: Theme = {
   fonts: {
     body: "Merriweather, serif",
     header: "Open Sans, sans-serif",
-    monospace: "Meno, monospace",
+    mono: "Meno, monospace",
   },
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
   lineHeights: {
