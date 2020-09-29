@@ -185,7 +185,7 @@ let bb: [number, string, string, number] = [
 
 ## Object Types and Interfaces
 
-> Object types looks kind of like object values, except instead of `key: value` it's `key: type`
+> Object types looks kind of like object values, except instead of  `key: value`  it's  `key: type`
 
 
 
