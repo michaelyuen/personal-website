@@ -24,6 +24,10 @@ const navItems = [
     label: "blog.",
     value: "/blog",
   },
+  {
+    label: 'til.',
+    value: "/today-i-learned"
+  }
 ];
 
 export const HeaderContainer = styled.header`
