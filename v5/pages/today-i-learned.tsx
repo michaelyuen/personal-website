@@ -2,6 +2,30 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 3rd, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a href="https://en.wikipedia.org/wiki/Ken_Miles">Ken Miles</a> and{" "}
+        <a href="https://en.wikipedia.org/wiki/Carroll_Shelby">Carrol Shelby</a>
+        , the protagonists in the film{" "}
+        <a href="https://en.wikipedia.org/wiki/Ford_v_Ferrari">
+          Ford v Ferrari.
+        </a>
+      </p>
+      <p>
+        Excellent film! Wonderful story, acting, casting, etc. I generally
+        regard auto racing as boring (and I'm a baseball fan). And even for
+        those who do enjoy it, I think making it a compelling motion picture is
+        a quite different challenge. However, they did it! I felt something of
+        the rush and exhilleration of being in a freakin' rocket ship on wheels;
+        especially the scene where Shelby gives Henry Ford II a ride. Whoa!
+        🏎️💨💨
+      </p>
+      <p>
+        What's more, the storytelling and human aspects are what really did it
+        for me. Ken Miles is a legend and Christian Bale's acting was sublime as
+        usual. How can you not love the triumph of the human spirit?
+      </p>
       <h2>October 2nd, 2020</h2>
       <p>
         TIL why examples using lint-staged use cli commands directly. Because it
