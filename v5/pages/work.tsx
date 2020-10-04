@@ -15,16 +15,14 @@ export default function Work() {
         </a>
         .
       </p>
-      <p>
-        Also, some music I'm currently enjoying (GTA radio is <em>so good</em>):
-      </p>
+      <p>Also, since youtube recommended Aldous Harding, I've been obsessed:</p>
       <p style={{ textAlign: "center" }}>
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube-nocookie.com/embed/AtPS-pJwBL4"
+          src="https://www.youtube-nocookie.com/embed/QyZeJr5ppm8"
           frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{ maxWidth: "100%" }}
         ></iframe>

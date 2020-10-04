@@ -1,8 +1,21 @@
 import Link from "next/link";
+import styled from "styled-components";
+import { typography, TypographyProps } from "styled-system";
+
+const Figure = styled.figure`
+  @media (min-width: 768px) {
+    float: right;
+    margin-right: 0;
+  }
+`;
+
+const FigCaption = styled.figcaption<TypographyProps>`
+  ${typography}
+`;
 
 export default function Home() {
   return (
-    <div className="HomeContainer">
+    <div>
       <h1>
         <span>my</span>Bio
       </h1>
@@ -10,6 +23,13 @@ export default function Home() {
         👋🏻 I'm Michael but sometimes I go by <b>my</b>. My purpose in life is to
         create order.
       </p>
+      <Figure>
+        <img
+          src="/images/puerto-rico-with-bb.jpg"
+          alt="Sue and Michael in Puerto Rico"
+        />
+        <FigCaption fontFamily="Gaegu">Puerto Rico, 2019 🧡</FigCaption>
+      </Figure>
       <p>
         I am a <s>🤖 robot</s>, <s>👽 alien</s>, 👨🏻‍🌾 human bean, and I live in
         📍Edison, New Jersey with my beautiful girl bean{" "}
@@ -19,6 +39,7 @@ export default function Home() {
         . We are in the process of buying a condo in Bushwick and could not be
         more thrilled! 🏡
       </p>
+
       <p>
         I'm also a software engineer and I love building{" "}
         <a
@@ -83,6 +104,10 @@ export default function Home() {
         </a>{" "}
         and share what I enjoy.
       </p>
+      <figure style={{}}>
+        <img src="/images/pool-with-bb.jpg" alt="Sue and Michael in the pool" />
+        <FigCaption fontFamily="Gaegu">Pool, Edison, NJ, 2020 🥑</FigCaption>
+      </figure>
     </div>
   );
 }
