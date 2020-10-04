@@ -87,7 +87,7 @@ Various interactions in the real estate category **suck**, and technology can em
   - Agents / brokers
 - Information about potential neighbors
   - i.e., the home/apartment is nice but actually living there is a nightmare due to other circumstances
-- Collect info from other sources and centralize in a more easily navigable and digestable format
+- Collect info from other sources and centralize in a more easily navigable and digestible format
   - historical issues
   - crime
   - Pests

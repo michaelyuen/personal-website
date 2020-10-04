@@ -6,7 +6,9 @@ export default function TIL() {
       <p>
         TIL about{" "}
         <a href="https://en.wikipedia.org/wiki/Ken_Miles">Ken Miles</a> and{" "}
-        <a href="https://en.wikipedia.org/wiki/Carroll_Shelby">Carrol Shelby</a>
+        <a href="https://en.wikipedia.org/wiki/Carroll_Shelby">
+          Carroll Shelby
+        </a>
         , the protagonists in the film{" "}
         <a href="https://en.wikipedia.org/wiki/Ford_v_Ferrari">
           Ford v Ferrari.
@@ -17,7 +19,7 @@ export default function TIL() {
         regard auto racing as boring (and I'm a baseball fan). And even for
         those who do enjoy it, I think making it a compelling motion picture is
         a quite different challenge. However, they did it! I felt something of
-        the rush and exhilleration of being in a freakin' rocket ship on wheels;
+        the rush and exhilaration of being in a freakin' rocket ship on wheels;
         especially the scene where Shelby gives Henry Ford II a ride. Whoa!
         🏎️💨💨
       </p>
@@ -58,7 +60,7 @@ export default function TIL() {
         lint-staged, which is to do the operation against just the staged files.
         Another key piece of knowledge I mentioned above, that lint-staged
         implicitly passes the staged files as an argument to the cli command.
-        Thus, "pretter --write" <b>without any "files" option</b> is probably
+        Thus, "prettier --write" <b>without any "files" option</b> is probably
         what is desired, because lint-staged will add that for you.
       </p>
 
