@@ -2,6 +2,14 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 4th, 2020</h2>
+      <p>
+        TIL about the Danish word <em>arbejdsgl&aelig;de</em>, or "happiness at
+        work" or "work joy".
+      </p>
+      <p>
+        I learned this in the book I'm reading <b>The Best Team Wins</b>.
+      </p>
       <h2>October 3rd, 2020</h2>
       <p>
         TIL about{" "}
