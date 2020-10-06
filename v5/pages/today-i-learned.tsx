@@ -2,6 +2,17 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 5th, 2020</h2>
+      <p>
+        TIL how to define a function parameter as optional in TypeScript -
+        `function Foo(optional?){}`
+      </p>
+      <p>
+        The question mark! So simple, but I either never knew this or forgot. I
+        really like combination of being succinct and easy to understand at a
+        glance. Also, the consistency between this case and defining optional
+        properties in a type or interface is great!
+      </p>
       <h2>October 4th, 2020</h2>
       <p>
         TIL about the Danish word <em>arbejdsgl&aelig;de</em>, or "happiness at
