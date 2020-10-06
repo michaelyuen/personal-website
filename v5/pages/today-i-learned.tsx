@@ -8,7 +8,18 @@ export default function TIL() {
         work" or "work joy".
       </p>
       <p>
-        I learned this in the book I'm reading <b>The Best Team Wins</b>.
+        I learned this in the book I'm reading{" "}
+        <a href="https://www.goodreads.com/book/show/35785251-the-best-team-wins">
+          <b>The Best Team Wins</b>
+        </a>
+        . The context is around hierarchy in the workplace and how a lower
+        "power-distance" (i.e., boss being ruler vs. collaborator) relates to
+        employees being more engaged, feeling a greater sense of psychological
+        safety, and therefore being more likely to take initiative and challenge
+        the status quo (i.e., Innovate). The book goes on to explain how Danish
+        teams have one of the lowest power-distance scores and attempts to
+        correlate this with other figures about Denmark's amount of innovation,
+        general happiness of citizens, and employee satisfaction.
       </p>
       <h2>October 3rd, 2020</h2>
       <p>
