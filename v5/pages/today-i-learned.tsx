@@ -2,6 +2,13 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 6th, 2020</h2>
+      <p>TIL that GraphQL has been used in production since 2012!</p>
+      <p>
+        Wow, that is pretty crazy to me for what I think of as a relatively new
+        technology. I don't think I even knew I wanted to be a software engineer
+        in 2012!
+      </p>
       <h2>October 5th, 2020</h2>
       <p>
         TIL how to define a function parameter as optional in TypeScript -
