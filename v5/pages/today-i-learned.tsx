@@ -2,6 +2,28 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 7th, 2020</h2>
+      <p>
+        TIL about the{" "}
+        <a
+          href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-ts-expect-error-comments"
+          target="_blank"
+        >
+          @ts-expect-error comment.
+        </a>
+      </p>
+      <p>
+        When writing code in TypeScript, you typically rely on its static
+        analysis abilities to signal errors in real time. This is a wonderful
+        feature of the language, but can backfire when it comes to testing when
+        you sometimes <b>intentionally</b> want to do things wrong. As it turns
+        out, TypeScript has something for that case! From the handbook: "That’s
+        why TypeScript 3.9 brings a new feature: // @ts-expect-error comments.
+        When a line is preceded by a // @ts-expect-error comment, TypeScript
+        will suppress that error from being reported; but if there’s no error,
+        TypeScript will report that // @ts-expect-error wasn’t necessary."
+        Awesome!
+      </p>
       <h2>October 6th, 2020</h2>
       <p>TIL that GraphQL has been used in production since 2012!</p>
       <p>
