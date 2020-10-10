@@ -2,6 +2,22 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 8th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a href="https://github.com/remarkjs/strip-markdown" target="_blank">
+          strip-markdown
+        </a>
+        , part of the remark suite.
+      </p>
+      <p>
+        For work, I had to support a feature where a string of markdown should
+        only conditionally support links. The remark plugin strip-markdown was
+        nearly perfect! One odd thing I noticed is that it always seemed to
+        leave a newline character at the end of the parsed string. I wonder if
+        this is a bug, and may investigate further to see if I can contribute
+        back to the library.
+      </p>
       <h2>October 7th, 2020</h2>
       <p>
         TIL about the{" "}
