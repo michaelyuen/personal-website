@@ -2,6 +2,14 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 9th, 2020</h2>
+      <p>TIL the Yankees will not be proceeding to the ALCS.</p>
+      <p>
+        I just finished watching game 5 of the ALDS against the Tampa Bay Rays.
+        The game was really close; a pitcher's duel. In the end, one home run
+        made the difference. I'm sad, but good for the Rays; they deserve it.
+        May they kick the cheating Astros' ass.
+      </p>
       <h2>October 8th, 2020</h2>
       <p>
         TIL about{" "}
