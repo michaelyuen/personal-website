@@ -2,6 +2,19 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 10th, 2020</h2>
+      <p>
+        TIL that the bikini is named after the{" "}
+        <a href="https://en.wikipedia.org/wiki/Bikini" target="_blank">
+          Bikini Atoll
+        </a>
+        , where the first public nuclear bomb test took place.
+      </p>
+      <p>
+        I was playing Cranium tonight with Sue's family, and this was part of a
+        question. I think it was "clothing named after nuclear bomb", or
+        something like that. Apparently they all knew this! I had no idea.
+      </p>
       <h2>October 9th, 2020</h2>
       <p>TIL the Yankees will not be proceeding to the ALCS.</p>
       <p>
