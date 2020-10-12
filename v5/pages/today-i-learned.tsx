@@ -2,6 +2,20 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 11th, 2020</h2>
+      <p>TIL a little about microeconomics.</p>
+      <p>
+        I started going through the course on{" "}
+        <a href="khanacademy.org/" target="_blank">
+          Khan Academy
+        </a>
+        . I've known about it for a while. Really, who hasn't? But today I
+        finally followed the impulse to check it out further in the interest of
+        continued learning. At a glance, the website targets curriculum from
+        high school and below, but do you really remember everything from high
+        school? I think I slept through a lot of economics. But now I'm
+        interested and it's wonderful!
+      </p>
       <h2>October 10th, 2020</h2>
       <p>
         TIL that the bikini is named after the{" "}
