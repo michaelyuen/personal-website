@@ -2,6 +2,23 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 12th, 2020</h2>
+      <p>TIL about the term didactic.</p>
+      <p>
+        Seems like one of those words I see at different times, but if I were
+        pressed for a definition I'd be stumped. I was watching some of this
+        youtube video of{" "}
+        <a href="https://youtu.be/ImyFyZJ0BNo" target="_blank">
+          Ron Paul and William Buckley on Firing Line
+        </a>
+        , and Buckley was speaking about the Libertarian party and their
+        attempts to run for office as being didactic rather than political. I
+        didn't understand, so naturally I looked up the definition -- "Designed
+        or intended to teach". Therefore, my interpretation is that Buckley was
+        commenting on running under the Libertarian party as being something
+        that may be instructive to people and/or politics, but not political as
+        there was no expectation of possibly winning. Ron Paul disagreed.
+      </p>
       <h2>October 11th, 2020</h2>
       <p>TIL a little about microeconomics.</p>
       <p>
