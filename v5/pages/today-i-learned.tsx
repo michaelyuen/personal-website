@@ -2,6 +2,31 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 13th, 2020</h2>
+      <p>
+        TIL what <em>en passant</em> means in chess.
+      </p>
+      <p>
+        Or in French, "in passing". I had no idea about this chess rule! I've
+        recently signed up on{" "}
+        <a href="https://www.chess.com/member/mikeybabyy" target="_blank">
+          chess.com
+        </a>{" "}
+        and went through some of their beginner's lessons, which is where I
+        learned this. The move occurs when an opponents pawn makes its first
+        move and chooses to move two squares. If, as a result, the opponents
+        pawn is situated directly next to your pawn, you may play an{" "}
+        <em>en passant</em> <b>on your next move</b> by capturing the opponent's
+        pawn as normal by moving diagonally behind it. If you don't choose to
+        make this move on your immediate next turn, the right to do so is lost.
+      </p>
+      <p>
+        I think that was a decent explanation, but regardless Wikipedia's is
+        probably much better.{" "}
+        <a href="https://en.wikipedia.org/wiki/En_passant" target="_blank">
+          https://en.wikipedia.org/wiki/En_passant
+        </a>
+      </p>
       <h2>October 12th, 2020</h2>
       <p>TIL about the term didactic.</p>
       <p>
