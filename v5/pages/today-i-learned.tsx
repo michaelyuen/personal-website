@@ -2,6 +2,28 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 14th, 2020</h2>
+      <p>
+        TIL about the game{" "}
+        <a href="https://en.wikipedia.org/wiki/Disco_Elysium" target="_blank">
+          Disco Elysium
+        </a>
+        .
+      </p>
+      <p>
+        I'm by no means a hardcore gamer, but this game is pretty interesting
+        and unique to me. Thus far, I'm really enjoying it. I guess it would be
+        categorized as a role-playing game. The gameplay is primarily centered
+        around dialogue and decision making. Beyond simple decision making, your
+        character has various traits to be developed that present unique
+        decision that can only succeed if certain skills are sufficient. These
+        traits also actively participate in the dialogue, or should I say inner
+        monologue? I'm getting a kick out of "Electrochemistry" which seems to
+        be encouraging substance abuse in amusing ways. Additionally, I find the
+        setting and art style to be quite unique and compelling, and nicely
+        support the primarily dialogue-driven interactions. The voice acting is
+        fun too! I wish there was more of that.
+      </p>
       <h2>October 13th, 2020</h2>
       <p>
         TIL what <em>en passant</em> means in chess.
