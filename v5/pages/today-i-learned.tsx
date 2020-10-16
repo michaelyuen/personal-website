@@ -2,6 +2,31 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 15th, 2020</h2>
+      <p>
+        TIL{" "}
+        <a
+          href="https://www.nbcnews.com/politics/politics-news/chris-christie-says-he-was-icu-7-days-battling-covid-n1243589"
+          target="_blank"
+        >
+          Chris Christie spent 7 days in ICU during his battle with Coronavirus.
+        </a>
+      </p>
+      <p>
+        Given all of the people that have been infected recently in relation to
+        the White House, I have been wondering <em>how</em> none of them have
+        had severe, life-threatening experiences (that we know of). I think it's
+        safe to assume they are certainly receiving the best health care
+        possible, but still. Many are certainly in the high risk demographics
+        (old, fat, pre-existing conditions). I guess this is the first person
+        that I'm aware of that has actually come out publicly about their very
+        serious experience. 7 days in ICU sounds super scary to me. It seems
+        good that his statements are indicating self-reflection and gained
+        awareness. Sad that it would have to take a near death experience to do
+        that, but I hope he is being honest and continues to use his influence
+        to advocate for following public health guidelines and taking them
+        seriously. This virus does not play politics.
+      </p>
       <h2>October 14th, 2020</h2>
       <p>
         TIL about the game{" "}
