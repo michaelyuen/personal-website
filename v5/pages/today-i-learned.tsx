@@ -2,6 +2,33 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 16th, 2020</h2>
+      <p>
+        TIL about the{" "}
+        <a
+          href="https://github.com/probablyup/markdown-to-jsx#optionsoverrides---rendering-arbitrary-react-components"
+          target="_blank"
+        >
+          markdown-to-jsx
+        </a>{" "}
+        feature to replace arbitrary custom elements in markdown with React
+        components.
+      </p>
+      <p>
+        At work, we have to process a lot of markdown content and turn it into
+        html for our applications. In a case I was reviewing today, I noticed
+        the markdown also contained custom tags - something like{" "}
+        <code>
+          hello world &lt;custom-element&gt;content&lt;/custom-element&gt;
+        </code>
+        .
+      </p>
+      <p>
+        Well, that's certainly not markdown! But as it turns out, at least in
+        the case of markdown-to-jsx, handling this can become super easy and
+        elegant! Now we can literally map the custom tag to a React component
+        and voila! Way better than before.
+      </p>
       <h2>October 15th, 2020</h2>
       <p>
         TIL{" "}
