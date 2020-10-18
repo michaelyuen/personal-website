@@ -2,6 +2,46 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 17th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a
+          href="https://date-fns.org/v2.16.1/docs/Unicode-Tokens"
+          target="_blank"
+        >
+          Unicode Tokens, as the library date-fns calls them.
+        </a>
+      </p>
+      <p>
+        A big pain in being a JavaScript programmer, and probably a programmer
+        at large, is a lack of standardization. I see it as a natural downside
+        that comes with a quickly evolving ecosystem - which is a good thing!
+        This may be plain wrong, but I'd be willing to guess many "standards"
+        (in the JS ecosystem) are really "de facto standards". The distinction I
+        would make is that the latter is a result of a critical mass of users
+        going "hey, well other people do it this way" versus a formal standard
+        that is thoughtfully created based upon research.
+      </p>
+      <p>
+        I figured I may be talking out of my ass (I'm a little drunk), so I
+        popped in a quick query of "de facto standard vs" to DuckDuckGo, and
+        this was my second result after Wikipedia:{" "}
+        <a
+          href="https://www.electronicdesign.com/technologies/embedded-revolution/article/21796209/whats-the-difference-between-de-jure-and-de-facto-standards"
+          target="_blank"
+        >
+          What’s The Difference Between De Jure And De Facto Standards?
+        </a>{" "}
+        Interesting to me that the source seems to indicate a wider application
+        than programming, but not wholly surprising. Anyway, I digress...
+      </p>
+      <p>
+        Awesome to see that there is, in fact, a standard for tokens to be used
+        in date/time formatting! To me, that not only instills confidence in the
+        date-fns library, but also in the gained knowledge that I could write
+        something based upon the same standard and it would automatically be
+        interoperable and somewhat future-proof. Nice!
+      </p>
       <h2>October 16th, 2020</h2>
       <p>
         TIL about the{" "}
