@@ -2,6 +2,19 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 18th, 2020</h2>
+      <p>
+        TIL the 2020 World Series will be played by the Tampa Bay Rays and the
+        Los Angeles Dodgers.
+      </p>
+      <p>
+        I'm not happy that the Rays beat the Yankees, but I am ecstatic that
+        they beat the <s>Asterisks</s> Astros. As for the National League, I
+        don't have such strong feelings. I am sad the Braves couldn't pull it
+        off after having a 3-1 lead, but game 7 was really great and the Dodgers
+        have definitely demonstrated some grit and resilience.
+      </p>
+      <p>My pick for the WS is the Rays.</p>
       <h2>October 17th, 2020</h2>
       <p>
         TIL about{" "}
