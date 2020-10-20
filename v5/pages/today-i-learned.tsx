@@ -2,6 +2,32 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 19th, 2020</h2>
+      <p>
+        TIL about the{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment"
+          target="_blank"
+        >
+          principle of least astonishment
+        </a>
+        .
+      </p>
+      <p>
+        In general, it means that a feature of a system should do what a user
+        expects. In other words, be intuitive. This makes sense, but is probably
+        much more difficult in practice. I've heard people talk about the ideal
+        interface consisting of a single button. Didactic (ah-ha! using a
+        previous TIL!), but obviously not practical. I came across this phrase
+        while recently browsing GitHub issues discussing API design. Not
+        high-level API design, but particularly the parameters of a function.
+        With programming being a discipline where you can achieve almost
+        anything imaginable, it can be helpful to have certain guiding
+        principles to help ground such conversations that can quickly lose the
+        forest for the trees. One criticism would be that this particular
+        principle definitely has an element of subjectivity, but it's
+        interesting.
+      </p>
       <h2>October 18th, 2020</h2>
       <p>
         TIL the 2020 World Series will be played by the Tampa Bay Rays and the
