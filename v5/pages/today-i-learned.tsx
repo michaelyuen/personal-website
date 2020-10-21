@@ -2,6 +2,26 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 20th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions"
+          target="_blank"
+        >
+          the billion-dollar mistake
+        </a>
+        .
+      </p>
+      <p>Spoiler alert: it's the invention of `null`.</p>
+      <p>
+        Tony Hoare, while working on the first type system for an object
+        oriented language (ALGOL W), couldn't help himself but to invent `null`
+        because it was so easy to implement. Also according to Wikipedia, while
+        speaking at a conference in 2009 he apologized for it! Amazing! I wonder
+        what it must feel like to have invented something that has cost so much.
+        Personally, I like null. Hah!
+      </p>
       <h2>October 19th, 2020</h2>
       <p>
         TIL about the{" "}
