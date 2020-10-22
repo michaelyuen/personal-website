@@ -2,6 +2,18 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 21st, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a href="https://nextjs.org/conf/tickets/michaelyuen" target="_blank">
+          Next.js Conf
+        </a>
+      </p>
+      <p>
+        How cool is it that they generate a custom ticket and url when you
+        register? I LOVE the stuff Vercel is doing. Next.js, Vercel, Server,
+        Hyper, SWR, etc. etc. Awesome stuff!!!
+      </p>
       <h2>October 20th, 2020</h2>
       <p>
         TIL about{" "}
