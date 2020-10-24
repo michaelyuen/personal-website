@@ -2,6 +2,54 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 23rd, 2020</h2>
+      <p>
+        TIL the{" "}
+        <a
+          href="https://www.motorola.com/us/smartphones-razr-gen-2/p"
+          target="_blank"
+        >
+          Motorola Razr
+        </a>{" "}
+        is available for purchase!
+      </p>
+      <p>
+        I remember some time ago when this was announced, and of course being a
+        child of the 90s it evoked a lot of nostalgia. The design is pretty
+        interesting to me! I think it's a really cool modern take on the flip
+        phone style that made the original Razor so famous. Also, it's nice to
+        see something unique in a world where the iPhone style has become so
+        ubiquitous.
+      </p>
+      <p>
+        I'm still using my old faithful iPhone 7 and not in a particular rush to
+        replace it. Is it really worth it? I think not. But of course, the
+        desire for something shiny and new exists. Just glancing at the price
+        tag, no thank you! I may still check it out just to see what it brings
+        to the table beyond the unique design.
+      </p>
+      <h2>October 22nd, 2020</h2>
+      <p>
+        TIL that it is difficult to determine the sex of a parakeet without a
+        DNA test.
+      </p>
+      <p>
+        My coworker recently bought parakeets and I asked him what he named the
+        birds. Paraphrasing, he said he chose generally unisex names because the
+        birds are young and at that point it's quite difficult to determine sex
+        without a DNA test. I did a quick search and found{" "}
+        <a
+          href="https://www.worldbirds.org/how-to-sex-a-parakeet/"
+          target="_blank"
+        >
+          worldbirds.org
+        </a>
+        , where this seems to validate that it's pretty much true. Imagine that!
+        Funny - I was just going to remark how strange that would be for a dog
+        or cat or fish... but then I realized that it totally applies to fish
+        too. For me, the fish were just fish and I decided which was a boy and
+        which was a girl. lol 🤦
+      </p>
       <h2>October 21st, 2020</h2>
       <p>
         TIL about{" "}
