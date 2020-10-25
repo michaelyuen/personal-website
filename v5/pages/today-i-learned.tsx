@@ -1,7 +1,35 @@
+import Link from "next/link";
+
 export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 24th, 2020</h2>
+      <p>TIL about the difference between a pure democracy and a republic.</p>
+      <p>
+        In a pure democracy, all constituents would have a say as to what their
+        government does. Whereas a republic employs representatives to act on
+        the behalf of the constituents to the same end. One issue with a pure
+        democracy is scalability because once a population grows beyond a
+        certain size gathering feedback from all members becomes a practical
+        challenge. Another potential issue with a pure democracy, at least one
+        the Founding Fathers were concerned about, is the potential for factions
+        to arise and gain a majority from which they could do things that are
+        not in the interest of the people. A republic was thought to have a
+        better chance to prevent this. I find this part quite interesting
+        because of the way things are today with essentially two parties that
+        may as well be factions. I think an argument can be made that this has
+        resulted in some of the problems the Founding Fathers hoped to prevent!
+        🤔
+      </p>
+      <p>
+        I started watching the videos on Khan Academy about US Government and
+        Civics. Khan Academy is awesome! You can see the notes I took{" "}
+        <Link href="./notes/21a-us-government-and-civics">
+          <a>here</a>
+        </Link>
+        .
+      </p>
       <h2>October 23rd, 2020</h2>
       <p>
         TIL the{" "}
