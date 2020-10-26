@@ -4,6 +4,34 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 25th, 2020</h2>
+      <p>
+        TIL about the{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/ISO_8601#Durations"
+          target="_blank"
+        >
+          ISO 8601 spec for durations
+        </a>
+        .
+      </p>
+      <p>
+        From the Wikipedia article: Durations define the amount of intervening
+        time in a time interval. In my own words: the amount of time between two
+        timestamps.
+      </p>
+      <p>
+        I'm working on a little open source project involving the formatting of
+        durations, and it's wonderful to have a formal specification for
+        reference. Unfortunately, I can't think of a way to make it easily
+        conducive with my needs, which involves specifying a "format" string
+        with tokens representing the parts of a duration to be replaced in the
+        given format. The problem is that the ISO 8601 spec has two tokens that
+        are identical - "M" (month and minute). It works fine in the spec
+        because there are additional delimiters of "P" and "T" to represent the
+        difference of period (date) and time respectively. I'm not sure how I'd
+        incorporate that simply, but that's okay there are other good options.
+      </p>
       <h2>October 24th, 2020</h2>
       <p>TIL about the difference between a pure democracy and a republic.</p>
       <p>
