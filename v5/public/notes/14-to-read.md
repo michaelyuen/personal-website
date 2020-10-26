@@ -20,18 +20,6 @@ zettel: 14
 
 
 
-potentially 60-80 games (half season?). still to end season "on time". postseason economics are important.
-
-
-
-Draft - 5 rounds (40 normally). whole thing televised
-
-
-
-software engineers... should assume wfh until end of summer at least
-
-
-
 
 
 ## The Silent Type
@@ -79,3 +67,7 @@ Sounds very interesting.
 
 
 - [x] https://www.forbes.com/sites/stevenbertoni/2020/09/15/exclusive-the-billionaire-who-wanted-to-die-brokeis-now-officially-broke/?utm_source=pocket-newtab#31bcec923a2a
+
+
+
+- [x] https://medium.com/javascript-in-plain-english/the-modern-way-to-style-with-styled-components-c3c51b750b5f
