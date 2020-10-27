@@ -1,8 +1,15 @@
+import { format } from "@goomba/date-fns";
 import Link from "next/link";
 
+const date = "2020-10-20T04:10:00Z";
+const baseDate = "2020-10-19T00:08:29Z";
+
 export default function TIL() {
+  const form = format({ date, baseDate, format: "dd'D:'hh'H:'mm'M:'ss'S'" });
+  // const form = format({ date, baseDate });
   return (
     <section className="TILContainer">
+      <h1>{form}</h1>
       <h1>Today I Learned</h1>
       <h2>October 25th, 2020</h2>
       <p>
