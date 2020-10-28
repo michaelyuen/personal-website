@@ -4,9 +4,11 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 27th, 2020</h2>
+      <p>TIL</p>
       <h2>October 26th, 2020</h2>
       <p>TIL the Senate confirmed Amy Coney Barrett to the US Supreme Court.</p>
-      <p>Sad day for our country.</p>
+      <p>Sad day for the United States.</p>
       <h2>October 25th, 2020</h2>
       <p>
         TIL about the{" "}
