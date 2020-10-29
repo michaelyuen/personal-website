@@ -4,9 +4,34 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>Octover 28th, 2020</h2>
+      <p>
+        TIL about the youtube channel{" "}
+        <a href="https://www.youtube.com/c/ThatChapter" target="_blank">
+          That Chapter
+        </a>{" "}
+        from my good friend Ty.
+      </p>
+      <p>
+        I've only watched one video, but I found it enjoyable, interesting, and
+        entertaining. The category seems to be true crime, and I'm all about
+        true crime stuff. I guess one criticism may be that I was left wanting
+        more? I watched the video on Kelly Cochran, but I don't have much to
+        remark about. It was like an overview of the events so I'm left thinking
+        "ok so that happened". Idk I guess I enjoy the mystery and exploration
+        of the human psyche. Anyway, cool stuff! I'll probably watch more.
+      </p>
+      <h2>October 27th, 2020</h2>
+      <p>TIL the 2020 World Series champions are the Los Angeles Dodgers!!!</p>
+      <p>
+        I'm writing this as Mookie Betts just smashed a HR in the bottom of the
+        8th. I <em>did</em> pick the Rays, so maybe this will jynx things? In
+        either case, this was a great series as a neutral fan. Even better
+        without the cheating astros!
+      </p>
       <h2>October 26th, 2020</h2>
       <p>TIL the Senate confirmed Amy Coney Barrett to the US Supreme Court.</p>
-      <p>Sad day for our country.</p>
+      <p>Sad day for the United States.</p>
       <h2>October 25th, 2020</h2>
       <p>
         TIL about the{" "}
