@@ -4,7 +4,25 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
-      <h2>Octover 28th, 2020</h2>
+      <h2>October 29th, 2020</h2>
+      <p>
+        TIL about the{" "}
+        <a href="https://en.wikipedia.org/wiki/XY_problem" target="_blank">
+          XY problem
+        </a>
+        .
+      </p>
+      <p>
+        To summarize, it is a communication problem caused by asking for help
+        with <em>what is thought</em> to be a problem (Y), but in effect it
+        distracts or obscures from solving the real problem (X). I think this is
+        often caused by someone <em>trying</em> to help and diagnose the
+        problem, but incidentally misleading the solution. Instead, it is
+        probably better to ask a question with no presuppositions, and only add
+        additional information about the problem solving attempts after a
+        baseline is formed.
+      </p>
+      <h2>October 28th, 2020</h2>
       <p>
         TIL about the youtube channel{" "}
         <a href="https://www.youtube.com/c/ThatChapter" target="_blank">
