@@ -4,6 +4,40 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 30th, 2020</h2>
+      <p>
+        TIL about the band{" "}
+        <a href="https://youtu.be/EDFwgeMvYYY" target="_blank">
+          Fidlar
+        </a>
+        .
+      </p>
+      <p>
+        They just popped up on my youtube suggestions recently, and today I
+        really dove in. I really dig their sound! To me there is a raw, punk
+        energy that I really love. Makes me want to mosh and just go crazy!!!
+        Also, I think the video is fantastically produced - a great mix between
+        getting to know some of the band and enjoying their live performance.
+        Zac and Brandon come across as such chill, genuine dudes that I could
+        see myself kickin' it with.
+      </p>
+      <p>
+        Before I found the previous video, I also watched these music videos.
+        While I generally prefer videos of live music, these are pretty great in
+        their own right!
+      </p>
+      <p>
+        <a href="https://youtu.be/bQOec2n6bK4" target="_blank">
+          No Money No Honey
+        </a>{" "}
+        with some dope crip walking!
+      </p>
+      <p>
+        <a href="https://youtu.be/wfGK9x8ChEk" target="_blank">
+          Flake
+        </a>
+        . No idea how to describe this but I love it.
+      </p>
       <h2>October 29th, 2020</h2>
       <p>
         TIL about the{" "}
