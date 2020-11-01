@@ -74,3 +74,44 @@ I want to be able to format as
 or
 
 `Cheer in X hours`
+
+
+
+
+
+---
+
+
+
+## Tokens
+
+
+
+| Property | Token |
+| -------- | ----- |
+| Years    | y     |
+| Months   | M     |
+| Days     | d     |
+| Hours    | h     |
+| Minutes  | m     |
+| Seconds  | s     |
+
+
+
+## Arguments
+
+| Name     | Type     | Description            |
+| -------- | -------- | ---------------------- |
+| duration | Duration | the duration to format |
+| format   | string   | the string of tokens   |
+
+
+
+## Exceptions
+
+| Type       | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| TypeError  | Parameter `duration` is required.                            |
+| TypeError  | Parameter `duration` is required.                            |
+| RangeError | format string contains an unescaped latin alphabet character |
+

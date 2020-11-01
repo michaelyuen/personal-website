@@ -2,7 +2,9 @@
   "name": "with-styled-components",
   "version": "1.0.0",
   "license": "MIT",
-  "browserslist": ["IE 10"],
+  "browserslist": [
+    "IE 10"
+  ],
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
@@ -14,7 +16,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@goomba/date-fns": "0.0.0",
+    "@goomba/date-fns": "^0.1.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.13.0",
     "framer-motion": "^1.10.3",

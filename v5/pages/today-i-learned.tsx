@@ -1,12 +1,19 @@
-import { format } from "@goomba/date-fns";
+import { intervalToDuration } from "date-fns";
+import { formatDuration } from "@goomba/date-fns";
+// import { test } from "../lib/date-fns-test";
 import Link from "next/link";
 
 const date = "2020-10-20T04:10:00Z";
 const baseDate = "2020-10-19T00:08:29Z";
 
 export default function TIL() {
-  const form = format({ date, baseDate, format: "dd'D:'hh'H:'mm'M:'ss'S'" });
+  const duration = intervalToDuration({
+    start: new Date(baseDate),
+    end: new Date(date),
+  });
+  // const form = format({ date, baseDate, format: "dd'D:'hh'H:'mm'M:'ss'S'" });
   // const form = format({ date, baseDate });
+  const form = formatDuration(duration, "dd'D:'hh'H:'mm'M:'ss'S'");
   return (
     <section className="TILContainer">
       <h1>{form}</h1>
