@@ -4,6 +4,30 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>October 31st, 2020</h2>
+      <p>
+        TIL about the web app{" "}
+        <a href="https://bundlephobia.com/" target="_blank">
+          Bundlephobia
+        </a>
+        .
+      </p>
+      <p>
+        This is a website that helps answer the question "how big is this
+        package and how much will it affect my app's total size". I just
+        published my the first version of a library I'm working on and I
+        curiously wanted to know how big it is. Great site, beautiful UI, and
+        tremendously informative!
+      </p>
+      <p>
+        Check it out!{" "}
+        <a
+          href="https://bundlephobia.com/result?p=@goomba/date-fns@0.1.0"
+          target="_blank"
+        >
+          https://bundlephobia.com/result?p=@goomba/date-fns@0.1.0
+        </a>
+      </p>
       <h2>October 30th, 2020</h2>
       <p>
         TIL about the band{" "}
