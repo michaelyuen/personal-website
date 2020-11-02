@@ -4,6 +4,21 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>Novermber 1st, 2020</h2>
+      <p>
+        TIL about the netflix tv show <b>The Queen's Gambit</b>.
+      </p>
+      <p>
+        I have recently begun to play chess on Chess.com. Casually, but I enjoy
+        it. I think I'm pretty mediocre at best, but I hope to push through the
+        fear of playing poorly and losing in order to improve my skills. Chess
+        is an amazing game. Anyway, I have also been able to engage Sue in
+        playing with me sometimes. She coincidentally discovered the show The
+        Queen's Queen's Gambit on netflix and actually I think it's not a
+        coincidence at all, but totally cause and effect. She turned it on one
+        evening and as the exposition began I really wasn't interested much at
+        all. Then, all of a sudden, the chess part came in and I was hooked!
+      </p>
       <h2>October 31st, 2020</h2>
       <p>
         TIL about the web app{" "}
