@@ -4,7 +4,43 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
-      <h2>Novermber 1st, 2020</h2>
+      <h2>November 2nd, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a href="https://graphql.org/learn/schema/#interfaces" target="_blank">
+          GraphQL interface types
+        </a>
+        .
+      </p>
+      <p>
+        I have come across them before along with union types, but today was the
+        first time I found a use case where they really made sense. My overly
+        simple explanation is that an interface is an abstract type where a set
+        of fields can be defined which all implementing types must contain. For
+        example, there could be an interface "Human" which defined fields such
+        as name, age, height, and weight. It can't be used on its own, but would
+        be used to define explicit types such as "Michael" or "Sue" which must
+        have all of the previously mentioned fields. They can also have
+        additional, unique fields, but forcing them to adhere to the common
+        "foundation" is great.
+      </p>
+      <p>
+        The use case I encountered is one I think exists in a ton of other
+        scenarios - basically a simple list versus detail pattern. There are a
+        common set of entities; let's use a blog post for example. In the case
+        of a list of blog posts, the data will contain only a subset of the blog
+        post entity, which makes sense as the UI would not need to display
+        nearly as much as the UI for an individual blog post. As such,
+        leveraging an interface to define the "base" blog post type and then
+        implementing it in the explicit "BlogPostDetail" and "BlogPostInList"
+        types works great and helps to catch simple mistakes that would
+        otherwise cause inconsistencies between the common fields. Another
+        aspect in which the interface helps is to avoid reusing a single,
+        superset type for both cases. This would be more simple in
+        implementation, but more challenging for users as the list type would
+        appear to have more query-able fields than truly exist.
+      </p>
+      <h2>November 1st, 2020</h2>
       <p>
         TIL about the netflix tv show <b>The Queen's Gambit</b>.
       </p>
