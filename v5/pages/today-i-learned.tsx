@@ -4,6 +4,31 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 3rd, 2020</h2>
+      <p>
+        TIL about the difference between a cashier's check and a certified
+        check.
+      </p>
+      <p>
+        As Sue and I are preparing for our condo closing, we anticipate needing
+        to prepare certified checks for the closing payments. I've used
+        cashier's checks before, but never a certified check so I wanted to
+        understand the difference. Both are considered fairly safe and secure
+        methods for making payments compared to a personal check.
+      </p>
+      <p>
+        In short, it seems to be a difference in order of operations for the
+        payer. With a cashier's check, the funds are guaranteed against the
+        institution's account, <em>not</em> the payer's account. That is done by
+        first withdrawing the funds from the payer's account so when acquiring a
+        cashier's check the money it represents is immediately gone. A big risk
+        for the chance that the cashier's check is lost. With a certified check,
+        I don't think the funds are immediately gone or withdrawn, but the
+        institution "certifies" the account is good for the amount. I'm not
+        sure, but I think the funds represented by the check are put on hold. So
+        effectively similar to the funds already being gone, but maybe a little
+        less cause for anxiety from the payer until the check is deposited.
+      </p>
       <h2>November 2nd, 2020</h2>
       <p>
         TIL about{" "}
