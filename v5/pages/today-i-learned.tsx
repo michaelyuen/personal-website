@@ -4,6 +4,18 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 5th, 2020</h2>
+      <p>TIL you can't deposit a check and access the funds on the same day.</p>
+      <p>
+        I don't completely understand this, because aren't you able to "cash" a
+        check? Isn't that the same concept? Or maybe that has changed too, I
+        don't know. Interesting how times have changed. How much do people
+        actually need to use checks anymore? Seems like so much has become
+        digital. But we have to prepare some cashier's checks for our condo
+        closing, and we needed to transfer some funds between our accounts. I
+        thought literally going to a teller with a check would be the fastest
+        route, but I guess it still takes at least a day. Such a pain!
+      </p>
       <h2>November 4th, 2020</h2>
       <p>
         TIL{" "}
