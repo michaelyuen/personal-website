@@ -4,6 +4,23 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 4th, 2020</h2>
+      <p>
+        TIL{" "}
+        <a
+          href="https://www.cbsnews.com/news/joe-biden-popular-vote-record-barack-obama-us-presidential-election-donald-trump/"
+          target="_blank"
+        >
+          Joe Biden has received the most votes for president of all time
+        </a>
+        .
+      </p>
+      <p>
+        He surpassed Obama's 69.5 million from 2008. Never thought Biden would
+        draw more votes than Obama, but I guess it really speaks to how
+        politically charged the country has become and, for better or worse, it
+        has compelled a ton of people to vote - myself included.
+      </p>
       <h2>November 3rd, 2020</h2>
       <p>
         TIL about the difference between a cashier's check and a certified
