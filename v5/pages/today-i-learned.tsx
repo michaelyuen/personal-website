@@ -4,6 +4,19 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 6th, 2020</h2>
+      <p>
+        TIL about the <b>obscene</b> amount of paperwork you must sign when
+        buying a condo.
+      </p>
+      <p>
+        So many dead trees! Sue and I closed on our condo today!!! So crazy to
+        be home owners. It finally feels real and exciting. But wow, soooo much
+        paperwork. You really have to just trust your attorney and sign, sign,
+        sign. Seriously, like stacks of papers inches thick. Makes me think of
+        the South Park episode about not reading the iTunes t&c and ending up as
+        a human centipede. Phew!
+      </p>
       <h2>November 5th, 2020</h2>
       <p>TIL you can't deposit a check and access the funds on the same day.</p>
       <p>
