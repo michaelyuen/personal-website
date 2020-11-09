@@ -73,3 +73,4 @@ Sounds very interesting.
 - [x] https://medium.com/javascript-in-plain-english/the-modern-way-to-style-with-styled-components-c3c51b750b5f
 
 - [x] https://ariya.io/2011/08/hall-of-api-shame-boolean-trap
+- [x] https://www.wired.com/story/nameless-hiker-mostly-harmless-internet-mystery
