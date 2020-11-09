@@ -4,6 +4,26 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 7th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a
+          href="https://www.wired.com/story/nameless-hiker-mostly-harmless-internet-mystery"
+          target="_blank"
+        >
+          "Mostly Harmless"
+        </a>
+        , a hiker that unfortunately died and inexplicably can't be identified.
+      </p>
+      <p>
+        I love a good mystery, and this case seems to be just that. What's more,
+        there are connections to the tech industry, hiking, and Florida (and I
+        guess Hitchhiker's Guide to the Galaxy too), all facets that I find
+        connection with and further drive my interest. It definitely reminds me
+        of <b>Into the Wild</b> too which the article aptly points out. A very
+        intriguing mystery indeed. I hope that Mostly Harmless is able to be
+        identified on the chance that people out there are missing him.
+      </p>
       <h2>November 6th, 2020</h2>
       <p>
         TIL about the <b>obscene</b> amount of paperwork you must sign when
