@@ -4,6 +4,22 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 8th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a href="https://screeps.com/" target="_blank">
+          screeps
+        </a>
+        , an MMO sandbox game for programmers.
+      </p>
+      <p>
+        I don't know much about it, but the tagline certainly checks a number of
+        boxes for things that pique my interest. I came across this from the
+        previous TIL about <b>Mostly Harmless</b> and a reddit thread trying to
+        investigate indicating he was a player. I doubt I'll have any time at
+        the moment to really get into screeps, but it does seem interesting -
+        maybe in the future!
+      </p>
       <h2>November 7th, 2020</h2>
       <p>
         TIL about{" "}
