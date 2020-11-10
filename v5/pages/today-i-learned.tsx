@@ -4,6 +4,20 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 9th, 2020</h2>
+      <p>
+        TIL that{" "}
+        <a
+          href="https://www.brickunderground.com/live/are-fire-pits-legal-in-NYC"
+          target="_blank"
+        >
+          fire pits are illegal in NYC
+        </a>
+        .
+      </p>
+      <p>
+        I think it makes some sense, but I guess bummer for our new back yard!
+      </p>
       <h2>November 8th, 2020</h2>
       <p>
         TIL about{" "}
