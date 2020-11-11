@@ -4,6 +4,15 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 10th, 2020</h2>
+      <p>
+        TIL that{" "}
+        <a href="https://www.tickets.com/about-us/" target="_blank">
+          tickets.com
+        </a>{" "}
+        is owned by MLB.
+      </p>
+      <p>Really good domain. Really bad website. lol</p>
       <h2>November 9th, 2020</h2>
       <p>
         TIL that{" "}
