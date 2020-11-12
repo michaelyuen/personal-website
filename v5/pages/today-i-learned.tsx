@@ -4,6 +4,46 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 11th, 2020</h2>
+      <p>
+        TIL that it is, in fact, NY law that condos must keep financial records.
+      </p>
+      <p>
+        Going through the home buying process, I've come to feel that there is
+        an important distinction between things you think are true and things
+        that you <b>know</b> are true because of the legal documents to back
+        them up. I certainly thought it was true that condos must keep financial
+        records; just seems like common sense, right? Now I know it is true
+        because I took the time to find the{" "}
+        <a
+          href="https://www.ncsl.org/documents/environ/NYcondo.pdf"
+          target="_blank"
+        >
+          Condominium Act
+        </a>
+        .
+      </p>
+      <p>
+        <b>Section 339-w:</b> The manager or board of managers, as the case may
+        be, shall keep detailed, accurate records, in chronological order, of
+        the receipts and expenditures arising from the operation of the
+        property. Such records and the vouchers authorizing the payments shall
+        be available for examination by the unit owners at convenient hours of
+        weekdays. A written report summarizing such receipts and expenditures
+        shall be rendered by the board of managers to all unit owners at least
+        once annually.
+      </p>
+      <p>
+        And there we have it. I was discussing this with a friend who is also in
+        the home buying process. When I asked, they said the buyer hadn't shared
+        the condo financial records. To me, that's a pretty important part of
+        due diligence, and I think it's empowering to know the law and therefore
+        that there's no excuse for a building to not have such records. And
+        well, if they don't that's probably a big red flag. Now there is also
+        the technicality of "shall be available for the examination by the unit
+        owners", but practically speaking I can't see an argument for excluding
+        a prospective owner.
+      </p>
       <h2>November 10th, 2020</h2>
       <p>
         TIL that{" "}
