@@ -4,6 +4,28 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 12th, 2020</h2>
+      <p>
+        TIL something about the term{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/Irish_people#Black_Irish"
+          target="_blank"
+        >
+          "Black Irish"
+        </a>
+        , but I still don't think I fully understand it.
+      </p>
+      <p>
+        I've seen this term used at various times in pop culture. I find it to
+        be quite interesting. Black Irish. That's thought provoking to me; what
+        does it mean?! Well, I'm still not sure, but I guess a simple definition
+        is Irish people with dark hair or features. Whereas the standard
+        archetype of an Irish person has more fair features, I guess "Black
+        Irish" refers to those with darker features - black hair, olive skin,
+        etc. It seems there is a lot of speculation and very little agreement on
+        where this subset of Irish people have originated from. But I may be
+        wrong, I only looked this over fairly quick while tipsy.
+      </p>
       <h2>November 11th, 2020</h2>
       <p>
         TIL that it is, in fact, NY law that condos must keep financial records.
