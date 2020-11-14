@@ -4,6 +4,24 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 13th, 2020</h2>
+      <p>
+        TIL about{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/American_Horror_Story:_1984"
+          target="_blank"
+        >
+          American Horror Story Season 9 - 1984
+        </a>
+        .
+      </p>
+      <p>
+        First, I'm surprised AHS is still going! When Sue first started watching
+        this season randomly I didn't take it too seriously. My reaction was
+        more like "oh a show trying to take advantage of the Stranger Things
+        aesthetic", but after a few episodes in I was hooked. This season is
+        crazy!!!
+      </p>
       <h2>November 12th, 2020</h2>
       <p>
         TIL something about the term{" "}
