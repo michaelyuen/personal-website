@@ -4,6 +4,11 @@ export default function TIL() {
   return (
     <section className="TILContainer">
       <h1>Today I Learned</h1>
+      <h2>November 14th, 2020</h2>
+      <p>
+        Fuck it there's 10 minutes to get my commit for the day I'll update this
+        tomorrow.
+      </p>
       <h2>November 13th, 2020</h2>
       <p>
         TIL about{" "}
