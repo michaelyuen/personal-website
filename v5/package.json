@@ -1,10 +1,7 @@
 {
-  "name": "with-styled-components",
-  "version": "1.0.0",
+  "name": "personal-website",
+  "version": "5.0.0",
   "license": "MIT",
-  "browserslist": [
-    "IE 10"
-  ],
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
@@ -12,7 +9,8 @@
     "clean-notes": "rm -f ./public/notes/*",
     "copy-notes": "yarn clean-notes && node ./scripts/copy-notes.js",
     "dev": "yarn copy-notes && next",
-    "build": "next build --profile",
+    "build": "next build",
+    "build:profile": "next build --profile",
     "start": "next start"
   },
   "dependencies": {
