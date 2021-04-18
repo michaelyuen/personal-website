@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -51,7 +51,7 @@ export default function Notes({ allNotesData }: Props) {
       </p>
       <ul>
         {allNotesData.map(({ id, date, title }) => (
-          <React.Fragment key={id}>
+          <Fragment key={id}>
             <li className="Note">
               <Link href="/notes/[id]" as={`/notes/${id}`}>
                 <a>
@@ -62,7 +62,7 @@ export default function Notes({ allNotesData }: Props) {
                 <Date dateString={date} />
               </small>
             </li>
-          </React.Fragment>
+          </Fragment>
         ))}
       </ul>
     </NotesContainer>
