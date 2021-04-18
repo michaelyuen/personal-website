@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   javascript,
@@ -13,21 +14,24 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { withTheme } from "styled-components";
 import Theme from "../../styles/theme.d";
+import Code from "../Code";
 SyntaxHighlighter.registerLanguage("javascript", javascript);
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 
 type Props = {
-  language: string;
+  children: ReactNode[];
+  className?: string;
+  inline?: boolean;
   theme: Theme;
-  value: string;
 };
 
 const CodeBlock = ({
-  language = null,
+  children,
+  className,
+  inline,
   theme: {
     colors: { _name },
   },
-  value,
 }: Props) => {
   const style = {
     dark: nightOwl,
@@ -37,10 +41,14 @@ const CodeBlock = ({
     teal: atelierLakesideLight,
     light: monoBlue,
   };
+  const match = /language-(\w+)/.exec(className || "");
+  const language = (match && match[1]) || "javascript";
 
-  return (
+  return inline ? (
+    <Code>{children}</Code>
+  ) : (
     <SyntaxHighlighter language={language} style={style[_name]}>
-      {value}
+      {children}
     </SyntaxHighlighter>
   );
 };

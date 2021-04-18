@@ -8,7 +8,7 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
     "clean-notes": "rm -f ./public/notes/*",
     "copy-notes": "yarn clean-notes && node ./scripts/copy-notes.js",
-    "dev": "yarn copy-notes && next",
+    "dev": "next",
     "build": "next build",
     "build:profile": "next build --profile",
     "start": "next start"
@@ -24,7 +24,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
-    "react-markdown": "^4.3.1",
+    "react-markdown": "^6.0.0",
     "react-syntax-highlighter": "^15.4.3",
     "remark": "^12.0.0",
     "remark-html": "^11.0.1",

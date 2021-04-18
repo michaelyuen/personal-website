@@ -2,7 +2,6 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import Date from "../Date";
 import Blockquote from "../Blockquote";
-import Code from "../Code";
 import CodeBlock from "../CodeBlock";
 
 type Props = {
@@ -25,10 +24,9 @@ export default function Note({ className, data: { content, date } }: Props) {
     <NoteContainer className={className}>
       <Date dateString={date} />
       <ReactMarkdown
-        renderers={{
+        components={{
           blockquote: Blockquote,
           code: CodeBlock,
-          inlineCode: Code,
         }}
       >
         {content}
