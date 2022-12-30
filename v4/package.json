@@ -24,7 +24,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
-		"gatsby": "^2.0.12",
+		"gatsby": "^2.32.13",
 		"gatsby-plugin-google-fonts": "0.0.4",
 		"gatsby-plugin-layout": "^1.0.3",
 		"gatsby-plugin-react-helmet": "^3.0.0",
